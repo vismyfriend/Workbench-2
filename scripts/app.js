@@ -1,6 +1,11 @@
-// 0001 создаем в папке скриптов папку utils и в ней файл ques-answ.js, в нем будут данные и импортируем данные из файла - указываем путь  файлу 
+// 0001 создаем в папке скриптов папку utils и в ней файлы с расширением .js, в них будут данные для приложения игры и страницы и импортируем данные из файла - указываем путь  файлу 
 import allCards from "./utils/ques-answ.js"
+import allQuestions from "./utils/questions.js"
 // 0002 добавляем константы
+// const buttons006007008 = document.querySelector(".buttons006-007-008")
+const buttonsSix = document.querySelector(".buttons-006-007-008")
+const refreshInfo= document.querySelector(".refresh-info")
+const button001 = document.querySelector(".header__button001")
 const isTouch = () => 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0
 const allSets = document.querySelectorAll(".popup__set")
 const popup = document.querySelector(".popup")
@@ -9,7 +14,9 @@ const popupDescription = document.querySelector(".popup__description")
 const popupSets = document.querySelector(".popup__sets")
 const findAPair = document.querySelector(".popup__find-a-pair")
 const checkMemory = document.querySelector(".popup__check-memory")
+const p004questions = document.querySelector(".popup__p004-questions")
 const chosenSet = document.querySelector(".popup__chosen-set")
+const logoSpecial = document.querySelector(".logo-special")
 const pool = document.querySelector(".pool")
 const card = document.querySelector(".template").content.querySelector(".card")
 const next = document.querySelector(".next")
@@ -24,6 +31,16 @@ const timeMiliseconds = document.getElementById("tens")
 const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
+
+// <copied
+const cardQuestion = document.querySelector(".card1_question1")
+const cardValueQuestion = cardQuestion.querySelector(".card1__value1")
+const cardHintQuestion = cardQuestion.querySelector(".card1__hint1")
+// ниже я добавил константу, чтобы при нажатии на любую часть карточки появлялся следующий вопрос - но тогда сбивается номер вопроса
+const cardTop = cardQuestion.querySelector(".card1__top1")
+// const shuffle = document.querySelector(".shuffle")
+// copied>
+
 let selectCard = null
 let chosenArray = null
 let min = 0
@@ -32,6 +49,59 @@ let tens = "00"
 let seconds = "00"
 let interval = null
 let count = 0
+
+// <copied
+let value = null
+let questionNumber = 0
+let shuffledQuestions = null
+// let chosenArrayQuestions = null
+
+function shuffleDecks() {
+        shuffledQuestions = allQuestions.sort(function () {
+        return Math.random() - 0.5;
+    });
+    questionNumber = 0
+    cardQuestion.classList.remove("open1")
+    cardQuestion.style.border = 'none';
+}
+function getquestions() {
+    if (questionNumber < shuffledQuestions.length) {
+        cardQuestion.classList.remove("open1")
+        setTimeout(function () { cardQuestion.classList.add("open1") }, 0);
+        value = shuffledQuestions[questionNumber]
+        cardHintQuestion.classList.remove("show1")
+        // обновляет blur на каждой новой карточке
+        cardValueQuestion.textContent = value.eng
+        cardHintQuestion.textContent = value.ru
+        cardQuestion.style.border = "solid 4px rgb(123, 207, 255)";
+        // questionNumber++
+        questionNumber = questionNumber + 1
+        console.log(questionNumber)
+    } else {
+        cardQuestion.classList.remove("open1")
+        cardQuestion.style.border = 'none';
+        shuffleDecks()
+    }
+}
+refreshInfo.addEventListener("click",mainScreen)
+function mainScreen() {
+location.reload()
+}
+shuffleDecks()
+cardHintQuestion.addEventListener("click", (event) => {
+    cardHintQuestion.classList.toggle("show1")
+    event.stopPropagation()
+})
+// проверка - если карта уже открыта, то изменения только при нажатии на кнопку, а не по карте кликая
+// cardQuestion.addEventListener("click", () => {
+//     cardQuestion.classList.contains("open") ? null : getquestions()
+// })
+cardQuestion.addEventListener("click", getquestions)
+// shuffle.addEventListener("click", shuffleDecks)
+
+
+// copied>
+
 
 function startTimer() {
     tens++;
@@ -66,25 +136,44 @@ function nextCards() {
     }
 }
 function chooseSet(text, set) {
+    logoSpecial.classList.add("hidden")
+    refreshInfo.classList.add("visible")
     tryAgainButton.classList.add("hidden")
-    popupTitle.textContent = "Вы выбрали набор:"
-    popupDescription.textContent = "Варианты тренировок"
+    buttonsSix.classList.add("hidden")
+    popupTitle.textContent = "You chose mission:"
+    popupDescription.textContent = " Как будете тренировать? :"
     popupSets.classList.add("hide")
     checkMemory.classList.add("show")
     findAPair.classList.add("show")
+    p004questions.classList.add("show")
     chosenSet.classList.add("show")
     chosenSet.textContent = text
+}
+function startGameQuestions() {
+    // renderCards("ru")
+    // renderCards("eng")
+   
+    popup.classList.add("close")
+    // logoSpecial.classList.add("hidden")
+    cardQuestion.classList.remove("hidden1")
+    // pool.classList.add("open")
+    interval = setInterval(startTimer, 10);
 }
 function startGameFindPairs() {
     renderCards("ru")
     renderCards("eng")
+    buttonCoverL.disabled =true;
+    buttonCoverR.disabled =true;
+    button001.classList.add("hidden")
     popup.classList.add("close")
+    logoSpecial.classList.add("hidden")
     pool.classList.add("open")
     interval = setInterval(startTimer, 10);
 }
 
 function startGameCheckMemory() {
     startGameFindPairs()
+    button001.classList.add("hidden")
     coverCards(pictureL)
 }
 
@@ -93,6 +182,7 @@ allSets.forEach((set) => {
     set.addEventListener("click", (evt) => {
         getArray(evt.target.dataset.set)
         chooseSet(evt.target.textContent, evt.target.dataset.set)
+        
     })
 })
 
@@ -111,7 +201,7 @@ function renderCards(lang) {
         poolContainer.append(someCard)
     }
 }
-// получаем и массив ниже и рандомно перемешиваем через готовую функции
+// получаем массив и ниже рандомно перемешиваем через готовую функции
 function getArray(set) {
     chosenArray = null
     chosenArray = allCards[set].sort(function () {
@@ -155,15 +245,17 @@ function finishGame() {
     uncoverCards(pictureL)
     uncoverCards(pictureR)
     tryAgainButton.classList.remove("hidden")
+    buttonsSix.classList.remove("hidden")
     popup.classList.remove("close")
     pool.classList.remove("open")
     popupTitle.textContent = `Вы справились за: ${timer.textContent}`
-    popupDescription.innerHTML = "Тренировать другой набор"
+    popupDescription.innerHTML = "Попробуете побить рекорд?"
     timeMiliseconds.textContent = "00"
     timeSeconds.textContent = "00"
     popupSets.classList.remove("hide")
     checkMemory.classList.remove("show")
     findAPair.classList.remove("show")
+    p004questions.classList.remove("show")
     chosenSet.classList.remove("show")
     
     
@@ -180,9 +272,10 @@ function finishGame() {
 function scroll(direction) {
     popupSets.scrollBy(direction, 0)
 }
-
+// При нажатии запускаем событие "навешиваем событие"
 checkMemory.addEventListener("click", startGameCheckMemory)
 findAPair.addEventListener("click", startGameFindPairs)
+p004questions.addEventListener("click", startGameQuestions)
 next.addEventListener("click", nextCards)
 tryAgainButton.addEventListener("click", startGameFindPairs)
 

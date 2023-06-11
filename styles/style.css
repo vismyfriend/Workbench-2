@@ -3,17 +3,7 @@
 /* 0002 подключаем гугл шрифт - иногда на айфонах цвет шрифта не совпадает и у каждой кнопки нужно дописать color: это поменяет цвет текста на кнопке*/
 @import url(https://fonts.googleapis.com/css?family=Neucha:regular);
 /* 0003 скопировал все из pool-game */
-
-.body {
-    background-image: url(../images/background.png);
-    height: 100vh;
-    background-position: 72% 0;
-    background-size: cover;
-    font-family: neucha;
-    color: #000000;
-}
-
-
+/* 0004 задаем стили для созданных классов начиная с точки .название-класса */
 .header {
     position: fixed;
     left: 0;
@@ -28,9 +18,81 @@
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    padding: 15px;
+    padding: 5px;
+}
+/* 0005 если просто написать button без точки (указания на класс - то он все кнопки сделает с заданными стилями (радиусом заданым или дркгими параметрами) */
+button {
+    border-radius: 20px;
+    color: #092acf;
+    
+}
+/* 0006 то есть сейчас у всех кнопок по умолчанию радиус 20px и цвет текста #092acf; (типа синий какой-то) */
+/* 0007 чтобы отдельной кнопке присвоить другой цвет шрифта пишем color */
+.header__button001 {
+    color: #ffffff;
+    cursor: pointer;
+    background: #ffffff00;
+    /* border: 2px solid #000000; */
+    /* border-radius: 20px; */
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    margin: 5px 15px;
+    display: none;
+}
+.header__button001.hidden {
+    display: none;
+}
+.refresh-info {
+    color: white;
+    display: none;
+}
+.refresh-info.visible {
+    display: flex;
+    
+   
+}
+/* 0008 Код читается сверху вниз, поэтому сперва стиль display: none;  указанный ниже, заменится на display: flex;так как этот стиль указан ниже. В результате сперва кнопки на странице будут видны на экране */
 
+.buttons-006-007-008 {
+    position: relative;
+    top: 430px;
+    /* display: flex; */
+    display: none;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    gap: 20px;
+    /* padding-right:  71px; */
+    max-width: 480px;
+    /* margin: 0 auto; */
+    margin: auto;
+}
+.buttons-006-007-008.hidden {
+    display: none;
+}
 
+.button006 {
+
+    background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #FA8181;
+}
+
+.button007 {
+    background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #FFF27B;
+}
+
+.button008 {
+    background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #80FF01;
+
+}
+
+.body {
+    /* background-image: url(../images/background.png); */
+    height: 100vh;
+    background-position: 72% 0;
+    background-size: cover;
+    font-family: neucha;
+    color: #000000;
+    background-color: #000000;
 }
 
 .picture-right {
@@ -50,7 +112,10 @@
 }
 
 .picture-right.shown {
-    right: 10%;
+    top: 15px;
+    right: 16px;
+    width: 168px;
+    height: 570px;
 
 }
 
@@ -71,22 +136,17 @@
 }
 
 .picture-left.shown {
-    left: 10%;
+    /* left: 10%; */
+    top: 15px;
+    left: 16px;
+    width: 168px;
+    height: 570px;
 }
 
-.header__button001 {
-    cursor: pointer;
-    background: #FFF27B;
-    border: 2px solid #000000;
-    border-radius: 20px;
-    width: 150px;
-    height: 40px;
-    font-size: 20px;
-    color: #000000;
-}
+
 
 .picture-left.shown.again {
-    left: 50%;
+    left: 51%;
 }
 
 /* .picture-left.finish, 
@@ -113,8 +173,9 @@
     padding: 15px;
     -webkit-box-shadow: 0 0 20px 3px #000000;
     box-shadow: 0 0 20px 3px #000000;
-    background: #D9D9D9;
+    background: #d9d9d900;
     border-radius: 35px;
+    color: #ffffff;
 }
 
 .try-again {
@@ -147,8 +208,10 @@
 }
 
 .popup__description {
-    margin: 5px 0;
+    margin: 5px 10px;
     height: 35px;
+    display: flex;
+    align-items: end;
 }
 
 .popup__set {
@@ -165,10 +228,11 @@
     height: 46px;
     left: 49.09px;
     top: 304px;
-    background: #FFF27B;
+    background: #fff27b00;
     border-radius: 20px;
     -webkit-box-shadow: 0 2px 6px 1px #000000;
-    box-shadow: 0 2px 6px 1px #000000;
+    box-shadow: 0 2px 6px 1px #ffffff;
+    color: #ffffff;
 }
 
 .popup__sets {
@@ -207,7 +271,7 @@
 } */
 
 .popup__title {
-    margin: 10px 0;
+    margin: 10px 10px;
     /* одна цифра с 4 сторон */
     /* две цифры 2 оси  */
     /* три цифры 1 общая и две оси */
@@ -215,25 +279,26 @@
     /* regular = 400 (100 тонкий 900 толстый) убрали размытие - так как оно не наследуется */
     font-size: 30px;
 }
-
+.popup__find-a-pair {
+    margin-top: 20px;
+}
 .popup__find-a-pair,
-.popup__check-memory {
+.popup__check-memory,
+.popup__p004-questions {
     display: none;
     gap: 10px;
     /* гэп работает внутри флекс элементов */
     margin-bottom: 10px;
-
 }
-
 .popup__find-a-pair img,
-.popup__check-memory img {
+.popup__check-memory img,
+.popup__p004-questions img {
     max-width: 50px;
-
 }
-
 .popup__find-a-pair p,
-.popup__check-memory p {
-    background: #80FF01;
+.popup__check-memory p,
+.popup__p004-questions p{
+    background: #80ff0100;
     border-radius: 20px;
     margin: 0;
     height: 40px;
@@ -249,16 +314,21 @@
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-shadow: 0 2px 6px 1px #000000;
-    box-shadow: 0 2px 6px 1px #000000;
+    box-shadow: 0 2px 6px 1px #ffffff;
+    color: #ffffff;
 }
-
-.popup__find-a-pair {
-    margin-top: 20px;
+.popup__find-a-pair.show,
+.popup__check-memory.show,
+.popup__p004-questions.show,
+.popup__chosen-set.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
-
 .popup__chosen-set {
     display: none;
-    background: #FFF27B;
+    background: #fff27b00;
+    color: #ffffff;
     border-radius: 20px;
     margin: 10px 0 15px 58px;
     height: 40px;
@@ -271,24 +341,13 @@
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-shadow: 0 2px 6px 1px #000000;
-    box-shadow: 0 2px 6px 1px #000000;
+    box-shadow: 0 2px 6px 1px #ffffff;
 
 }
-
-.popup__chosen-set.show,
-.popup__find-a-pair.show,
-.popup__check-memory.show {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.hide {
-    
-}
+.hide {}
 
 .pool {
-    background-image: url(../images/pull\ table.png);
+    /* background-image: url(../images/pull\ table.png); */
     position: fixed;
     top: 0;
     right: 0;
@@ -296,7 +355,7 @@
     bottom: 0;
     background-size: 100% 100%;
     display: none;
-
+    background-color: #000000;
 
 }
 
@@ -321,10 +380,12 @@
     display: -ms-grid;
     display: grid;
     /* grid-template-areas: ; */
-    padding: 50px 43px;
+    padding: 19px 19px;
     grid-auto-rows: 82px;
     gap: 10px 10px;
     grid-auto-flow: dense;
+    width: 337px;
+    
 }
 
 .pool.open {
@@ -350,12 +411,13 @@
     width: 104px;
     height: 47px;
 
-    background: #80FFC2;
+    background: #6f6f6f74;
     border-radius: 20px;
     -webkit-box-shadow: 0 2px 6px 1px #000000;
     box-shadow: 0 2px 6px 1px #000000;
     font-size: 22px;
     color: #000000;
+    
 }
 
 .next {
@@ -388,7 +450,8 @@
 .card {
 
     margin: 0;
-    background: #FFF27B;
+    background: #ffffff00;
+    color: #ffffff;
     border-radius: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -416,7 +479,7 @@
 }
 
 .card.select {
-    background-color: #7BE7FF;
+    background-color: #7be7ffd1;
 }
 
 .card:active {
@@ -462,20 +525,132 @@
     right: 0;
     z-index: -1;
 }
+.logo-special {
+    z-index: -2;
+    position: fixed;
+    bottom: 1px;
+    left: calc(50% - 170px);
+    height: 250px;
+    margin: 0;
+    padding: 0;
+}
+.logo-special.hidden {
+display: none;
+}
+/* <copied */
+
+
+.card1 {
+    background-image: url(../images/card.png);
+    width: 222px;
+    height: 145px;
+    background-size: cover;
+    position: absolute;
+    /* top: 82px; */
+    left: calc(50% - 111px);
+}
+
+.card1_question1 {
+    top: 215px;
+    
+    left: calc(50% - 111px);
+    transform: rotate(185deg);
+}
+.card1_question1.hidden1 {
+    display: none;
+}
+
+.card1__top1 {
+    border-bottom: dashed 1px #000;
+    display: none;
+    height: 50%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.card1__bottom1 {
+    display: none;
+    height: 50%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.card1__hint1 {
+    filter: blur(4px);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card1__hint1.show1 {
+    filter: none;
+}
+
+.card1__value1,
+.card1__hint1 {
+    margin: 0%;
+    text-align: center;
+    /* у параграфа по умолчанию margins - у списков есть по умолчанию padding */
+}
+
+.card1.open1 {
+    animation: card-flip 0.4s ease forwards;
+    background-image: none;
+    background-color: white;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 #000;
+    /* тени визуализация */
+    /* 50% это круг */
+}
+
+.card1.open1 .card1__top1,
+.card1.open1 .card1__bottom1 {
+    display: flex;
+}
+
+@keyframes card-flip {
+    from {
+        transform: rotateX(0d);
+    }
+
+    /* break points - сколько угодно может быть */
+    50% {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+
+
+/* copied> */
 @media screen and (max-width: 700px) {
     .homer {
         display: none;
     }
 }
+
 @media screen and (min-width: 700px) {
     .pool {
-        width: 400px ;
+        width: 400px;
         height: 700px;
         right: auto;
         bottom: auto;
         left: 15px;
         top: 15px;
     }
+
     .pool__buttons {
         bottom: auto;
         top: 617px;
@@ -483,54 +658,74 @@
         width: 400px;
         left: 15px;
         padding: 0;
-        
+
     }
-    .picture-left, .picture-right {
-        width: 157px ;
+
+    .picture-left,
+    .picture-right {
+        width: 157px;
         right: auto;
         left: -100%;
         height: 555px;
         top: 56px;
     }
+
     .picture-left.shown {
         left: 56px;
     }
+
     .picture-left.shown.again {
         left: 217px;
     }
+
     .picture-right.shown {
         left: 217px;
     }
+
     .homer {
         width: 420px;
     }
 }
+/* Это медиа-запрос для ihone5 экранов разных девайсов, чтобы отображалось и не съезжало */
 @media screen and (max-height: 640px) {
     .card {
         margin-top: 5px;
         max-height: 50px;
     }
+
     .pool__container {
-        padding: 45px 33px;
+        /* padding: 45px 33px;
         gap: 0 5px;
         margin: 1px;
         grid-auto-rows: 62px;
-        width: 230px;
+        width: 270px; */
         
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        /* grid-template-areas: ; */
+        padding: 2px 2px;
+        grid-auto-rows: 72px;
+        gap: 10px 10px;
+        grid-auto-flow: dense;
+        width: 291px;
         
+
     }
+
     .header__back {
         display: none;
     }
+
     .pool {
-        width: 300px ;
+        width: 300px;
         height: 550px;
         right: auto;
         bottom: auto;
         left: 15px;
         top: 10px;
-        
+
     }
+
     .pool__buttons {
         bottom: auto;
         top: 500px;
@@ -539,33 +734,52 @@
         height: 200px;
         left: 15px;
         padding: 0;
-        
+
     }
-    .picture-left, .picture-right {
-        width: 108px ;
+
+
+
+}
+    .picture-left,
+    .picture-right {
+        width: 146px;
         right: auto;
         left: -100%;
-        height: 378px;
-        top: 54px;
+        height: 485px;
+        top: 9px;
     }
+
     .picture-left.shown {
-        left: 56px;
+        left: 14px;
     }
+
     .picture-left.shown.again {
         left: 165px;
     }
+
     .picture-right.shown {
         left: 165px;
     }
-
+    .logo-special {
+        z-index: -2;
+        position: fixed;
+        bottom: 1px;
+        left: calc(50% - 170px);
+        height: 200px;
+        margin: 0;
+        padding: 0;
+    }
+.popup {
+    padding-left: 11px;
 }
+
 @media screen and (max-height: 415px) {
     .card {
         margin-top: 5px;
         max-height: 20px;
-        
+
     }
-   
+
     .pool__container {
         padding: 35px 10px;
         gap: 0 5px;
@@ -574,55 +788,64 @@
 
         -ms-grid-columns: 1fr 10px 1fr;
 
-    grid-auto-rows: 42px;
-   
+        grid-auto-rows: 42px;
+
     }
-    .pool {
-        
-        
-    }
+
+    .pool {}
+
     .pool.open {
-        
+
         background-image: none
     }
+
     .pool__buttons {
         display: none;
-        
+
     }
-    .picture-left, .picture-right {
+
+    .picture-left,
+    .picture-right {
         display: none;
     }
+
     .picture-left.shown {
         display: none;
     }
+
     .picture-left.shown.again {
         display: none;
     }
+
     .picture-right.shown {
         display: none;
     }
 
 }
+
 @media screen and (min-width: 1000px) {
     .pool {
         left: 20%;
-        
+
     }
+
     .pool__buttons {
-        
+
         left: 20%;
-        
-        
+
+
     }
-   
-   
+
+
     .picture-left.shown {
-        left: calc(20% + 40px) ;
+        left: calc(20% + 40px);
     }
+
     .picture-left.shown.again {
         left: calc(20% + 202px);
     }
+
     .picture-right.shown {
         left: calc(20% + 202px);
-}
+    }
 }

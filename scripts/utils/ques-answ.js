@@ -1,5 +1,345 @@
 // 0001 добавляем константу с данными - с массивом
 const allCards = {
+    manual: [
+        {
+            id: 1,
+            ru: "и потом сюда - 2",
+            eng: "1 - нажми сюда	"
+        },
+        {
+            id: 2,
+            ru: "<< find /фАйнд э пЭа/",
+            eng: "Найди пару >>"
+        },
+        {
+            id: 3,
+            ru: "six",
+            eng: "2 + 2 x 2"
+        },
+        {
+            id: 4,
+            ru: "...eight",
+            eng: "восемь на английском это..."
+        },
+        {
+            id: 5,
+            ru: "You can do it!",
+            eng: "Ты справишься!"
+        },
+        {
+            id: 6,
+            ru: "Отличная работа агент!",
+            eng: "Great job, agent!"
+        },
+        
+       
+    ],
+    mission1: [
+        {
+            id: 1,
+            ru: "1",
+            eng: "one /уан/"
+        },
+        {
+            id: 2,
+            ru: "номер два",
+            eng: "number two /нАмбэ ту/"
+        },
+        {
+            id: 3,
+            ru: "не Фри и не Сри",
+            eng: "three /TH/"
+        },
+        {
+            id: 4,
+            ru: "4",
+            eng: "four /фо/"
+        },
+        {
+            id: 5,
+            ru: "5 не файФ",
+            eng: "five /файВ/"
+        },
+        {
+            id: 6,
+            ru: "не сИкс и не sex",
+            eng: "six /сЫкс/"
+        },
+        {
+            id: 7,
+            ru: "7",
+            eng: "seven /cЭвн/"
+        },
+        {
+            id: 8,
+            ru: "8",
+            eng: "eight /Эйт/"
+        },
+        {
+            id: 9,
+            ru: "9",
+            eng: "nine /нАйн/"
+        },
+        {
+            id: 10,
+            ru: "10",
+            eng: "ten /тЭн/"
+        },
+        {
+            id: 11,
+            ru: "11",
+            eng: "eleven /илЭвн/"
+        },
+        {
+            id: 12,
+            ru: "12",
+            eng: "twelve /твЭлВ/"
+        },
+        
+        {
+            id: 13,
+            ru: "не сЁртин и не Фёртин",
+            eng: "thirteen /TH/"
+        },
+        
+        {
+            id: 14,
+            ru: "14 тянем крайнюю И",
+            eng: "foureen /фотИИИИн/"
+        },
+        
+        {
+            id: 15,
+            ru: "15 долго тянем И",
+            eng: "fifteen /фифтИИИн/"
+        },
+        {
+            id: 16,
+            ru: "16 ударение на И",
+            eng: "sixteen /сыкстИн/"
+        },
+        {
+            id: 17,
+            ru: "20 уверенно!",
+            eng: "twenty /твЭнти/"
+        },
+        {
+            id: 17,
+            ru: "/пЭа/ ПАРА = 2",
+            eng: "a pair"
+        },
+        {
+            id: 18,
+            ru: "числа, номера ",
+            eng: "numbers /нАмбэz/"
+        },
+        {
+            id: 19,
+            ru: "цифры 0-9",
+            eng: "digits /дИджитс/"
+        },
+
+        
+       
+    ],
+    mission2: [
+        {					
+            id	:	1	,		
+            ru	:	"	...Эйт	"	,
+            eng	:	"	8...	"	
+            }	,				
+            {					
+            id	:	2	,		
+            ru	:	"	..eight	"	,
+            eng	:	"	восемь..	"	
+            }	,				
+            {					
+            id	:	3	,		
+            ru	:	"	...твэлв	"	,
+            eng	:	"	12...	"	
+            }	,				
+            {					
+            id	:	4	,		
+            ru	:	"	...твэнти	"	,
+            eng	:	"	20...	"	
+            }	,				
+            {					
+            id	:	5	,		
+            ru	:	"	..is 12	"	,
+            eng	:	"	six plus six..	"	
+            }	,				
+            {					
+            id	:	6	,		
+            ru	:	"	is twenty 20	"	,
+            eng	:	"	Ten plus ten	"	
+            }	,				
+            {					
+            id	:	7	,		
+            ru	:	"	..is sixteen	"	,
+            eng	:	"	Eight plus eight..	"	
+            }	,				
+            {					
+            id	:	8	,		
+            ru	:	"	..is nine	"	,
+            eng	:	"	one plus eight..	"	
+            }	,				
+            {					
+            id	:	9	,		
+            ru	:	"	....12	"	,
+            eng	:	"	твЭлв....	"	
+            }	,				
+            {					
+            id	:	10	,		
+            ru	:	"	Десять	"	,
+            eng	:	"	Ten	"	
+            }	,				
+            {					
+            id	:	11	,		
+            ru	:	"	Одиннадцать	"	,
+            eng	:	"	Eleven	"	
+            }	,				
+            {					
+            id	:	12	,		
+            ru	:	"	(Двенадцать)	"	,
+            eng	:	"	(Twelve)	"	
+            }	,				
+            {					
+            id	:	13	,		
+            ru	:	"	Тринадцать	"	,
+            eng	:	"	Thirteen	"	
+            }	,				
+            {					
+            id	:	14	,		
+            ru	:	"	Четырнадцать	"	,
+            eng	:	"	Fourteen	"	
+            }	,				
+            {					
+            id	:	15	,		
+            ru	:	"	Пятнадцать	"	,
+            eng	:	"	Fifteen	"	
+            }	,				
+            {					
+            id	:	16	,		
+            ru	:	"	Шестнадцать	"	,
+            eng	:	"	Sixteen	"	
+            }	,				
+            {					
+            id	:	17	,		
+            ru	:	"	Семнадцать	"	,
+            eng	:	"	Seventeen	"	
+            }	,				
+            {					
+            id	:	18	,		
+            ru	:	"	Восемнадцать	"	,
+            eng	:	"	Eighteen	"	
+            }	,				
+            {					
+            id	:	19	,		
+            ru	:	"	Девятнадцать	"	,
+            eng	:	"	Nineteen	"	
+            }	,				
+            {					
+            id	:	20	,		
+            ru	:	"	Двадцать	"	,
+            eng	:	"	Twenty	"	
+            }	,				
+            {					
+            id	:	21	,		
+            ru	:	"	Двадцать один	"	,
+            eng	:	"	Twenty-one	"	
+            }	,				
+            {					
+            id	:	22	,		
+            ru	:	"	Двадцать два	"	,
+            eng	:	"	Twenty-two	"	
+            }	,							
+            {					
+            id	:	23	,		
+            ru	:	"	Тридцать	"	,
+            eng	:	"	Thirty	"	
+            }	,				
+            {					
+            id	:	24	,		
+            ru	:	"	Тридцать три	"	,
+            eng	:	"	Thirty-three	"	
+            }	,							
+            {					
+            id	:	25	,		
+            ru	:	"	Сорок	"	,
+            eng	:	"	Forty	"	
+            }	,				
+            {					
+            id	:	26	,		
+            ru	:	"	Пятьдесят пять	"	,
+            eng	:	"	Fifty-five /фИфти файВ/	"	
+            }	,				
+            {					
+            id	:	27	,		
+            ru	:	" /э хАндрэд хАнгри хУлигэнz/"	,
+            eng	:	" a hundred hungry hooligans "	
+            }	,				
+        
+       
+    ],
+    mission3: [
+        {
+            id: 1,
+            ru: "красивый",
+            eng: "handsome /хЭнсам/"
+        },
+        {
+            id: 2,
+            ru: "все (ударение на Э)",
+            eng: "everybody /Эврибади/"
+        },
+        {
+            id: 3,
+            ru: "Все люди",
+            eng: "all people /ол пипл/"
+        },
+        {
+            id: 4,
+            ru: "ставим is, если нет глагола",
+            eng: "после it,he,she"
+        },
+        {
+            id: 5,
+            ru: "ставим ARE, если нет глагола",
+            eng: "после you,we,they"
+        },
+        {
+            id: 6,
+            ru: " I am a secret agent",
+            eng: " Я - секретный агент"
+        },
+        {
+            id: 7,
+            ru: " Винсент мой друг",
+            eng: " Vismyfriend"
+        },
+        {
+            id: 8,
+            ru: " Я особенная",
+            eng: " I'm special"
+        },
+        {
+            id: 9,
+            ru: " I am special /спэшл/",
+            eng: " Я особенный"
+        },
+        {
+            id: 10,
+            ru: " You are special! /ю а спэшл/",
+            eng: " Особенные вы!"
+        },
+        {
+            id: 11,
+            ru: " Я не ленивая z4dniцa",
+            eng: " I'm not a lazzy bOttom!"
+        },
+        
+       
+    ],
     seasons: [
         {
             id: 1,

@@ -17,10 +17,11 @@
 <body class="body">
     <!-- 0006 дальше самая верхняя кнопка в заголовке сайта - присваиваем класс, можно было придать ей стили -->
     <header class="header">
+        <p class="refresh-info">← back</p>
         <a href="https://vismyfriend.github.io/A-pool-game/">
             <!-- 0007 Чтобы сделать неразрывной пробел нажимаю option + space -->
             <!-- 0008 в редакторе кода можно вставлять сюда даже спец символы html их можно загуглить -->
-            <button class="header__button001">❎ button 001</button>
+            <button class="header__button001"> S.P.E.C.I.A.L 🍺</button>
         </a>
     </header>
     <!-- 0009 после header создаем main (это вроде середины страницы) и присваиваем класс -->
@@ -28,54 +29,90 @@
     <main class="main">
         <div class="pool">
             <p class="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
+            <!-- 0011 двойное подчеркивание__обозначает дополнительный класс?? спросить у Эндрю что значит -->
             <div class="pool__container"></div>
             <div class="pool__buttons">
-                <button class="cover-l">button 002</button>
-                <button class="next">button 003</button>
-                <button class="cover-r">button 004</button>
+                <!-- 0012 пробел не ставится в названии классов. вместо него символ - Если поставить пробел это будет второй класс-->
+                <button class="cover-l">back</button>
+                <button class="next">cheat</button>
+                <button class="cover-r">next</button>
             </div>
         </div>
         <template class="template">
             <p class="card"></p>
         </template>
         <div class="popup">
-            <h3 class="popup__title"> h3 001</h3>
+            <h3 class="popup__title"> Welcome, secret Agent!</h3>
             <p class="popup__chosen-set"></p>
-            <p class="popup__description"> p 001 строка <br> 👈 br перенос 👉</p>
-            <button class="try-again hidden"> button 005 </button>
-            <!-- изначально класс hidden -->
+            <p class="popup__description"> choose your mission <br> 👈 /чуз ё мишн/ и погнали! 👉</p>
+            <button class="try-again hidden"> Yes! </button>
+            <!-- изначально класс скрыт hidden -->
             <ul class="popup__sets">
                 <button class="scroll-left"></button>
                 <button class="scroll-right"></button>
-                <li class="popup__set" data-set="bodypartsa1">ul li 001</li>
-                <li class="popup__set" data-set="bodypartsa2">li 002</li>
-                <li class="popup__set" data-set="Naughty_verbs_challenge">li 003</li>
-                <li class="popup__set" data-set="Irregular_verbs_ALL">li 004</li>
-                <li class="popup__set" data-set="verbs">li 005</li>
-                <li class="popup__set" data-set="numbers">li 006</li>
+                <li class="popup__set" data-set="manual">Инструкция</li>
+                <li class="popup__set" data-set="mission1">Миссия 1</li>
+                <li class="popup__set" data-set="mission2">Мишн ту</li>
+                <li class="popup__set" data-set="mission3">Mission 3</li>
+                <li class="popup__set" data-set="bodypartsa1">body parts A1</li>
                 <li class="popup__set" data-set="animals"> животные </li>
+                <li class="popup__set" data-set="bodypartsa2">body parts A2</li>
+                <li class="popup__set" data-set="verbs">common verbs</li>
+                <li class="popup__set" data-set="Naughty_verbs_challenge">NV Contest</li>
+                <li class="popup__set" data-set="seasons"> сезоны </li>
                 <li class="popup__set" data-set="Irregular_verbs_F_K"> Irr.V F-K</li>
                 <li class="popup__set" data-set="Irregular_verbs_B_K"> Irr.V B-K</li>
-                <li class="popup__set" data-set="seasons"> сезоны </li>
-                <li class="popup__set" data-set="prepositions"> предлоги (NO) </li>
-                <li class="popup__set" data-set="food"> еда </li>
-                <li class="popup__set" data-set="Irregular_verbs_3_forms"> Irr.V 3 forms </li>
-                <li class="popup__set" data-set="Irregular_verbs_1_form"> Irr.V 1 form</li>
-                <li class="popup__set" data-set="Irregular_verbs_En_Ru"> Irr.V En Ru</li>
-                <li class="popup__set" data-set="mission 3"> миссия 3 </li>
+                <li class="popup__set" data-set="Irregular_verbs_ALL">coming soon</li>
+                <li class="popup__set" data-set="numbers">coming soon</li>
+                <li class="popup__set" data-set="prepositions"> coming soon </li>
+                <li class="popup__set" data-set="food"> coming soon </li>
+                <li class="popup__set" data-set="Irregular_verbs_3_forms"> coming soon </li>
+                <li class="popup__set" data-set="Irregular_verbs_1_form"> coming soon</li>
+                <li class="popup__set" data-set="Irregular_verbs_En_Ru"> coming soon</li>
+                <li class="popup__set" data-set="mission 3"> coming soon </li>
             </ul>
             <div class="popup__find-a-pair">
-                <img src="./images/favicon-32x32.png">
-                <p> p строка 002 пары</p>
+                <img src="./images/special logo square black and white.png">
+                <p> find a pair</p>
             </div>
             <div class="popup__check-memory">
-                <img src="./images/favicon-32x32.png">
-                <p> p 003 проверить память</p>
+                <img src="./images/special logo square black and white.png">
+                <p> не жми сюда! :]</p>
+            </div>
+            <div class="popup__p004-questions">
+                <img src="./images/special logo square black and white.png">
+                <p> p004 questions</p>
             </div>
         </div>
         <img class="picture-right" src="./images/hide R.png">
         <img class="picture-left" src="./images/Hide L.png">
         <img class="homer" src="./images/Gomer.png" alt="Homer">
+        <img class="logo-special" src="./images/special logo square black and white.png" alt="Logo Special">
+        
+        <div class="buttons-006-007-008">
+            <button class="button006">button 006</button>
+            <button class="button007">button 007</button>
+            <button class="button008">button 008</button>
+
+        </div>
+        <!-- несколько классов указываются через пробел в html а в css через точку -->
+        <!-- аозже при выборе набора класс hidden удалится remove hidden1 -->
+        <div class="card1_question1 hidden1 card1">
+            <div class="card1__top1">
+                <p class="card1__value1">вопрос?</p>
+            </div>
+            <div class="card1__bottom1">
+                <p class="card1__hint1">перевод и пример?</p>
+            </div>
+        </div>
+        <!-- <div class="card_question card">
+            <div class="card__top">
+                <p class="card__value">вопрос?</p>
+            </div>
+            <div class="card__bottom">
+                <p class="card__hint">перевод и пример?</p>
+            </div>
+        </div> -->
     </main>
     <!-- 0010 подключаем скрипты - для этого сперва создаем папку scripts и в ней файл app.js  -->
     <script type="module" src="./scripts/app.js"></script>

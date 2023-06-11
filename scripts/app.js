@@ -141,7 +141,7 @@ function chooseSet(text, set) {
     tryAgainButton.classList.add("hidden")
     buttonsSix.classList.add("hidden")
     popupTitle.textContent = "You chose mission:"
-    popupDescription.textContent = " Как будете тренировать? :"
+    popupDescription.textContent = " Что будем тренировать? :"
     popupSets.classList.add("hide")
     checkMemory.classList.add("show")
     findAPair.classList.add("show")
@@ -172,9 +172,10 @@ function startGameFindPairs() {
 }
 
 function startGameCheckMemory() {
-    startGameFindPairs()
+    location.href="https://vismyfriend.github.io/Bender/"
+    // startGameFindPairs()
     button001.classList.add("hidden")
-    coverCards(pictureL)
+    // coverCards(pictureL)
 }
 
 allSets.forEach((set) => {
@@ -273,7 +274,10 @@ function scroll(direction) {
     popupSets.scrollBy(direction, 0)
 }
 // При нажатии запускаем событие "навешиваем событие"
-checkMemory.addEventListener("click", startGameCheckMemory)
+checkMemory.addEventListener("click",startGameCheckMemory)
+// checkMemory.addEventListener("onclick", () => {
+    // location.href="https://vismyfriend.github.io/Bender/"
+// })
 findAPair.addEventListener("click", startGameFindPairs)
 p004questions.addEventListener("click", startGameQuestions)
 next.addEventListener("click", nextCards)

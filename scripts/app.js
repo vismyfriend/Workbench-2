@@ -57,6 +57,8 @@ let shuffledQuestions = null
 // let chosenArrayQuestions = null
 
 function shuffleDecks() {
+    // let chosenQuestions =
+    // вот тут остановился - нужно как-то сделать так, чтобы вопросы выбирал в зависимости от выбранной миссии
         shuffledQuestions = allQuestions.sort(function () {
         return Math.random() - 0.5;
     });

@@ -139,6 +139,46 @@ const allQuestions = [
             ru: "Число какое сегодня? Какая дата сегодня?",
             eng: "What date is it now? /дЭйт/"
         },
+        {					
+            id	:	29	,		
+            ru	:	"	Чем ты занимался вчера вечером с часу до трёх? I was playing the guitar	"	,
+            eng	:	"	What were you doing yesterday from 1 pm till 3 ? 	"	
+            }	,				
+            {					
+            id	:	30	,		
+            ru	:	"	опаньки… а перевод еще не загрузился… но вопрос не сложный же, да?!	"	,
+            eng	:	"	What else did you do yesterday? Tell 3 facts, please	"	
+            }	,				
+            {					
+            id	:	31	,		
+            ru	:	"	опаньки… а перевод еще не загрузился… но вопрос не сложный же, да?!	"	,
+            eng	:	"	What were your friends doing from 5 till 6 pm?	"	
+            }	,				
+            {					
+            id	:	32	,		
+            ru	:	"	опаньки… а перевод еще не загрузился… но вопрос не сложный же, да?!	"	,
+            eng	:	"	What did you do after that? 	"	
+            }	,				
+            {					
+            id	:	33	,		
+            ru	:	"	опаньки… а перевод еще не загрузился… но вопрос не сложный же, да?!	"	,
+            eng	:	"	And what were you doing at this time yesterday?  	"	
+            }	,				
+            {					
+            id	:	34	,		
+            ru	:	"	опаньки… а перевод еще не загрузился… но вопрос не сложный же, да?!	"	,
+            eng	:	"	What do you want to do later tonight?	"	
+            }	,				
+            {					
+            id	:	35	,		
+            ru	:	"	опаньки… а перевод еще не загрузился… но вопрос не сложный же, да?!	"	,
+            eng	:	"	How long were you doing it?	"	
+            }	,				
+            {					
+            id	:	36	,		
+            ru	:	"	опаньки… а перевод еще не загрузился… но вопрос не сложный же, да?!	"	,
+            eng	:	"	What are you going to do next week?	"	
+            }	,				
     
     ]
 export default allQuestions

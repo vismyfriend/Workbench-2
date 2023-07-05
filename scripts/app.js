@@ -142,8 +142,8 @@ function chooseSet(text, set) {
     refreshInfo.classList.add("visible")
     tryAgainButton.classList.add("hidden")
     buttonsSix.classList.add("hidden")
-    popupTitle.textContent = "You chose mission:"
-    popupDescription.textContent = " Что будем тренировать? :"
+    popupTitle.textContent = "You chose /ю чОуз/ Вы выбрали:"
+    popupDescription.textContent = " Что будем делать? :"
     popupSets.classList.add("hide")
     checkMemory.classList.add("show")
     findAPair.classList.add("show")

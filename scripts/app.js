@@ -251,8 +251,11 @@ function finishGame() {
     buttonsSix.classList.remove("hidden")
     popup.classList.remove("close")
     pool.classList.remove("open")
-    popupTitle.textContent = `Вы справились за: ${timer.textContent}`
-    popupDescription.innerHTML = "Попробуете побить рекорд?"
+    popupTitle.textContent = `Результат: ${timer.textContent} seconds`
+    // popupTitle.textContent = `${chosenSet.textContent} пройдена : ${timer.textContent}`
+    popupDescription.innerHTML = "Сможешь лучше?" 
+    // попробуете побить рекорд
+    // popupDescription.innerHTML = `Сможешь лучше? ${chosenSet.textContent}`
     timeMiliseconds.textContent = "00"
     timeSeconds.textContent = "00"
     popupSets.classList.remove("hide")
@@ -260,6 +263,7 @@ function finishGame() {
     findAPair.classList.remove("show")
     p004questions.classList.remove("show")
     chosenSet.classList.remove("show")
+    tryAgainButton.textContent = `YES! ${chosenSet.textContent}`
     
     
     min = 0

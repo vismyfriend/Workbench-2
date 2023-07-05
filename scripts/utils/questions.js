@@ -1,27 +1,27 @@
 const allQuestions = [
     {					
         id	:	1	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	Разбить пару яиц и сделать омлет	"	,
         eng	:	"	Break some eggs and make an omelete	"	
         }	,				
         {					
         id	:	2	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	побить мировой рекорд и путешествовать вокруг света	"	,
         eng	:	"	Break a world record and travel around the world	"	
         }	,				
         {					
         id	:	3	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
-        eng	:	"	Break a habit and stop smoking	"	
+        ru	:	"	Разделаться с плохой привычкой и прекратить курить	"	,
+        eng	:	"	Break a bad habit and stop smoking	"	
         }	,				
         {					
         id	:	4	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
-        eng	:	"	Break a screen on my phone	"	
+        ru	:	"	Разбить экран на телефоне	"	,
+        eng	:	"	Break a screen on the phone	"	
         }	,				
         {					
         id	:	5	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	Нарушить обещание и солгать	"	,
         eng	:	"	Break a promise and tell a lie	"	
         }	,				
         {					
@@ -36,37 +36,37 @@ const allQuestions = [
         }	,				
         {					
         id	:	8	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	Стать умнее	"	,
         eng	:	"	Become smarter	"	
         }	,				
         {					
         id	:	9	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	стать членом какой-нибудь секты	"	,
         eng	:	"	Become a member of a cult	"	
         }	,				
         {					
         id	:	10	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	Стать успешным	"	,
         eng	:	"	Become successful	"	
         }	,				
         {					
         id	:	11	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	подружиться с могущественными любдьми	"	,
         eng	:	"	Become friends with powerful people	"	
         }	,				
         {					
         id	:	12	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	Стать родителем (снова стать родителем, если уже)	"	,
         eng	:	"	Become a parent (again if already a parent)	"	
         }	,				
         {					
         id	:	13	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
-        eng	:	"	Begin a day with physical exercises	"	
+        ru	:	"	Начать день с физических упражнений	"	,
+        eng	:	"	Begin a day with physical /фИзикл/ exercises	"	
         }	,				
         {					
         id	:	14	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	Начать путешествие в Африку	"	,
         eng	:	"	Begin a journey to Africa	"	
         }	,				
         {					
@@ -87,7 +87,7 @@ const allQuestions = [
         {					
         id	:	18	,		
         ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
-        eng	:	"	Begin to run n the morning	"	
+        eng	:	"	Begin to run in the morning	"	
         }	,				
         {					
         id	:	19	,		
@@ -391,7 +391,7 @@ const allQuestions = [
         }	,				
         {					
         id	:	79	,		
-        ru	:	"	перевод не загружен - попробуйте другую карточку	"	,
+        ru	:	"	пытаться понять сколько стоит дешевая машина	"	,
         eng	:	"	try to understand how much a cheap car costs	"	
         }	,				
         {					

@@ -636,10 +636,10 @@ display: none;
 .card1.open1 .card1__bottom1 {
     display: flex;
 }
-.audio {
+/* .audio {
     visibility: hidden;
-    
-}
+     */
+/* } */
 /* .audio.off {
     visibility: hidden;
     

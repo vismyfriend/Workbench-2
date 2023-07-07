@@ -34,7 +34,9 @@ const timeMiliseconds = document.getElementById("tens")
 const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
-const audio = document.querySelector(".audio")
+
+const audio = new Audio("../audio/audioIntro.mp3").play()
+// так же как классы и array в java уже есть Audio
 const audioIcon = document.querySelector(".audioIcon")
 
 // <copied
@@ -60,6 +62,12 @@ let count = 0
 // <copied
 let value = null
 let questionNumber = 0
+
+// на старте чтобы играла музыка
+
+audio.loop = true;
+
+
 
 // let chosenArrayQuestions = null
 
@@ -365,24 +373,25 @@ if (isTouch()) {
 function chooseSong (set) {
     const song=playList[set]
     if (!!set) {
-        audio.scrc = song
-        audio.loop = false;
+        audio.src = song
+        // audio.loop = false;
     }
 }
 audioIcon.addEventListener("click", audioOnOff)
 function audioOnOff () {
-    // audio.src = "./audio/Hello.mp3"
+   
     audioIcon.classList.toggle("off")
     // audio.loop = false;
     // audio.classList.add("off") музыка выключается не через стили
-    if (audio.paused) {
-        audio.play()
+    if (audio.volume == 0) {
+        audio.volume = 0.5;
     } else {
-        audio.pause()
+        audio.volume = 0; 
 
     }
 
-    // console.log(audio.paused);
+    console.log(audio);
+
 }
 
 // audio.src = musicMissionOne

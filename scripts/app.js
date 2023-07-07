@@ -313,7 +313,7 @@ function finishGame() {
     slotMachine.classList.remove("show")
     p004questions.classList.remove("show")
     chosenSet.classList.remove("show")
-    tryAgainButton.textContent = `Again! ${chosenSet.textContent}`
+    tryAgainButton.textContent = `Yes! ${chosenSet.textContent}`
 
 
     min = 0

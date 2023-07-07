@@ -248,7 +248,8 @@ button {
     display: grid;
     /* flex-wrap: wrap; */
     -ms-grid-rows: 46px 15px 46px;
-    grid-template-rows: 44px 44px 44px;
+    grid-template-rows: 46px 46px;
+    /* grid-template-rows: 44px 44px 44px; */
     /* сколько строк - столько раз и 46px */   
     grid-auto-flow: column;
     padding: 20px 10px;

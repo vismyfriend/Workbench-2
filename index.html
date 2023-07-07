@@ -52,7 +52,7 @@
                 <button class="scroll-right"></button>
                 <li class="popup__set" data-set="testing"> ... </li>
                 <li class="popup__set" data-set="manual">Миссия ZER0</li>
-                <li class="popup__set musicMissionOne" data-set="mission1">Миссия ONE</li>
+                <li class="popup__set" data-set="mission1">Миссия ONE</li>
                 <li class="popup__set" data-set="mission2">Mission TWO</li>
                 <li class="popup__set" data-set="mission3">Mission THREE</li>
                 <li class="popup__set" data-set="bodypartsa1">body parts A1</li>
@@ -122,11 +122,12 @@
         </div> -->
 
         <!-- добавляем фоновуб музыку на старте -->
-     
+        <audio class="audio" src="./audio/audioIntro.mp3" loop ></audio>
         <!-- preload не работает с autoplay -->
+        <!-- можно подряд добавлять autoplay loop -->
         <!-- loop - бес перерыва играет -->
-        <button class="audioIcon off"></button>
-        
+        <button class="audioIcon"></button>
+    
         <!-- Добавляем музыку для миссии -->
             
     </main>

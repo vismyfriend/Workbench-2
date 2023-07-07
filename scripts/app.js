@@ -34,8 +34,8 @@ const timeMiliseconds = document.getElementById("tens")
 const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
+const audio = document.querySelector(".audio")
 
-const audio = new Audio("../audio/audioIntro.mp3")
 // так же как классы и array в java уже есть Audio
 const audioIcon = document.querySelector(".audioIcon")
 
@@ -375,31 +375,31 @@ function chooseSong(set) {
     if (!!song) {
         audio.src = song;
         console.log(audio.paused,song);
-        if (!audio.paused) {
-            audio.play()
-            console.log(audio.paused,song);
-        }
-        // audio.loop = false;
+        audio.play()
+     
     }
+
 }
 audioIcon.addEventListener("click", audioOnOff)
 function audioOnOff() {
 
     audioIcon.classList.toggle("off")
-    // audio.loop = false;
+  
     // audio.classList.add("off") музыка выключается не через стили
-    // if (audio.volume == 0) {
-    if (audio.paused) {
+
+
         audio.play()
         audio.loop = true;
+    
+ 
+    if (audio.volume == 0) {
+        audio.volume = 0.7
+      
     } else {
-        audio.pause()
+        audio.volume= 0
 
     }
-
-    // console.log(audio);
+    
 
 
 }
-
-// audio.src = musicMissionOne

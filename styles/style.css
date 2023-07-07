@@ -701,6 +701,7 @@ transform: rotate(-45deg);
 }
 .audioIcon.visible,
 .audioIcon.off.visible {
+
     visibility: visible; 
 }
 .helloMusicStartButton {
@@ -713,9 +714,11 @@ transform: rotate(-45deg);
   color: white;
   font-size: 30px;
     z-index: 3;
+    display: none;
+   
 }
 .helloMusicStartButton.invisible {
-    display: none;
+    visibility: hidden;
 }
 @keyframes card-flip {
     from {

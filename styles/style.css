@@ -240,12 +240,14 @@ button {
     overflow-x: scroll;
     gap: 15px 10px;
     /* width: 100%; */
-    height: 127px;
+    height: 165px;
+    /* высота наборов изменяем , меняя количество строчек с миссиями */
     display: -ms-grid;
     display: grid;
     /* flex-wrap: wrap; */
     -ms-grid-rows: 46px 15px 46px;
-    grid-template-rows: 46px 46px;
+    grid-template-rows: 44px 44px 44px;
+    /* сколько строк - столько раз и 46px */   
     grid-auto-flow: column;
     padding: 20px 10px;
     /* transform: translateX(-30px); */
@@ -279,6 +281,9 @@ button {
     /* regular = 400 (100 тонкий 900 толстый) убрали размытие - так как оно не наследуется */
     font-size: 30px;
 }
+.popup__title.greyText {
+ color: #a2a3a6;
+}
 .popup__find-a-pair {
     margin-top: 20px;
 }
@@ -286,7 +291,8 @@ button {
 
 .popup__find-a-pair,
 .popup__check-memory,
-.popup__p004-questions {
+.popup__p004-questions,
+.popup__slot-machine {
     display: none;
     gap: 10px;
     /* гэп работает внутри флекс элементов */
@@ -294,12 +300,14 @@ button {
 }
 .popup__find-a-pair img,
 .popup__check-memory img,
-.popup__p004-questions img {
+.popup__p004-questions img,
+.popup__slot-machine img {
     max-width: 50px;
 }
 .popup__find-a-pair p,
 .popup__check-memory p,
-.popup__p004-questions p{
+.popup__p004-questions p,
+.popup__slot-machine p {
     background: #6cd00800;
     border-radius: 20px;
     margin: 0;
@@ -330,7 +338,8 @@ button {
 .popup__find-a-pair.show,
 .popup__check-memory.show,
 .popup__p004-questions.show,
-.popup__chosen-set.show {
+.popup__chosen-set.show,
+.popup__slot-machine.show {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -338,10 +347,10 @@ button {
 .popup__chosen-set {
     display: none;
     background: #fff27b00;
-    color: #ffffff;
+    color: #a2a3a6;
     border-radius: 20px;
     margin: 10px 0 15px 58px;
-    height: 40px;
+    height: 55px;
     width: 180px;
     font-size: 20px;
     -webkit-box-align: center;
@@ -627,7 +636,41 @@ display: none;
 .card1.open1 .card1__bottom1 {
     display: flex;
 }
+.audio {
+    visibility: hidden;
+    
+}
+/* .audio.off {
+    visibility: hidden;
+    
+} */
 
+.audioIcon {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    background-image: url(../images/MusicON2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    position: fixed;
+     /* скролится с прокруткой плашка */
+    right: 33px;
+    bottom: 12px;
+    z-index: 3;
+}
+.audioIcon.off:after { 
+    content: "";
+width: 50px;
+height: 5px;
+background-color: #FA8181;
+position: absolute;
+top: 50%;
+left: 0;
+transform: rotate(-45deg);
+    
+}
 @keyframes card-flip {
     from {
         transform: rotateX(0d);
@@ -859,4 +902,8 @@ display: none;
     .picture-right.shown {
         left: calc(20% + 202px);
     }
+    
+      
+
+    
 }

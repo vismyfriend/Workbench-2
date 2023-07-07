@@ -1,6 +1,8 @@
 // 0001 создаем в папке скриптов папку utils и в ней файлы с расширением .js, в них будут данные для приложения игры и страницы и импортируем данные из файла - указываем путь  файлу 
 import allCards from "./utils/ques-answ.js"
 import allQuestions from "./utils/questions.js"
+import playList from "./utils/music.js"
+
 // 0002 добавляем константы
 // const buttons006007008 = document.querySelector(".buttons006-007-008")
 const buttonsSix = document.querySelector(".buttons-006-007-008")
@@ -14,6 +16,7 @@ const popupDescription = document.querySelector(".popup__description")
 const popupSets = document.querySelector(".popup__sets")
 const findAPair = document.querySelector(".popup__find-a-pair")
 const checkMemory = document.querySelector(".popup__check-memory")
+const slotMachine = document.querySelector(".popup__slot-machine")
 const p004questions = document.querySelector(".popup__p004-questions")
 const chosenSet = document.querySelector(".popup__chosen-set")
 const logoSpecial = document.querySelector(".logo-special")
@@ -31,6 +34,8 @@ const timeMiliseconds = document.getElementById("tens")
 const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
+const audio = document.querySelector(".audio")
+const audioIcon = document.querySelector(".audioIcon")
 
 // <copied
 const cardQuestion = document.querySelector(".card1_question1")
@@ -41,8 +46,10 @@ const cardTop = cardQuestion.querySelector(".card1__top1")
 // const shuffle = document.querySelector(".shuffle")
 // copied>
 
+
 let selectCard = null
 let chosenArray = null
+let chooseQuestions = null
 let min = 0
 let max = 6
 let tens = "00"
@@ -53,24 +60,25 @@ let count = 0
 // <copied
 let value = null
 let questionNumber = 0
-let shuffledQuestions = null
+
 // let chosenArrayQuestions = null
 
 function shuffleDecks() {
     // let chosenQuestions =
     // вот тут остановился - нужно как-то сделать так, чтобы вопросы выбирал в зависимости от выбранной миссии
-        shuffledQuestions = allQuestions.sort(function () {
+        chooseQuestions = chooseQuestions.sort(function () {
         return Math.random() - 0.5;
     });
     questionNumber = 0
     cardQuestion.classList.remove("open1")
     cardQuestion.style.border = 'none';
-}
+} 
+// от прошлой
 function getquestions() {
-    if (questionNumber < shuffledQuestions.length) {
+    if (questionNumber < chooseQuestions.length) {
         cardQuestion.classList.remove("open1")
         setTimeout(function () { cardQuestion.classList.add("open1") }, 0);
-        value = shuffledQuestions[questionNumber]
+        value = chooseQuestions[questionNumber]
         cardHintQuestion.classList.remove("show1")
         // обновляет blur на каждой новой карточке
         cardValueQuestion.textContent = value.eng
@@ -89,16 +97,16 @@ refreshInfo.addEventListener("click",mainScreen)
 function mainScreen() {
 location.reload()
 }
-shuffleDecks()
+
 cardHintQuestion.addEventListener("click", (event) => {
     cardHintQuestion.classList.toggle("show1")
     event.stopPropagation()
 })
 // проверка - если карта уже открыта, то изменения только при нажатии на кнопку, а не по карте кликая
-// cardQuestion.addEventListener("click", () => {
-//     cardQuestion.classList.contains("open") ? null : getquestions()
-// })
-cardQuestion.addEventListener("click", getquestions)
+cardQuestion.addEventListener("click", () => {
+    cardQuestion.classList.contains("open") ? null : getquestions()
+})
+// cardQuestion.addEventListener("click", getquestions)
 // shuffle.addEventListener("click", shuffleDecks)
 
 
@@ -142,11 +150,13 @@ function chooseSet(text, set) {
     refreshInfo.classList.add("visible")
     tryAgainButton.classList.add("hidden")
     buttonsSix.classList.add("hidden")
-    popupTitle.textContent = "You chose /ю чОуз/ Вы выбрали:"
+    popupTitle.textContent = "/ю чОуз/ You chose Вы выбрали:"
+    popupTitle.classList.add("greyText")
     popupDescription.textContent = " Что будем делать? :"
     popupSets.classList.add("hide")
     checkMemory.classList.add("show")
     findAPair.classList.add("show")
+    slotMachine.classList.add("show")
     p004questions.classList.add("show")
     chosenSet.classList.add("show")
     chosenSet.textContent = text
@@ -173,22 +183,26 @@ function startGameFindPairs() {
     interval = setInterval(startTimer, 10);
 }
 
-function startGameCheckMemory() {
+function startGameRobotBender() {
     location.href="https://vismyfriend.github.io/Bender/"
-    // startGameFindPairs()
     button001.classList.add("hidden")
-    // coverCards(pictureL)
+}
+function startGameSlotMachine() {
+    location.href="https://bababum95.github.io/vinchento/slot-machine.html"
+    button001.classList.add("hidden")
+    
 }
 
 allSets.forEach((set) => {
     // console.log(set)
     set.addEventListener("click", (evt) => {
         getArray(evt.target.dataset.set)
+        chooseSong(evt.target.dataset.set)
         chooseSet(evt.target.textContent, evt.target.dataset.set)
         
     })
 })
-
+//НИже функция для Бильярда - ПОдбор пары
 function renderCards(lang) {
     let array = readyArray()
     // console.log(min,max)
@@ -204,12 +218,19 @@ function renderCards(lang) {
         poolContainer.append(someCard)
     }
 }
-// получаем массив и ниже рандомно перемешиваем через готовую функции
+// получаем массив и ниже рандомно перемешиваем через готовую функцию
+// для колоды карт 2 колоды
 function getArray(set) {
     chosenArray = null
+    chooseQuestions = null
     chosenArray = allCards[set].sort(function () {
         return Math.random() - 0.5;
     });
+    chooseQuestions = allQuestions[set].sort(function () {
+        return Math.random() - 0.5;
+    });
+    // перемешанные краточки
+    // console.log(chooseQuestions)
 }
 function readyArray() {
     return chosenArray.slice(min, max)
@@ -261,9 +282,10 @@ function finishGame() {
     popupSets.classList.remove("hide")
     checkMemory.classList.remove("show")
     findAPair.classList.remove("show")
+    slotMachine.classList.remove("show")
     p004questions.classList.remove("show")
     chosenSet.classList.remove("show")
-    tryAgainButton.textContent = `YES! ${chosenSet.textContent}`
+    tryAgainButton.textContent = `Again! ${chosenSet.textContent}`
     
     
     min = 0
@@ -280,7 +302,9 @@ function scroll(direction) {
     popupSets.scrollBy(direction, 0)
 }
 // При нажатии запускаем событие "навешиваем событие"
-checkMemory.addEventListener("click",startGameCheckMemory)
+checkMemory.addEventListener("click",startGameRobotBender)
+
+slotMachine.addEventListener("click",startGameSlotMachine)
 // checkMemory.addEventListener("onclick", () => {
     // location.href="https://vismyfriend.github.io/Bender/"
 // })
@@ -338,3 +362,27 @@ if (isTouch()) {
         clearInterval(interval)
     })
 }
+function chooseSong (set) {
+    const song=playList[set]
+    if (!!set) {
+        audio.scrc = song
+        audio.loop = false;
+    }
+}
+audioIcon.addEventListener("click", audioOnOff)
+function audioOnOff () {
+    // audio.src = "./audio/Hello.mp3"
+    audioIcon.classList.toggle("off")
+    // audio.loop = false;
+    // audio.classList.add("off") музыка выключается не через стили
+    if (audio.paused) {
+        audio.play()
+    } else {
+        audio.pause()
+
+    }
+
+    // console.log(audio.paused);
+}
+
+// audio.src = musicMissionOne

@@ -50,8 +50,9 @@
             <ul class="popup__sets">
                 <button class="scroll-left"></button>
                 <button class="scroll-right"></button>
+                <li class="popup__set" data-set="testing"> ... </li>
                 <li class="popup__set" data-set="manual">Миссия ZER0</li>
-                <li class="popup__set" data-set="mission1">Миссия ONE</li>
+                <li class="popup__set musicMissionOne" data-set="mission1">Миссия ONE</li>
                 <li class="popup__set" data-set="mission2">Mission TWO</li>
                 <li class="popup__set" data-set="mission3">Mission THREE</li>
                 <li class="popup__set" data-set="bodypartsa1">body parts A1</li>
@@ -85,6 +86,10 @@
                 <img src="./images/special logo square black and white.png">
                 <p> Speak (в разработке...) </p>
             </div>
+            <div class="popup__slot-machine">
+                <img src="./images/special logo square black and white.png">
+                <p> Slot machine</p>
+            </div>
         </div>
         <img class="picture-right" src="./images/hide R.png">
         <img class="picture-left" src="./images/Hide L.png">
@@ -115,8 +120,18 @@
                 <p class="card__hint">перевод и пример?</p>
             </div>
         </div> -->
+
+        <!-- добавляем фоновуб музыку на старте -->
+        <audio class="audio" src="./audio/audioIntro.mp3" autoplay loop ></audio>
+        <!-- preload не работает с autoplay -->
+        <!-- loop - бес перерыва играет -->
+        <button class="audioIcon"></button>
+    
+        <!-- Добавляем музыку для миссии -->
+            
     </main>
     <!-- 0010 подключаем скрипты - для этого сперва создаем папку scripts и в ней файл app.js  -->
     <script type="module" src="./scripts/app.js"></script>
+
 </body>
 </html>

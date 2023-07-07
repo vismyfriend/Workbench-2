@@ -1,5 +1,43 @@
 // 0001 добавляем константу с данными - с массивом
 const allCards = {
+    testing: [
+        {
+            id: 1,
+            ru: " id 1 ru ",
+            eng: " id 1 eng "
+            // sound: "можно ли произношение добавить?"
+        },
+        {
+            id: 2,
+            ru: " id 2 ru ",
+            eng: " id 2 eng "
+        },
+        {
+            id: 3,
+            ru: " id 3 ru ",
+            eng: " id 3 eng "
+        },
+        {
+            id: 4,
+            ru: " id 4 ru ",
+            eng: " id 4 eng "
+        },
+        {
+            id: 5,
+            ru: " id 5 ru ",
+            eng: " id 5 eng "
+        },
+        {
+            id: 6,
+            ru: " id 6 ru ",
+            eng: " id 6 eng "
+        },
+        {
+            id: 7,
+            ru: " id 7 ru ",
+            eng: " id 7 eng "
+        },
+    ],
     manual: [
         {
             id: 1,

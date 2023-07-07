@@ -49,7 +49,7 @@ const missionMusicBackground = document.querySelector(".missionMusicBackground")
 // так же как классы и array в java уже есть Audio
 const audioIcon = document.querySelector(".audioIcon")
 const missionMusicBackgroundIconButton = document.querySelector(".missionMusicBackgroundIconButton")
-
+const helloMusicStartButton = document.querySelector(".helloMusicStartButton")
 
 let selectCard = null
 let chosenArray = null
@@ -426,6 +426,23 @@ function audioOnOff() {
 
 
 }
+
+helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
+function helloMusicStartButtonInvisible() {
+    missionMusicBackground.play()
+    missionMusicBackground.loop = true;
+    helloMusicStartButton.classList.add("invisible")
+    missionMusicBackgroundIconButton.classList.add("off")
+
+if (missionMusicBackground.volume == 0) {
+    missionMusicBackground.volume = 0.7
+  
+} else {
+    missionMusicBackground.volume= 0
+
+}
+}
+
 
 missionMusicBackgroundIconButton.addEventListener("click", missionBackgroundMusicOnOff)
 function missionBackgroundMusicOnOff() {

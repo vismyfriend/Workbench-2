@@ -703,7 +703,20 @@ transform: rotate(-45deg);
 .audioIcon.off.visible {
     visibility: visible; 
 }
-
+.helloMusicStartButton {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(157, 39, 39);
+    border: none;
+    position: fixed;
+     /* скролится с прокруткой плашка */
+  color: white;
+  font-size: 30px;
+    z-index: 3;
+}
+.helloMusicStartButton.invisible {
+    display: none;
+}
 @keyframes card-flip {
     from {
         transform: rotateX(0d);

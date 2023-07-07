@@ -34,10 +34,6 @@ const timeMiliseconds = document.getElementById("tens")
 const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
-const audio = document.querySelector(".audio")
-
-// так же как классы и array в java уже есть Audio
-const audioIcon = document.querySelector(".audioIcon")
 
 // <copied
 const cardQuestion = document.querySelector(".card1_question1")
@@ -47,6 +43,12 @@ const cardHintQuestion = cardQuestion.querySelector(".card1__hint1")
 const cardTop = cardQuestion.querySelector(".card1__top1")
 // const shuffle = document.querySelector(".shuffle")
 // copied>
+
+const audio = document.querySelector(".audio")
+const missionMusicBackground = document.querySelector(".missionMusicBackground")
+// так же как классы и array в java уже есть Audio
+const audioIcon = document.querySelector(".audioIcon")
+const missionMusicBackgroundIconButton = document.querySelector(".missionMusicBackgroundIconButton")
 
 
 let selectCard = null
@@ -179,6 +181,18 @@ function startGameQuestions() {
     // pool.classList.add("open")
     interval = setInterval(startTimer, 10);
 }
+function chooseSong(set) {
+    // const song = playList[set]
+    // if (!!song) {
+    //     audio.src = song;
+    //     console.log(audio.paused,song);
+    //     audio.play()
+    //  console.log("проверка")
+    const MissionSong = playList[set]
+    audio.src = MissionSong
+     console.log(set)
+    // }
+}
 function startGameFindPairs() {
     renderCards("ru")
     renderCards("eng")
@@ -189,6 +203,12 @@ function startGameFindPairs() {
     logoSpecial.classList.add("hidden")
     pool.classList.add("open")
     interval = setInterval(startTimer, 10);
+    audio.play()
+    missionMusicBackground.volume = 0;
+    missionMusicBackgroundIconButton.classList.add("off")
+    missionMusicBackgroundIconButton.classList.add("hidden")
+    audioIcon.classList.add("visible")
+    // console.log(set) 
 }
 
 function startGameRobotBender() {
@@ -202,7 +222,7 @@ function startGameSlotMachine() {
 }
 
 allSets.forEach((set) => {
-    // console.log(set)
+   
     set.addEventListener("click", (evt) => {
         getArray(evt.target.dataset.set)
         chooseSong(evt.target.dataset.set)
@@ -370,16 +390,19 @@ if (isTouch()) {
         clearInterval(interval)
     })
 }
-function chooseSong(set) {
-    const song = playList[set]
-    if (!!song) {
-        audio.src = song;
-        console.log(audio.paused,song);
-        audio.play()
-     
-    }
 
-}
+// то,что ниже отсюда я перенес в начало игры find pairs
+// function chooseSong(set) {
+//     const song = playList[set]
+//     if (!!song) {
+//         audio.src = song;
+//         console.log(audio.paused,song);
+//         audio.play()
+//      console.log("проверка")
+//      console.log(set)
+//     }
+
+// }
 audioIcon.addEventListener("click", audioOnOff)
 function audioOnOff() {
 
@@ -397,6 +420,29 @@ function audioOnOff() {
       
     } else {
         audio.volume= 0
+
+    }
+    
+
+
+}
+
+missionMusicBackgroundIconButton.addEventListener("click", missionBackgroundMusicOnOff)
+function missionBackgroundMusicOnOff() {
+
+    missionMusicBackgroundIconButton.classList.toggle("off")
+  
+    // audio.classList.add("off") музыка выключается не через стили
+
+        missionMusicBackground.play()
+        missionMusicBackground.loop = true;
+    
+ 
+    if (missionMusicBackground.volume == 0) {
+        missionMusicBackground.volume = 0.7
+      
+    } else {
+        missionMusicBackground.volume= 0
 
     }
     

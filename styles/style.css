@@ -644,8 +644,7 @@ display: none;
     visibility: hidden;
     
 } */
-
-.audioIcon {
+.missionMusicBackgroundIconButton {
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -660,6 +659,36 @@ display: none;
     bottom: 12px;
     z-index: 3;
 }
+.missionMusicBackgroundIconButton.off:after { 
+    content: "";
+width: 50px;
+height: 5px;
+background-color: #1f32d7;
+position: absolute;
+top: 50%;
+left: 0;
+transform: rotate(-30deg);
+}
+.missionMusicBackgroundIconButton.hidden,
+.missionMusicBackgroundIconButton.off.hidden {
+    visibility: hidden;
+}
+.audioIcon {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    background-image: url(../images/MusicON2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    position: fixed;
+     /* скролится с прокруткой плашка */
+    right: 33px;
+    bottom: 12px;
+    z-index: 3;
+    visibility: hidden;
+}
 .audioIcon.off:after { 
     content: "";
 width: 50px;
@@ -668,9 +697,13 @@ background-color: #FA8181;
 position: absolute;
 top: 50%;
 left: 0;
-transform: rotate(-45deg);
-    
+transform: rotate(-45deg);   
 }
+.audioIcon.visible,
+.audioIcon.off.visible {
+    visibility: visible; 
+}
+
 @keyframes card-flip {
     from {
         transform: rotateX(0d);

@@ -6,7 +6,7 @@ import playList from "./utils/music.js"
 // 0002 добавляем константы
 // const buttons006007008 = document.querySelector(".buttons006-007-008")
 const buttonsSix = document.querySelector(".buttons-006-007-008")
-const refreshInfo= document.querySelector(".refresh-info")
+const refreshInfo = document.querySelector(".refresh-info")
 const button001 = document.querySelector(".header__button001")
 const isTouch = () => 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0
 const allSets = document.querySelectorAll(".popup__set")
@@ -35,7 +35,7 @@ const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
 
-const audio = new Audio("../audio/audioIntro.mp3").play()
+const audio = new Audio("../audio/audioIntro.mp3")
 // так же как классы и array в java уже есть Audio
 const audioIcon = document.querySelector(".audioIcon")
 
@@ -65,7 +65,7 @@ let questionNumber = 0
 
 // на старте чтобы играла музыка
 
-audio.loop = true;
+
 
 
 
@@ -74,13 +74,13 @@ audio.loop = true;
 function shuffleDecks() {
     // let chosenQuestions =
     // вот тут остановился - нужно как-то сделать так, чтобы вопросы выбирал в зависимости от выбранной миссии
-        chooseQuestions = chooseQuestions.sort(function () {
+    chooseQuestions = chooseQuestions.sort(function () {
         return Math.random() - 0.5;
     });
     questionNumber = 0
     cardQuestion.classList.remove("open1")
     cardQuestion.style.border = 'none';
-} 
+}
 // от прошлой
 function getquestions() {
     if (questionNumber < chooseQuestions.length) {
@@ -101,9 +101,9 @@ function getquestions() {
         shuffleDecks()
     }
 }
-refreshInfo.addEventListener("click",mainScreen)
+refreshInfo.addEventListener("click", mainScreen)
 function mainScreen() {
-location.reload()
+    location.reload()
 }
 
 cardHintQuestion.addEventListener("click", (event) => {
@@ -172,7 +172,7 @@ function chooseSet(text, set) {
 function startGameQuestions() {
     // renderCards("ru")
     // renderCards("eng")
-   
+
     popup.classList.add("close")
     // logoSpecial.classList.add("hidden")
     cardQuestion.classList.remove("hidden1")
@@ -182,8 +182,8 @@ function startGameQuestions() {
 function startGameFindPairs() {
     renderCards("ru")
     renderCards("eng")
-    buttonCoverL.disabled =true;
-    buttonCoverR.disabled =true;
+    buttonCoverL.disabled = true;
+    buttonCoverR.disabled = true;
     button001.classList.add("hidden")
     popup.classList.add("close")
     logoSpecial.classList.add("hidden")
@@ -192,13 +192,13 @@ function startGameFindPairs() {
 }
 
 function startGameRobotBender() {
-    location.href="https://vismyfriend.github.io/Bender/"
+    location.href = "https://vismyfriend.github.io/Bender/"
     button001.classList.add("hidden")
 }
 function startGameSlotMachine() {
-    location.href="https://bababum95.github.io/vinchento/slot-machine.html"
+    location.href = "https://bababum95.github.io/vinchento/slot-machine.html"
     button001.classList.add("hidden")
-    
+
 }
 
 allSets.forEach((set) => {
@@ -207,7 +207,7 @@ allSets.forEach((set) => {
         getArray(evt.target.dataset.set)
         chooseSong(evt.target.dataset.set)
         chooseSet(evt.target.textContent, evt.target.dataset.set)
-        
+
     })
 })
 //НИже функция для Бильярда - ПОдбор пары
@@ -268,7 +268,7 @@ function coverCards(picture) {
             picture.classList.add("shown")
 }
 function uncoverCards(picture) {
-    picture.classList.remove("shown","again")
+    picture.classList.remove("shown", "again")
 }
 
 
@@ -282,7 +282,7 @@ function finishGame() {
     pool.classList.remove("open")
     popupTitle.textContent = `Результат: ${timer.textContent} seconds`
     // popupTitle.textContent = `${chosenSet.textContent} пройдена : ${timer.textContent}`
-    popupDescription.innerHTML = "Сможешь лучше?" 
+    popupDescription.innerHTML = "Сможешь лучше?"
     // попробуете побить рекорд
     // popupDescription.innerHTML = `Сможешь лучше? ${chosenSet.textContent}`
     timeMiliseconds.textContent = "00"
@@ -294,8 +294,8 @@ function finishGame() {
     p004questions.classList.remove("show")
     chosenSet.classList.remove("show")
     tryAgainButton.textContent = `Again! ${chosenSet.textContent}`
-    
-    
+
+
     min = 0
     max = 6
     tens = "00";
@@ -310,11 +310,11 @@ function scroll(direction) {
     popupSets.scrollBy(direction, 0)
 }
 // При нажатии запускаем событие "навешиваем событие"
-checkMemory.addEventListener("click",startGameRobotBender)
+checkMemory.addEventListener("click", startGameRobotBender)
 
-slotMachine.addEventListener("click",startGameSlotMachine)
+slotMachine.addEventListener("click", startGameSlotMachine)
 // checkMemory.addEventListener("onclick", () => {
-    // location.href="https://vismyfriend.github.io/Bender/"
+// location.href="https://vismyfriend.github.io/Bender/"
 // })
 findAPair.addEventListener("click", startGameFindPairs)
 p004questions.addEventListener("click", startGameQuestions)
@@ -370,27 +370,35 @@ if (isTouch()) {
         clearInterval(interval)
     })
 }
-function chooseSong (set) {
-    const song=playList[set]
-    if (!!set) {
-        audio.src = song
+function chooseSong(set) {
+    const song = playList[set]
+    if (!!song) {
+        audio.src = song;
+        console.log(audio.paused,song);
+        if (!audio.paused) {
+            audio.play()
+            console.log(audio.paused,song);
+        }
         // audio.loop = false;
     }
 }
 audioIcon.addEventListener("click", audioOnOff)
-function audioOnOff () {
-   
+function audioOnOff() {
+
     audioIcon.classList.toggle("off")
     // audio.loop = false;
     // audio.classList.add("off") музыка выключается не через стили
-    if (audio.volume == 0) {
-        audio.volume = 0.5;
+    // if (audio.volume == 0) {
+    if (audio.paused) {
+        audio.play()
+        audio.loop = true;
     } else {
-        audio.volume = 0; 
+        audio.pause()
 
     }
 
-    console.log(audio);
+    // console.log(audio);
+
 
 }
 

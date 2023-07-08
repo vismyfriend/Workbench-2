@@ -474,7 +474,7 @@ function missionBackgroundMusicOnOff() {
 secretButton.addEventListener("click", special)
 function special() {
     
-        const audioWin = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
+        const audioWin = new Audio("../audio/HelloTest.mp3");
        
         audioWin.play()
         

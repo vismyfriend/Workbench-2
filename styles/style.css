@@ -647,6 +647,17 @@ display: none;
     visibility: hidden;
     
 } */
+.secretButton {
+    width: 20px;
+    height: 20px;
+    border: none;
+    position: fixed;
+     /* скролится с прокруткой плашка */
+    left: 5px;
+    bottom: 30px;
+    background-color: rgb(53, 52, 52);
+    z-index: 3;
+}
 .missionMusicBackgroundIconButton {
     width: 40px;
     height: 40px;
@@ -718,6 +729,7 @@ transform: rotate(-45deg);
   font-size: 30px;
     z-index: 3;
     display: none;
+    /* чтобы сделать кнопку видимой нужно удалить здесь дисплей none */
    
 }
 .helloMusicStartButton.invisible {

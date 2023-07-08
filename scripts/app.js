@@ -43,13 +43,14 @@ const cardHintQuestion = cardQuestion.querySelector(".card1__hint1")
 const cardTop = cardQuestion.querySelector(".card1__top1")
 // const shuffle = document.querySelector(".shuffle")
 // copied>
-
+// const MusicFromGoogleDriveDefault = new Audio("https://drive.google.com/file/d/1YlPN33KcfXRkw2BgHnNZVeb2z7NkiZKP/view?usp=sharing"); 
 const audio = document.querySelector(".audio")
 const missionMusicBackground = document.querySelector(".missionMusicBackground")
 // так же как классы и array в java уже есть Audio
 const audioIcon = document.querySelector(".audioIcon")
 const missionMusicBackgroundIconButton = document.querySelector(".missionMusicBackgroundIconButton")
 const helloMusicStartButton = document.querySelector(".helloMusicStartButton")
+const secretButton = document.querySelector(".secretButton")
 
 let selectCard = null
 let chosenArray = null
@@ -96,7 +97,7 @@ function getquestions() {
         cardQuestion.style.border = "solid 4px rgb(123, 207, 255)";
         // questionNumber++
         questionNumber = questionNumber + 1
-        console.log(questionNumber)
+        // console.log(questionNumber)
     } else {
         cardQuestion.classList.remove("open1")
         cardQuestion.style.border = 'none';
@@ -190,7 +191,7 @@ function chooseSong(set) {
     //  console.log("проверка")
     const MissionSong = playList[set]
     audio.src = MissionSong
-     console.log(set)
+     
     // }
 }
 function startGameFindPairs() {
@@ -208,7 +209,7 @@ function startGameFindPairs() {
     missionMusicBackgroundIconButton.classList.add("off")
     missionMusicBackgroundIconButton.classList.add("hidden")
     audioIcon.classList.add("visible")
-    // console.log(set) 
+
 }
 
 function startGameRobotBender() {
@@ -269,7 +270,7 @@ function match(evt) {
             selectCard.classList.add("delete")
             evt.target.classList.add("delete")
             count++
-            console.log(count)
+            // console.log(count)
             count === max - min ? nextCards() : null
         }
         selectCard.classList.remove("select")
@@ -443,6 +444,9 @@ if (missionMusicBackground.volume == 0) {
 }
 }
 
+// function GoogleDriveMusicCheck() {
+//     MusicFromGoogleDriveDefault.play()
+// }
 
 missionMusicBackgroundIconButton.addEventListener("click", missionBackgroundMusicOnOff)
 function missionBackgroundMusicOnOff() {
@@ -466,3 +470,14 @@ function missionBackgroundMusicOnOff() {
 
 
 }
+
+secretButton.addEventListener("click", special)
+function special() {
+    
+        const audioWin = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
+       
+        audioWin.play()
+        
+      }
+
+    

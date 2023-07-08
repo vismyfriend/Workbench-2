@@ -474,10 +474,11 @@ function missionBackgroundMusicOnOff() {
 secretButton.addEventListener("click", special)
 function special() {
     
-        // const audioWin = new Audio("../audio/HelloTest.mp3");
-        // const audioWin = new Audio("https://audio.jukehost.co.uk/7OUIbrRYhzrmgaexf3EGoQ3r4FgrlAm9");
-        // const audioWin = new Audio("https://disk.yandex.com/d/SQWNr3QHNOtFIg");
-        const special = new Audio("https://www.dropbox.com/s/izkudiigqhhscca/Icanlikethis.mp3");
+        // const special = new Audio("../audio/HelloTest.mp3");
+        // const special = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
+        const special = new Audio("https://audio.jukehost.co.uk/7OUIbrRYhzrmgaexf3EGoQ3r4FgrlAm9");
+        // const special = new Audio("https://disk.yandex.com/d/SQWNr3QHNOtFIg");
+        // const special = new Audio("https://www.dropbox.com/s/izkudiigqhhscca/Icanlikethis.mp3");
        
         special.play()
         

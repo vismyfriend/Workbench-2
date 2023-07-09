@@ -3,40 +3,40 @@ const allQuestions = {
 testing: [
     {
         id: 1,
-        ru: " Qustion id 1 ru ",
-        eng: " Qustion id 1 eng ",
+        ru: " Question id 1 ru ",
+        eng: " Question id 1 eng ",
         sound: " "
         // sound: "можно ли произношение добавить?"
     },
     {
         id: 2,
-        ru: " Qustionid 2 ru ",
-        eng: " Qustion id 2 eng "
+        ru: " Question 2 ru ",
+        eng: " Question id 2 eng "
     },
     {
         id: 3,
-        ru: "Qustion id 3 ru ",
-        eng: "  Qustionid 3 eng "
+        ru: "Question id 3 ru ",
+        eng: "  Question 3 eng "
     },
     {
         id: 4,
-        ru: "Qustion id 4 ru ",
-        eng: " id 4 eng "
+        ru: "Question id 4 ru ",
+        eng: " Question 4 eng "
     },
     {
         id: 5,
-        ru: " id 5 ru ",
-        eng: " id 5 eng "
+        ru: " Question 5 ru ",
+        eng: " Question 5 eng "
     },
     {
         id: 6,
-        ru: " id 6 ru ",
-        eng: " id 6 eng "
+        ru: " Question 6 ru ",
+        eng: " Question 6 eng "
     },
     {
         id: 7,
-        ru: " id 7 ru ",
-        eng: " id 7 eng "
+        ru: " Question 7 ru ",
+        eng: " Question 7 eng "
     },
 ],
 manual: [

@@ -115,6 +115,9 @@ cardHintQuestion.addEventListener("click", (event) => {
 })
 // проверка - если карта уже открыта, то изменения только при нажатии на кнопку, а не по карте кликая
 cardQuestion.addEventListener("click", () => {
+            const AudioNextQuestionCard = new Audio("https://zvukitop.com/wp-content/uploads/2021/06/klik-myshki-9.mp3");
+            AudioNextQuestionCard.volume = 0.2
+            AudioNextQuestionCard.play()
     cardQuestion.classList.contains("open") ? null : getquestions()
 })
 // cardQuestion.addEventListener("click", getquestions)
@@ -430,19 +433,29 @@ function audioOnOff() {
 
 helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
 function helloMusicStartButtonInvisible() {
-    missionMusicBackground.play()
-    missionMusicBackground.loop = true;
+    const audiomissionMusicBackground = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
+    audiomissionMusicBackground.volume = 0.4;
+    audiomissionMusicBackground.play()
+    audiomissionMusicBackground.loop = false;
     helloMusicStartButton.classList.add("invisible")
-    missionMusicBackgroundIconButton.classList.add("off")
-
-if (missionMusicBackground.volume == 0) {
-    missionMusicBackground.volume = 0.7
+    // missionMusicBackgroundIconButton.classList.add("off")
+   
+}
+// helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
+// function helloMusicStartButtonInvisible() {
+//     missionMusicBackground.play()
+//     missionMusicBackground.loop = false;
+//     helloMusicStartButton.classList.add("invisible")
+//     missionMusicBackgroundIconButton.classList.add("off")
+   
+// if (missionMusicBackground.volume == 0) {
+//     missionMusicBackground.volume = 0.7
   
-} else {
-    missionMusicBackground.volume= 0
+// } else {
+//     missionMusicBackground.volume= 0
 
-}
-}
+// }
+// }
 
 // function GoogleDriveMusicCheck() {
 //     MusicFromGoogleDriveDefault.play()
@@ -475,11 +488,12 @@ secretButton.addEventListener("click", special)
 function special() {
     
         // const special = new Audio("../audio/HelloTest.mp3");
+        
         // const special = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
         const special = new Audio("https://audio.jukehost.co.uk/7OUIbrRYhzrmgaexf3EGoQ3r4FgrlAm9");
         // const special = new Audio("https://disk.yandex.com/d/SQWNr3QHNOtFIg");
         // const special = new Audio("https://www.dropbox.com/s/izkudiigqhhscca/Icanlikethis.mp3");
-       
+        special.volume = 0.3
         special.play()
         
       }

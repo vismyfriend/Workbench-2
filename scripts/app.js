@@ -318,6 +318,9 @@ function finishGame() {
     p004questions.classList.remove("show")
     chosenSet.classList.remove("show")
     tryAgainButton.textContent = `Yes! ${chosenSet.textContent}`
+    const AudioWinner = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-na-trube.mp3");
+    AudioWinner.volume = 0.2
+    AudioWinner.play()
 
 
     min = 0

@@ -4436,13 +4436,13 @@ cooking: [
         }	,				
         {					
         id	:	24	,		
-        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
-        eng	:	"	Did you eat something between 	"	
+        ru	:	"	Ты ел вчера что-нибудь между завтраком и ужином?	"	,
+        eng	:	"	Did you eat something between breakfast and dinner yesterday?	"	
         }	,				
         {					
         id	:	25	,		
-        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
-        eng	:	"	breakfast and dinner yesterday?	"	
+        ru	:	"	A snack /снЭк/. For example: I usually have an apple for my snack	"	,
+        eng	:	"	What is the English for ПЕРЕКУС?	"	
         }	,				
         {					
         id	:	26	,		

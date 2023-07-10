@@ -116,8 +116,9 @@ cardHintQuestion.addEventListener("click", (event) => {
 // проверка - если карта уже открыта, то изменения только при нажатии на кнопку, а не по карте кликая
 cardQuestion.addEventListener("click", () => {
             const AudioNextQuestionCard = new Audio("https://zvukitop.com/wp-content/uploads/2021/06/klik-myshki-9.mp3");
-            AudioNextQuestionCard.volume = 0.2
+            AudioNextQuestionCard.volume = 0.1
             AudioNextQuestionCard.play()
+            
     cardQuestion.classList.contains("open") ? null : getquestions()
 })
 // cardQuestion.addEventListener("click", getquestions)

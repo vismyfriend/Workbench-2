@@ -1,4 +1,4 @@
-
+// Здесь вопросы для тренировки Speaking
 const allQuestions = {
 testing: [
     {
@@ -4316,6 +4316,219 @@ a_cook_cooks: [
         ru: "	salt / солт/	",
         eng: "	соль	"
     },
+
+],
+cooking: [
+    {					
+        id	:	1	,		
+        ru	:	"	to dip. For example: Vincent likes to dip chips in ketchup	"	,
+        eng	:	"	What is the English for : макать ?	"	
+        }	,				
+        {					
+        id	:	2	,		
+        ru	:	"	To whisk. For example: I can whisk cream without a whisker! I just need a spoon.	"	,
+        eng	:	"	What is the English for : взбивать ?	"	
+        }	,				
+        {					
+        id	:	3	,		
+        ru	:	"	to mix. For example: Let's mix all ingredients together	"	,
+        eng	:	"	What is the English for : перемешать ?	"	
+        }	,				
+        {					
+        id	:	4	,		
+        ru	:	"	to sharpen. For example: Please, sharpen the knife, it is dull.	"	,
+        eng	:	"	What is the English for : наточить ?	"	
+        }	,				
+        {					
+        id	:	5	,		
+        ru	:	"	В твоей семье кто-то может готовить что-то очень вкусное? Кто и какое блюдо?	"	,
+        eng	:	"	Can somebody in your family cook something really tasty? Who can do it and what dish?	"	
+        }	,				
+        {					
+        id	:	6	,		
+        ru	:	"	Как сказать одим словом <положить в холодильник>?	"	,
+        eng	:	"	How to say “put in a fridge” with one word?	"	
+        }	,				
+        {					
+        id	:	7	,		
+        ru	:	"	Как сказать одим словом <положить в мрозильную камеру>?	"	,
+        eng	:	"	How to say “put in a freezer” with one word?	"	
+        }	,				
+        {					
+        id	:	8	,		
+        ru	:	"	Чем мы можем украсить торт?	"	,
+        eng	:	"	What can we decorate a cake with?	"	
+        }	,				
+        {					
+        id	:	9	,		
+        ru	:	"	Чем мы можем накрыть кастрюлю?	"	,
+        eng	:	"	What can we cover a pot with?	"	
+        }	,				
+        {					
+        id	:	10	,		
+        ru	:	"	Чем мы можем перемешать салат?	"	,
+        eng	:	"	What can we mix a salad with?	"	
+        }	,				
+        {					
+        id	:	11	,		
+        ru	:	"	Что мы можем положить в пиццу?	"	,
+        eng	:	"	What can we top pizza with?	"	
+        }	,				
+        {					
+        id	:	12	,		
+        ru	:	"	Тебе нравится класть блины слоями на тарелку или скатывать их?	"	,
+        eng	:	"	Do you like to layer pancakes or roll them?	"	
+        }	,				
+        {					
+        id	:	13	,		
+        ru	:	"	С чем ты обычно ешь блинчики?	"	,
+        eng	:	"	What do you usually eat pancakes with?	"	
+        }	,				
+        {					
+        id	:	14	,		
+        ru	:	"	Расскажи как готовить пельмени	"	,
+        eng	:	"	Tell me how to cook pelmenis, please?	"	
+        }	,				
+        {					
+        id	:	15	,		
+        ru	:	"	Расскажи как готовить Доширак	"	,
+        eng	:	"	Tell me how to cook Doshirak, please?	"	
+        }	,				
+        {					
+        id	:	16	,		
+        ru	:	"	Расскажи как сделать горячий чай?	"	,
+        eng	:	"	Tell me how to make hot tea, please?	"	
+        }	,				
+        {					
+        id	:	17	,		
+        ru	:	"	Тебе нравятся яйца всмятку или вкрутую?	"	,
+        eng	:	"	Do you like hard boiled eggs or soft boiled?	"	
+        }	,				
+        {					
+        id	:	18	,		
+        ru	:	"	Сколько способов открыть бутылку вина ты знаешь?	"	,
+        eng	:	"	How many ways  to uncork a bottle of wine do you know?	"	
+        }	,				
+        {					
+        id	:	19	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	When was the last time you did BBQ?	"	
+        }	,				
+        {					
+        id	:	20	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	How long do you have to microwave cheese to melt?	"	
+        }	,				
+        {					
+        id	:	21	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Bend fingers and choose 5 hard to remember words :	"	
+        }	,				
+        {					
+        id	:	22	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What time did u eat breakfast yesterday?	"	
+        }	,				
+        {					
+        id	:	23	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What time did u eat dinner yesterday?	"	
+        }	,				
+        {					
+        id	:	24	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Did you eat something between 	"	
+        }	,				
+        {					
+        id	:	25	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	breakfast and dinner yesterday?	"	
+        }	,				
+        {					
+        id	:	26	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What did u drink and eat yesterday for lunch?	"	
+        }	,				
+        {					
+        id	:	27	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Did u cook yesterday or did anyone cook 4u?	"	
+        }	,				
+        {					
+        id	:	28	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Where did u eat yesterday? Did you like it?	"	
+        }	,				
+        {					
+        id	:	29	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What is your favorite vegetable?	"	
+        }	,				
+        {					
+        id	:	30	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What is your favorite fruit?	"	
+        }	,				
+        {					
+        id	:	31	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What is your favorite drink?	"	
+        }	,				
+        {					
+        id	:	32	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What is your favorite salad?	"	
+        }	,				
+        {					
+        id	:	33	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What food don’t you like?	"	
+        }	,				
+        {					
+        id	:	34	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Do you like KFC or McDonalds more?	"	
+        }	,				
+        {					
+        id	:	35	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What do you order when you eat fast food?	"	
+        }	,				
+        {					
+        id	:	36	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Do you know anybody who has food allergies?	"	
+        }	,				
+        {					
+        id	:	37	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Vincent is allergic to oranges, and he’s allergic to stupid people. Are you allergic to anything?	"	
+        }	,				
+        {					
+        id	:	38	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	What Italian food do you know?	"	
+        }	,				
+        {					
+        id	:	39	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Is or was your granny a good cook?	"	
+        }	,				
+        {					
+        id	:	40	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Who likes cooking in your family?	"	
+        }	,				
+        {					
+        id	:	41	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Who washes the dishes in your family?	"	
+        }	,				
+        {					
+        id	:	42	,		
+        ru	:	"	Тут мог бы быть перевод… Но кто-то не сделал домашку =) Скоро все исправим. Lol & Rofl	"	,
+        eng	:	"	Choose one: to clean toilet or to do Eng. h/w?	"	
+        }	,				
 
 ],
 }

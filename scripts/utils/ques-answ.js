@@ -1,4 +1,4 @@
-// 0001 добавляем константу с данными - с массивом
+// 0001 добавляем константу с данными - с массивом // Здесь слова для игры Find a pair
 const allCards = {
     testing: [
         {
@@ -4042,6 +4042,419 @@ const allCards = {
         },
     ],
     a_cook_cooks: [
+        {
+            id: 1,
+            ru: "Готовить",
+            eng: "to cook	"
+        },
+        {
+            id: 2,
+            ru: "Повар",
+            eng: "a cook"
+        },
+        {
+            id: 3,
+            ru: "Шеф-повар",
+            eng: "a chef /шеф/"
+        },
+        {
+            id: 4,
+            ru: "готовка",
+            eng: "cooking"
+        },
+        {
+            id: 5,
+            ru: "пища",
+            eng: "food"
+        },
+        {
+            id: 6,
+            ru: "порция, блюдо, еда",
+            eng: "a meal /мил/"
+        },
+        {
+            id: 7,
+            ru: "резать, нарезать, порезать, разрезать",
+            eng: "to cut"
+        },
+        {
+            id: 8,
+            ru: "нарезать тонкими ломтиками",
+            eng: "to slice /слайс/"
+        },
+        {
+            id: 9,
+            ru: "покрошить, нарезать кубиками,",
+            eng: "to dice /дайс/"
+        },
+        {
+            id: 10,
+            ru: "рубить лук, покрошить лучок",
+            eng: "to chop the onion /Аниэн/"
+        },
+        {
+            id: 11,
+            ru: "	pour me a cup of tea	",
+            eng: "	налейте мне чашечку чая	"
+        },
+        {
+            id: 12,
+            ru: "	May I have a sip?	",
+            eng: "	Можно мне мал.глоток?	"
+        },
+        {
+            id: 13,
+            ru: "	toast	",
+            eng: "	поджарить хлеб, сделать тост	"
+        },
+        {
+            id: 14,
+            ru: "	spread butter	",
+            eng: "	намазать масло	"
+        },
+        {
+            id: 15,
+            ru: "	squeeze	",
+            eng: "	сжимать	"
+        },
+        {
+            id: 16,
+            ru: "	Let's drink TO Vincent	",
+            eng: "	Выпьем за Винсента	"
+        },
+        {
+            id: 17,
+            ru: "	weigh	",
+            eng: "	Взвешивать	"
+        },
+        {
+            id: 18,
+            ru: "	measure	",
+            eng: "	мерить, измерять	"
+        },
+        {
+            id: 19,
+            ru: "	mix	",
+            eng: "	перемешать	"
+        },
+        {
+            id: 20,
+            ru: "	put	",
+            eng: "	поставить, положить, разместить	"
+        },
+        {
+            id: 21,
+            ru: "	I weigh 73 kilos	",
+            eng: "	Я вешу 73 кг	"
+        },
+        {
+            id: 22,
+            ru: "	layer	",
+            eng: "	Класть слоями	"
+        },
+        {
+            id: 23,
+            ru: "	wash hands	",
+            eng: "	Мыть руки	"
+        },
+        {
+            id: 24,
+            ru: "	peel	",
+            eng: "	чистить от кожуры	"
+        },
+        {
+            id: 25,
+            ru: "	My weight is 73 kilos	",
+            eng: "	Мой вес 73 кг	"
+        },
+        {
+            id: 26,
+            ru: "	dip	",
+            eng: "	Макать	"
+        },
+        {
+            id: 27,
+            ru: "	crush	",
+            eng: "	Давить	"
+        },
+        {
+            id: 28,
+            ru: "	prepare	",
+            eng: "	Подготавливать, приготавливаться	"
+        },
+        {
+            id: 29,
+            ru: "	sprinkle spices /спАйсиз/	",
+            eng: "	посыпать приправами	"
+        },
+        {
+            id: 30,
+            ru: "	decorate 	",
+            eng: "	украшать	"
+        },
+        {
+            id: 31,
+            ru: "	flip	",
+            eng: "	переворачивать	"
+        },
+        {
+            id: 32,
+            ru: "	microwave /мАйкровэйв/	",
+            eng: "	греть в микроволновке	"
+        },
+        {
+            id: 33,
+            ru: "	refrigerate	",
+            eng: "	to put in a fridge	"
+        },
+        {
+            id: 34,
+            ru: "	freeze	",
+            eng: "	to put in a freezer	"
+        },
+        {
+            id: 35,
+            ru: "	blend	",
+            eng: "	измельчить, перемолоть	"
+        },
+        {
+            id: 36,
+            ru: "	heat	",
+            eng: "	Жар, огонь	"
+        },
+        {
+            id: 37,
+            ru: "	roast	",
+            eng: "	Запекать	"
+        },
+        {
+            id: 38,
+            ru: "	sharpen 	",
+            eng: "	Точить	"
+        },
+        {
+            id: 39,
+            ru: "	serve	",
+            eng: "	Сервировать, обслуживать, подавать	"
+        },
+        {
+            id: 40,
+            ru: "	celebrate	",
+            eng: "	Праздновать, отмечать	"
+        },
+        {
+            id: 41,
+            ru: "	add	",
+            eng: "	добавлять	"
+        },
+        {
+            id: 42,
+            ru: "	sift	",
+            eng: "	просеивать	"
+        },
+        {
+            id: 43,
+            ru: "	roll	",
+            eng: "	раскатывать, катить	"
+        },
+        {
+            id: 44,
+            ru: "	toss	",
+            eng: "	подкидывать	"
+        },
+        {
+            id: 45,
+            ru: "	grate	",
+            eng: "	натереть на терке	"
+        },
+        {
+            id: 46,
+            ru: "	top	",
+            eng: "	положить сверху	"
+        },
+        {
+            id: 47,
+            ru: "	bake	",
+            eng: "	выпекать	"
+        },
+        {
+            id: 48,
+            ru: "	cool down	",
+            eng: "	остывать	"
+        },
+        {
+            id: 49,
+            ru: "	carve	",
+            eng: "	вырезАть	"
+        },
+        {
+            id: 50,
+            ru: "	mash /мэш/ smash 	",
+            eng: "	толочь	"
+        },
+        {
+            id: 51,
+            ru: "	tenderize	",
+            eng: "	отбивать, делать мягким	"
+        },
+        {
+            id: 52,
+            ru: "	BBQ	",
+            eng: "	Делать Барбекю	"
+        },
+        {
+            id: 53,
+            ru: "	simmer	",
+            eng: "	готовить на минимальной мощности	"
+        },
+        {
+            id: 54,
+            ru: "	melt	",
+            eng: "	растопить, таять	"
+        },
+        {
+            id: 55,
+            ru: "	fry	",
+            eng: "	жарить	"
+        },
+        {
+            id: 56,
+            ru: "	sauté 	",
+            eng: "	обжаривать	"
+        },
+        {
+            id: 57,
+            ru: "	boil	",
+            eng: "	варить, кипятить	"
+        },
+        {
+            id: 58,
+            ru: "	A pot	",
+            eng: "	Кастрлюля	"
+        },
+        {
+            id: 59,
+            ru: "	stir	",
+            eng: "	Помешивать	"
+        },
+        {
+            id: 60,
+            ru: "	taste	",
+            eng: "	Пробовать на вкус	"
+        },
+        {
+            id: 61,
+            ru: "	light	",
+            eng: "	включать огонь	"
+        },
+        {
+            id: 62,
+            ru: "	cover with a lid	",
+            eng: "	накрывать крышкой	"
+        },
+        {
+            id: 63,
+            ru: "	remove	",
+            eng: "	убирать	"
+        },
+        {
+            id: 64,
+            ru: "	turn on/off	",
+            eng: "	включать или выключать	"
+        },
+        {
+            id: 65,
+            ru: "	steam	",
+            eng: "	пар / готовить на пару	"
+        },
+        {
+            id: 66,
+            ru: "	whisk with a whisker	",
+            eng: "	взбивать венчиком	"
+        },
+        {
+            id: 67,
+            ru: "	A frying pan	",
+            eng: "	сковорода	"
+        },
+        {
+            id: 68,
+            ru: "	drain	",
+            eng: "	слить воду	"
+        },
+        {
+            id: 69,
+            ru: "	rinse	",
+            eng: "	прополоскать, ополоснуть	"
+        },
+        {
+            id: 70,
+            ru: "	uncork	",
+            eng: "	открыть пробку	"
+        },
+        {
+            id: 71,
+            ru: "	an oven	",
+            eng: "	духовка	"
+        },
+        {
+            id: 72,
+            ru: "	a stove	",
+            eng: "	печь	"
+        },
+        {
+            id: 73,
+            ru: "	a fork	",
+            eng: "	вилка	"
+        },
+        {
+            id: 74,
+            ru: "	a spoon	",
+            eng: "	ложка	"
+        },
+        {
+            id: 75,
+            ru: "	a cup and a mug	",
+            eng: "	чашка и кружка	"
+        },
+        {
+            id: 76,
+            ru: "	one knife or 2 knives	",
+            eng: "	нож или два ножа	"
+        },
+        {
+            id: 77,
+            ru: "	a cutting board	",
+            eng: "	разделоочная доска	"
+        },
+        {
+            id: 78,
+            ru: "	foil	",
+            eng: "	фольга	"
+        },
+        {
+            id: 79,
+            ru: "	sausage and sausages /сОсиджэз/	",
+            eng: "	Колбаса и сосиски	"
+        },
+        {
+            id: 80,
+            ru: "	Delicious /делИшэс / dinner	",
+            eng: "	Наивкуснейший ужин	"
+        },
+        {
+            id: 81,
+            ru: "	A pepper is not paper	",
+            eng: "	/э пЭппэ из нот ПэЙпэ/ не бумага	"
+        },
+        {
+            id: 82,
+            ru: "	salt / солт/	",
+            eng: "	соль	"
+        },
+
+    ],
+    cooking: [
         {
             id: 1,
             ru: "Готовить",

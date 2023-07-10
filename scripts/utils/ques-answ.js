@@ -38,21 +38,21 @@ const allCards = {
             eng: " id 7 eng "
         },
     ],
-    manual: [
+    mission0: [
         {
             id: 1,
-            ru: "и потом сюда - 2",
-            eng: "1 - нажми сюда	"
+            ru: "и потом сюда 2",
+            eng: "1 Нажми сюда	"
         },
         {
             id: 2,
-            ru: "<< find /фАйнд э пЭа/",
-            eng: "Найди пару >>"
+            ru: "Привет!",
+            eng: "Hi!"
         },
         {
             id: 3,
-            ru: "six",
-            eng: "2 + 2 x 2"
+            ru: "= six",
+            eng: "2 + 2 + 2 is ="
         },
         {
             id: 4,
@@ -311,7 +311,7 @@ const allCards = {
         },
         {
             id: 27,
-            ru: " /э хАндрэд хАнгри хУлигэнz/",
+            ru: " /э хАндрэд хАнгри хУлигэнz/ 100 голодных хулиганов",
             eng: " a hundred hungry hooligans "
         },
 
@@ -4866,6 +4866,203 @@ const allCards = {
             eng: "	соль	"
         },
 
+    ],
+    areamisTest: [
+        {					
+            id	:	1	,		
+            ru	:	"	My name is BOND, JAMES, B-O-N-D	"	,
+            eng	:	"	What’s your name? Spell /произнеси по буквам/ your name, please.	"	
+            }	,				
+            {					
+            id	:	2	,		
+            ru	:	"	My phone number is  007 	"	,
+            eng	:	"	What’s your phone number?	"	
+            }	,				
+            {					
+            id	:	3	,		
+            ru	:	"	My car number is  C 007 AR	"	,
+            eng	:	"	What’s your car number?	"	
+            }	,				
+            {					
+            id	:	4	,		
+            ru	:	"	My house N. is 107	"	,
+            eng	:	"	What’s your house number?	"	
+            }	,				
+            {					
+            id	:	5	,		
+            ru	:	"	My flat N. is 36	"	,
+            eng	:	"	What’s your flat number? /флэт/	"	
+            }	,				
+            {					
+            id	:	6	,		
+            ru	:	"	My apt. N. is 36	"	,
+            eng	:	"	What’s your apartment number? /апАртмэнт/	"	
+            }	,				
+            {					
+            id	:	7	,		
+            ru	:	"	My shoe size is 46	"	,
+            eng	:	"	What’s your shoe size? /шу сайз/	"	
+            }	,				
+            {					
+            id	:	8	,		
+            ru	:	"	The color of my car is black	"	,
+            eng	:	"	What’s the color /кАла/ of your car?	"	
+            }	,				
+            {					
+            id	:	9	,		
+            ru	:	"	The color of my eyes is blue. Или myeyes Are blue.	"	,
+            eng	:	"	What’s the color /кАла/  of your eyes/айз/ ?	"	
+            }	,				
+            {					
+            id	:	10	,		
+            ru	:	"	My favorite colors are black &yellow	"	,
+            eng	:	"	What are your favorite/фЭйворит/ colors?	"	
+            }	,				
+            {					
+            id	:	11	,		
+            ru	:	"	My favorite books are Voina and Mir & 12 stuljev (не нужно переводить названия) 	"	,
+            eng	:	"	What are your favorite books?	"	
+            }	,				
+            {					
+            id	:	12	,		
+            ru	:	"	My fav. movies are detectives & comedies /кАмедис/	"	,
+            eng	:	"	What are your favorite movies? /мУви/	"	
+            }	,				
+            {					
+            id	:	13	,		
+            ru	:	"	My fav. games are Poker & Pryatki & Sims 3	"	,
+            eng	:	"	What are your favorite games?	"	
+            }	,				
+            {					
+            id	:	14	,		
+            ru	:	"	My fav. song is “Show must go on” by Queen (by - кем исполняется)	"	,
+            eng	:	"	What’s your favorite song?	"	
+            }	,				
+            {					
+            id	:	15	,		
+            ru	:	"	My fav .band is Queen.	"	,
+            eng	:	"	What’s your favorite musical band?	"	
+            }	,				
+            {					
+            id	:	16	,		
+            ru	:	"	My fav. drink is martini	"	,
+            eng	:	"	What’s your favorite drink?	"	
+            }	,				
+            {					
+            id	:	17	,		
+            ru	:	"	My fav. adj. is “sexy”	"	,
+            eng	:	"	What’s your favorite English adjective? /Эджэктив/ ударение на пЕрвую букву. Adj. прилагательное	"	
+            }	,				
+            {					
+            id	:	18	,		
+            ru	:	"	My fav. Verb  is ”to kiss”	"	,
+            eng	:	"	What’s your favorite English verb? /вЁрб/	"	
+            }	,				
+            {					
+            id	:	19	,		
+            ru	:	"	I’m great/super/fine/ok/so-so/bad. And you?	"	,
+            eng	:	"	How are you today? How r u doing?	"	
+            }	,				
+            {					
+            id	:	20	,		
+            ru	:	"	My life is good, everything is nice.	"	,
+            eng	:	"	How is your life? What’s up?	"	
+            }	,				
+            {					
+            id	:	21	,		
+            ru	:	"	My family is alright, everybody is ok. 	"	,
+            eng	:	"	How is your family?	"	
+            }	,				
+            {					
+            id	:	22	,		
+            ru	:	"	I’m at work, at 69 Oxford street	"	,
+            eng	:	"	Where are you now? What street?	"	
+            }	,				
+            {					
+            id	:	23	,		
+            ru	:	"	I’m from Oek it’s a small village in RF	"	,
+            eng	:	"	Where are you from?	"	
+            }	,				
+            {					
+            id	:	24	,		
+            ru	:	"	I’m in Paris/пЭрис/ now. It is in France.	"	,
+            eng	:	"	Where are you now? What city? 	"	
+            }	,				
+            {					
+            id	:	25	,		
+            ru	:	"	My father is from Ukraine and my mom is from Russia.	"	,
+            eng	:	"	Where are your parents from?	"	
+            }	,				
+            {					
+            id	:	26	,		
+            ru	:	"	My mom is in Heaven… My dad is in Ukraine.	"	,
+            eng	:	"	Where are your parents now?	"	
+            }	,				
+            {					
+            id	:	27	,		
+            ru	:	"	He is from a secret bunker in Siberia	"	,
+            eng	:	"	Where is special agent Vincent from?	"	
+            }	,				
+            {					
+            id	:	28	,		
+            ru	:	"	Because I study English with Vincent.	"	,
+            eng	:	"	Why are you a special agent?	"	
+            }	,				
+            {					
+            id	:	29	,		
+            ru	:	"	He’s an agent! A foreign/форин/ agent. (иностранный агент)	"	,
+            eng	:	"	Who is your teacher?	"	
+            }	,				
+            {					
+            id	:	30	,		
+            ru	:	"	I can’t tell you. It is not safe/сэйф/  	"	,
+            eng	:	"	Who are you? What is your job?	"	
+            }	,				
+            {					
+            id	:	31	,		
+            ru	:	"	They are people who study with me.	"	,
+            eng	:	"	Who are secret agents?	"	
+            }	,				
+            {					
+            id	:	32	,		
+            ru	:	"	Vincent & Polinochka are my best friends	"	,
+            eng	:	"	Who are your best friends?	"	
+            }	,				
+            {					
+            id	:	33	,		
+            ru	:	"	You are here because you are special 	"	,
+            eng	:	"	Why am I here?	"	
+            }	,				
+            {					
+            id	:	34	,		
+            ru	:	"	I can eat many pelmenis! Maybe 33.	"	,
+            eng	:	"	How many pelmenis can you eat?	"	
+            }	,				
+            {					
+            id	:	35	,		
+            ru	:	"	I live in Vilnius	"	,
+            eng	:	"	Where do you live?	"	
+            }	,				
+            {					
+            id	:	36	,		
+            ru	:	"	I work in a “ S.P.E.C.I.A.L.” agency. 	"	,
+            eng	:	"	Where do you work?	"	
+            }	,				
+            {					
+            id	:	37	,		
+            ru	:	"	I study English 2 times a week. 2 раза в неделю	"	,
+            eng	:	"	How often do you study English?	"	
+            }	,				
+            {					
+            id	:	38	,		
+            ru	:	"	I practice English 10 minutes a day. 10м в день. Every day.	"	,
+            eng	:	"	How often do you practice English ?	"	
+            }	,
+            {					
+                id	:	39	,		
+                ru	:	"	Love is everywhere /ЭвриУээ/ in every sight/сайт/ в каждом взгляде"	,
+                eng	:	"	Where is love?	"	
+                }	,						
     ],
 }
 export default allCards

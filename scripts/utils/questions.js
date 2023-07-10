@@ -39,21 +39,21 @@ testing: [
         eng: " Question 7 eng "
     },
 ],
-manual: [
+mission0: [
     {
         id: 1,
-        ru: "и потом сюда - 2",
-        eng: "1 - нажми сюда	"
+        ru: "Да я вообще столько всего отвечу! Например: hi, hey, hello, what's up! Howis life?",
+        eng: "Что ты ответишь, если тебе скажут Hello?	"
     },
     {
         id: 2,
-        ru: "<< find /фАйнд э пЭа/",
-        eng: "Найди пару >>"
+        ru: "Ну я не растеряюсь, ведь это же вопрос Что нового? Что происходит? Чё каво? Отвчеу, что Everything is okay! Сам как? And you?",
+        eng: "Что ты ответишь, если тебе скажут What's up?"
     },
     {
         id: 3,
-        ru: "six",
-        eng: "2 + 2 x 2"
+        ru: "Меня не проведёшь! Умножение делается вперёд! ТУ плас ТУ мАлтиплай ТУ из СЫКС! А еще умножить можно сказать: тАймз. А равно = это is. Vincent is my teacher! I am smart!" ,
+        eng: "2 + 2 x 2 is ="
     },
     {
         id: 4,
@@ -62,124 +62,259 @@ manual: [
     },
     {
         id: 5,
-        ru: "You can do it!",
-        eng: "Ты справишься!"
+        ru: "My phone number is +370 676 417 706",
+        eng: "What is your phone number?"
     },
     {
         id: 6,
-        ru: "Отличная работа агент!",
-        eng: "Great job, agent!"
+        ru: "My eyes are blue. And my eyes are grey sometimes",
+        eng: "What color are your eyes?"
     },
 ],
 mission1: [
     {
         id: 1,
         ru: "1",
-        eng: "one /уан/"
+        eng: "произнеси уверенно и вслух - one /уан/"
     },
     {
         id: 2,
         ru: "номер два",
-        eng: "number two /нАмбэ ту/"
+        eng: "произнеси уверенно и вслух - number two /нАмбэ ту/"
     },
     {
         id: 3,
         ru: "не Фри и не Сри",
-        eng: "three /TH/"
+        eng: "произнеси уверенно и вслух - three"
     },
     {
         id: 4,
         ru: "4",
-        eng: "four /фо/"
+        eng: "произнеси уверенно и вслух - four /фо/"
     },
     {
         id: 5,
         ru: "5 не файФ",
-        eng: "five /файВ/"
+        eng: "произнеси уверенно и вслух - five /файВ/"
     },
     {
         id: 6,
         ru: "не сИкс и не sex",
-        eng: "six /сЫкс/"
+        eng: "произнеси уверенно и вслух - six /сЫкс/"
     },
     {
         id: 7,
         ru: "7",
-        eng: "seven /cЭвн/"
+        eng: "произнеси уверенно и вслух - seven /cЭвн/"
     },
     {
         id: 8,
         ru: "8",
-        eng: "eight /Эйт/"
+        eng: "произнеси уверенно и вслух - eight /Эйт/"
     },
     {
         id: 9,
         ru: "9",
-        eng: "nine /нАйн/"
+        eng: "произнеси уверенно и вслух - nine /нАйн/"
     },
     {
         id: 10,
         ru: "10",
-        eng: "ten /тЭн/"
+        eng: "произнеси уверенно и вслух - ten /тЭн/"
     },
     {
         id: 11,
         ru: "11",
-        eng: "eleven /илЭвн/"
+        eng: "произнеси уверенно и вслух - eleven /илЭвн/"
     },
     {
         id: 12,
         ru: "12",
-        eng: "twelve /твЭлВ/"
+        eng: "произнеси уверенно и вслух - twelve /твЭлВ/"
     },
 
     {
         id: 13,
         ru: "не сЁртин и не Фёртин",
-        eng: "thirteen /TH/"
+        eng: "произнеси уверенно и вслух - thirteen /TH/"
     },
 
     {
         id: 14,
         ru: "14 тянем крайнюю И",
-        eng: "foureen /фотИИИИн/"
+        eng: "произнеси уверенно и вслух - foureen /фотИИИИн/"
     },
 
     {
         id: 15,
         ru: "15 долго тянем И",
-        eng: "fifteen /фифтИИИн/"
+        eng: "произнеси уверенно и вслух - fifteen /фифтИИИн/"
     },
     {
         id: 16,
         ru: "16 ударение на И",
-        eng: "sixteen /сыкстИн/"
+        eng: "произнеси уверенно и вслух - sixteen /сыкстИн/"
     },
     {
         id: 17,
         ru: "20 уверенно!",
-        eng: "twenty /твЭнти/"
+        eng: "произнеси уверенно и вслух - twenty /твЭнти/"
     },
     {
         id: 17,
         ru: "/пЭа/ ПАРА = 2",
-        eng: "a pair"
+        eng: "произнеси уверенно и вслух - a pair"
     },
     {
         id: 18,
         ru: "числа, номера ",
-        eng: "numbers /нАмбэz/"
+        eng: "произнеси уверенно и вслух - numbers /нАмбэz/"
     },
     {
         id: 19,
         ru: "цифры 0-9",
-        eng: "digits /дИджитс/"
+        eng: "произнеси уверенно и вслух - digits /дИджитс/"
     },
 
 
 
 ],
 mission2: [
+    {
+        id: 1,
+        ru: "	...Эйт	",
+        eng: "	8...	"
+    },
+    {
+        id: 2,
+        ru: "	..eight	",
+        eng: "	восемь..	"
+    },
+    {
+        id: 3,
+        ru: "	...твэлв	",
+        eng: "	12...	"
+    },
+    {
+        id: 4,
+        ru: "	...твэнти	",
+        eng: "	20...	"
+    },
+    {
+        id: 5,
+        ru: "	..is 12	",
+        eng: "	six plus six..	"
+    },
+    {
+        id: 6,
+        ru: "	is twenty 20	",
+        eng: "	Ten plus ten	"
+    },
+    {
+        id: 7,
+        ru: "	..is sixteen	",
+        eng: "	Eight plus eight..	"
+    },
+    {
+        id: 8,
+        ru: "	..is nine	",
+        eng: "	one plus eight..	"
+    },
+    {
+        id: 9,
+        ru: "	....12	",
+        eng: "	твЭлв....	"
+    },
+    {
+        id: 10,
+        ru: "	Десять	",
+        eng: "	Ten	"
+    },
+    {
+        id: 11,
+        ru: "	Одиннадцать	",
+        eng: "	Eleven	"
+    },
+    {
+        id: 12,
+        ru: "	(Двенадцать)	",
+        eng: "	(Twelve)	"
+    },
+    {
+        id: 13,
+        ru: "	Тринадцать	",
+        eng: "	Thirteen	"
+    },
+    {
+        id: 14,
+        ru: "	Четырнадцать	",
+        eng: "	Fourteen	"
+    },
+    {
+        id: 15,
+        ru: "	Пятнадцать	",
+        eng: "	Fifteen	"
+    },
+    {
+        id: 16,
+        ru: "	Шестнадцать	",
+        eng: "	Sixteen	"
+    },
+    {
+        id: 17,
+        ru: "	Семнадцать	",
+        eng: "	Seventeen	"
+    },
+    {
+        id: 18,
+        ru: "	Восемнадцать	",
+        eng: "	Eighteen	"
+    },
+    {
+        id: 19,
+        ru: "	Девятнадцать	",
+        eng: "	Nineteen	"
+    },
+    {
+        id: 20,
+        ru: "	Двадцать	",
+        eng: "	Twenty	"
+    },
+    {
+        id: 21,
+        ru: "	Двадцать один	",
+        eng: "	Twenty-one	"
+    },
+    {
+        id: 22,
+        ru: "	Двадцать два	",
+        eng: "	Twenty-two	"
+    },
+    {
+        id: 23,
+        ru: "	Тридцать	",
+        eng: "	Thirty	"
+    },
+    {
+        id: 24,
+        ru: "	Тридцать три	",
+        eng: "	Thirty-three	"
+    },
+    {
+        id: 25,
+        ru: "	Сорок	",
+        eng: "	Forty	"
+    },
+    {
+        id: 26,
+        ru: "	Пятьдесят пять	",
+        eng: "	Fifty-five /фИфти файВ/	"
+    },
+    {
+        id: 27,
+        ru: " /э хАндрэд хАнгри хУлигэнz/ 100 голодных хулиганов",
+        eng: " a hundred hungry hooligans "
+    },
 ],
 mission3: [
     {
@@ -200,12 +335,12 @@ mission3: [
     {
         id: 4,
         ru: "ставим is, если нет глагола",
-        eng: "после it,he,she"
+        eng: "после it,he,she если нет глагола ставим что?"
     },
     {
         id: 5,
         ru: "ставим ARE, если нет глагола",
-        eng: "после you,we,they"
+        eng: "после you,we,they если нет глагола ставим что?"
     },
     {
         id: 6,
@@ -215,7 +350,7 @@ mission3: [
     {
         id: 7,
         ru: " Винсент мой друг",
-        eng: " Vismyfriend"
+        eng: " V is my friend"
     },
     {
         id: 8,
@@ -4530,6 +4665,203 @@ cooking: [
         eng	:	"	Choose one: to clean toilet or to do Eng. h/w?	"	
         }	,				
 
+],
+areamisTest: [
+    {					
+        id	:	1	,		
+        ru	:	"	My name is BOND, JAMES, B-O-N-D	"	,
+        eng	:	"	What’s your name? Spell /произнеси по буквам/ your name, please.	"	
+        }	,				
+        {					
+        id	:	2	,		
+        ru	:	"	My phone number is  007 	"	,
+        eng	:	"	What’s your phone number?	"	
+        }	,				
+        {					
+        id	:	3	,		
+        ru	:	"	My car number is  C 007 AR	"	,
+        eng	:	"	What’s your car number?	"	
+        }	,				
+        {					
+        id	:	4	,		
+        ru	:	"	My house N. is 107	"	,
+        eng	:	"	What’s your house number?	"	
+        }	,				
+        {					
+        id	:	5	,		
+        ru	:	"	My flat N. is 36	"	,
+        eng	:	"	What’s your flat number? /флэт/	"	
+        }	,				
+        {					
+        id	:	6	,		
+        ru	:	"	My apt. N. is 36	"	,
+        eng	:	"	What’s your apartment number? /апАртмэнт/	"	
+        }	,				
+        {					
+        id	:	7	,		
+        ru	:	"	My shoe size is 46	"	,
+        eng	:	"	What’s your shoe size? /шу сайз/	"	
+        }	,				
+        {					
+        id	:	8	,		
+        ru	:	"	The color of my car is black	"	,
+        eng	:	"	What’s the color /кАла/ of your car?	"	
+        }	,				
+        {					
+        id	:	9	,		
+        ru	:	"	The color of my eyes is blue. Или myeyes Are blue.	"	,
+        eng	:	"	What’s the color /кАла/  of your eyes/айз/ ?	"	
+        }	,				
+        {					
+        id	:	10	,		
+        ru	:	"	My favorite colors are black &yellow	"	,
+        eng	:	"	What are your favorite/фЭйворит/ colors?	"	
+        }	,				
+        {					
+        id	:	11	,		
+        ru	:	"	My favorite books are Voina and Mir & 12 stuljev (не нужно переводить названия) 	"	,
+        eng	:	"	What are your favorite books?	"	
+        }	,				
+        {					
+        id	:	12	,		
+        ru	:	"	My fav. movies are detectives & comedies /кАмедис/	"	,
+        eng	:	"	What are your favorite movies? /мУви/	"	
+        }	,				
+        {					
+        id	:	13	,		
+        ru	:	"	My fav. games are Poker & Pryatki & Sims 3	"	,
+        eng	:	"	What are your favorite games?	"	
+        }	,				
+        {					
+        id	:	14	,		
+        ru	:	"	My fav. song is “Show must go on” by Queen (by - кем исполняется)	"	,
+        eng	:	"	What’s your favorite song?	"	
+        }	,				
+        {					
+        id	:	15	,		
+        ru	:	"	My fav .band is Queen.	"	,
+        eng	:	"	What’s your favorite musical band?	"	
+        }	,				
+        {					
+        id	:	16	,		
+        ru	:	"	My fav. drink is martini	"	,
+        eng	:	"	What’s your favorite drink?	"	
+        }	,				
+        {					
+        id	:	17	,		
+        ru	:	"	My fav. adj. is “sexy”	"	,
+        eng	:	"	What’s your favorite English adjective? /Эджэктив/ ударение на пЕрвую букву. Adj. прилагательное	"	
+        }	,				
+        {					
+        id	:	18	,		
+        ru	:	"	My fav. Verb  is ”to kiss”	"	,
+        eng	:	"	What’s your favorite English verb? /вЁрб/	"	
+        }	,				
+        {					
+        id	:	19	,		
+        ru	:	"	I’m great/super/fine/ok/so-so/bad. And you?	"	,
+        eng	:	"	How are you today? How r u doing?	"	
+        }	,				
+        {					
+        id	:	20	,		
+        ru	:	"	My life is good, everything is nice.	"	,
+        eng	:	"	How is your life? What’s up?	"	
+        }	,				
+        {					
+        id	:	21	,		
+        ru	:	"	My family is alright, everybody is ok. 	"	,
+        eng	:	"	How is your family?	"	
+        }	,				
+        {					
+        id	:	22	,		
+        ru	:	"	I’m at work, at 69 Oxford street	"	,
+        eng	:	"	Where are you now? What street?	"	
+        }	,				
+        {					
+        id	:	23	,		
+        ru	:	"	I’m from Oek it’s a small village in RF	"	,
+        eng	:	"	Where are you from?	"	
+        }	,				
+        {					
+        id	:	24	,		
+        ru	:	"	I’m in Paris/пЭрис/ now. It is in France.	"	,
+        eng	:	"	Where are you now? What city? 	"	
+        }	,				
+        {					
+        id	:	25	,		
+        ru	:	"	My father is from Ukraine and my mom is from Russia.	"	,
+        eng	:	"	Where are your parents from?	"	
+        }	,				
+        {					
+        id	:	26	,		
+        ru	:	"	My mom is in Heaven… My dad is in Ukraine.	"	,
+        eng	:	"	Where are your parents now?	"	
+        }	,				
+        {					
+        id	:	27	,		
+        ru	:	"	He is from a secret bunker in Siberia	"	,
+        eng	:	"	Where is special agent Vincent from?	"	
+        }	,				
+        {					
+        id	:	28	,		
+        ru	:	"	Because I study English with Vincent.	"	,
+        eng	:	"	Why are you a special agent?	"	
+        }	,				
+        {					
+        id	:	29	,		
+        ru	:	"	He’s an agent! A foreign/форин/ agent. (иностранный агент)	"	,
+        eng	:	"	Who is your teacher?	"	
+        }	,				
+        {					
+        id	:	30	,		
+        ru	:	"	I can’t tell you. It is not safe/сэйф/  	"	,
+        eng	:	"	Who are you? What is your job?	"	
+        }	,				
+        {					
+        id	:	31	,		
+        ru	:	"	They are people who study with me.	"	,
+        eng	:	"	Who are secret agents?	"	
+        }	,				
+        {					
+        id	:	32	,		
+        ru	:	"	Vincent & Polinochka are my best friends	"	,
+        eng	:	"	Who are your best friends?	"	
+        }	,				
+        {					
+        id	:	33	,		
+        ru	:	"	You are here because you are special 	"	,
+        eng	:	"	Why am I here?	"	
+        }	,				
+        {					
+        id	:	34	,		
+        ru	:	"	I can eat many pelmenis! Maybe 33.	"	,
+        eng	:	"	How many pelmenis can you eat?	"	
+        }	,				
+        {					
+        id	:	35	,		
+        ru	:	"	I live in Vilnius	"	,
+        eng	:	"	Where do you live?	"	
+        }	,				
+        {					
+        id	:	36	,		
+        ru	:	"	I work in a “ S.P.E.C.I.A.L.” agency. 	"	,
+        eng	:	"	Where do you work?	"	
+        }	,				
+        {					
+        id	:	37	,		
+        ru	:	"	I study English 2 times a week. 2 раза в неделю	"	,
+        eng	:	"	How often do you study English?	"	
+        }	,				
+        {					
+        id	:	38	,		
+        ru	:	"	I practice English 10 minutes a day. 10м в день. Every day.	"	,
+        eng	:	"	How often do you practice English ?	"	
+        }	,				
+        {					
+        id	:	39	,		
+        ru	:	"	Love is everywhere /ЭвриУээ/ in every sight/сайт/ в каждом взгляде"	,
+        eng	:	"	Where is love?	"	
+        }	,				
 ],
 }
 export default allQuestions

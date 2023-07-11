@@ -20,6 +20,8 @@ const playList = {
     Irregular_verbs_ALL: "https://zvukitop.com/wp-content/uploads/2021/04/zvuk-perezariadki-pistoleta-435.mp3",
     cooking: "https://zvukitop.com/wp-content/uploads/2021/04/zvuk-perezariadki-pistoleta-435.mp3",
     a_cook_cooks: "../audio/Mission a cook cooks.mp3",
+    travel: "https://zvukitop.com/wp-content/uploads/2021/04/zvuk-perezariadki-pistoleta-435.mp3",
+ 
     
 }
 export default playList

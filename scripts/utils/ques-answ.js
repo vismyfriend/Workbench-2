@@ -5064,6 +5064,114 @@ const allCards = {
         },
 
     ],
+    travel: [
+        {					
+            id	:	1	,		
+            ru	:	"	Какую страну ты хочешь посетить и почему?	"	,
+            eng	:	"	What country do you want to Visit and why?	"	
+            }	,				
+            {					
+            id	:	2	,		
+            ru	:	"	Какую страну ты НЕ хочешь посещать и почему?	"	,
+            eng	:	"	What country do you not want to Visit? Why?	"	
+            }	,				
+            {					
+            id	:	3	,		
+            ru	:	"	Антананариво - столица какой страны?	"	,
+            eng	:	"	Antananarivo is a capital of what country?	"	
+            }	,				
+            {					
+            id	:	4	,		
+            ru	:	"	Африка - это страна?	"	,
+            eng	:	"	Is Africa a country? 	"	
+            }	,				
+            {					
+            id	:	5	,		
+            ru	:	"	Сколько стран в Африке ты знаешь?	"	,
+            eng	:	"	How many countries in Africa do you know?	"	
+            }	,				
+            {					
+            id	:	6	,		
+            ru	:	"	Какая страна известна своими Кенгуру?	"	,
+            eng	:	"	What country is famous for its kangaroo?	"	
+            }	,				
+            {					
+            id	:	7	,		
+            ru	:	"	Какая страна известна своими винами?	"	,
+            eng	:	"	What country is famous for its wine?	"	
+            }	,				
+            {					
+            id	:	8	,		
+            ru	:	"	Какая страна известна своей популяцией (густонаселенностью)?	"	,
+            eng	:	"	What country is famous for its population?	"	
+            }	,				
+            {					
+            id	:	9	,		
+            ru	:	"	Какая страна находится близко к твоей стране?	"	,
+            eng	:	"	What country is very close to your country?	"	
+            }	,				
+            {					
+            id	:	10	,		
+            ru	:	"	Какие страны посетила твоя семья?	"	,
+            eng	:	"	What countries did your family visit?	"	
+            }	,				
+            {					
+            id	:	11	,		
+            ru	:	"	Какой лучший способ путешествовать?	"	,
+            eng	:	"	What is the best way to travel?	"	
+            }	,				
+            {					
+            id	:	12	,		
+            ru	:	"	Сможешь назвать 2 страны начинающихся с буквы Z?	"	,
+            eng	:	"	Can you name 2 countries beginning with Z ?	"	
+            }	,				
+            {					
+            id	:	13	,		
+            ru	:	"	Сможешь назвать 3 страны начинающихся с буквы R?	"	,
+            eng	:	"	Can you name 3 countries beginning with R ?	"	
+            }	,				
+            {					
+            id	:	14	,		
+            ru	:	"	Знаешь что-нибудь про Северную Корею?	"	,
+            eng	:	"	Do you know anything about North Korea?	"	
+            }	,				
+            {					
+            id	:	15	,		
+            ru	:	"	Какая самая большая о площади страна?	"	,
+            eng	:	"	What is the biggest country in the world?	"	
+            }	,				
+            {					
+            id	:	16	,		
+            ru	:	"	Сколько текущих президентов ты сможешь назвать?	"	,
+            eng	:	"	How many current presidents can you name?	"	
+            }	,				
+            {					
+            id	:	17	,		
+            ru	:	"	Вы бы согласились выйти замуж за иностранца?	"	,
+            eng	:	"	Would you agree to marry a foreigner?	"	
+            }	,				
+            {					
+            id	:	18	,		
+            ru	:	"	Вы бы согласились съесть легушачьи лапки?	"	,
+            eng	:	"	Would you agree to eat frog legs in France?	"	
+            }	,				
+            {					
+            id	:	19	,		
+            ru	:	"	Вы бы согласились попробовать наркотики в Амстердаме?	"	,
+            eng	:	"	Would you agree to try drugs in Amsterdam?	"	
+            }	,				
+            {					
+            id	:	20	,		
+            ru	:	"	Вы бы согласились поехать вокруг света на машине?	"	,
+            eng	:	"	Would you agree to travel around the world by car?	"	
+            }	,				
+            {					
+            id	:	21	,		
+            ru	:	"	Вы знаете какие-нибудь интересные факты о странах?	"	,
+            eng	:	"	Do u know any interesting facts about any country? 	"	
+            }	,				
+    
+    ],
     
 }
 export default allCards

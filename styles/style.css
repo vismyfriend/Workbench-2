@@ -77,34 +77,24 @@ button {
 
 /* 0008 Код читается сверху вниз, поэтому сперва стиль display: none;  указанный ниже, заменится на display: flex;так как этот стиль указан ниже. В результате сперва кнопки на странице будут видны на экране */
 
-.buttons-006-007-008 {
-    position: relative;
-    top: 430px;
-    /* display: flex; */
-    display: none;
-    /* justify-content: space-evenly; */
-    justify-content: center;
-    gap: 20px;
-    /* padding-right:  71px; */
-    max-width: 480px;
-    /* margin: 0 auto; */
-    margin: auto;
+
+
+.oneDeckButtons.visible {
+    display: flex;
 }
 
-.buttons-006-007-008.hidden {
-    display: none;
-}
-
-.button006 {
-
-    background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #FA8181;
-}
-
-.button007 {
+.oneDeckPrevious {
+width: 60px;
     background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #FFF27B;
 }
 
-.button008 {
+.oneDeckCheck {
+    width: 60px;
+    background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #7BE7FF;
+}
+
+.oneDeckNext {
+    width: 55px;
     background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #80FF01;
 
 }
@@ -628,7 +618,19 @@ button {
 
 /* <copied */
 
-
+.oneDeckButtons {
+    position: relative;
+    top: 494px;
+    /* display: flex; */
+    display: none;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    gap: 20px;
+    /* padding-right:  71px; */
+    max-width: 480px;
+    /* margin: 0 auto; */
+    margin: auto;
+}
 .card1 {
     background-image: url(../images/card.png);
     width: 222px;
@@ -640,7 +642,7 @@ button {
 }
 
 .card1_question1 {
-    top: 215px;
+    top: 180px;
 
     left: calc(50% - 111px);
     transform: rotate(185deg);

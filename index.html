@@ -67,13 +67,15 @@
                 
                 
             <!-- контейнеры внутри контейнеров - так оказывается и строятся сайты
-            делаем контейнер с кнопками wtf-->
+            делаем контейнер с кнопками -->
+            <!-- это контейнер с кнопками для игры find-a-pair -->
             <div class="pool__buttons">
-
+                <!-- wtf - нужно переименаовать кнопки для каждой игры понятно и отдельно -->
                 <!-- 0012 пробел не ставится в названии классов. вместо-него-символ-вот-такой - Если поставить пробел это будет второй класс-->
                 <!-- уточнить у Andrew разницу между двойным подчеркиванием и пробелом при присвоении классов  -->
                 <!-- несколько классов указываются через пробел в html а в css через точку -->
                 <!-- ну и вот соственно сами кнопки создаем wtf-->
+                <!-- br это перенос текста на следующую строку -->
                 <button class="cover-l">вернуться к <br> выбору миссий</button>
                 <button class="next">skip these <br> пропустить </button>
                 <button class="cover-r">next</button>
@@ -164,19 +166,15 @@
 
 
 
-        wtf
+        <!-- wtf -->
 
         <img class="picture-right" src="./images/hide R.png">
         <img class="picture-left" src="./images/Hide L.png">
         
-        <div class="buttons-006-007-008">
-            <button class="button006">button 006</button>
-            <button class="button007">button 007</button>
-            <button class="button008">button 008</button>
-
-        </div>
+        
         <!-- несколько классов указываются через пробел в html а в css через точку -->
-        <!-- аозже при выборе набора класс hidden удалится remove hidden1 -->
+        <!-- позже при выборе набора класс hidden удалится remove hidden1 -->
+        <!-- Это игра oneDeck вопросы и ответы одна карта заблюрен перевод -->
         <div class="card1_question1 hidden1 card1">
             <div class="card1__top1">
                 <p class="card1__value1">вопрос?</p>
@@ -184,7 +182,17 @@
             <div class="card1__bottom1">
                 <p class="card1__hint1">перевод и пример?</p>
             </div>
+            
         </div>
+        <!-- кнопки для oneDeck game -->
+        <div class="oneDeckButtons">
+            <button class="oneDeckPrevious">missions</button>
+            <button class="oneDeckCheck">check</button>
+            <button class="oneDeckNext">next</button>
+
+        </div>
+
+        <!-- вторая колода -->
         <!-- <div class="card_question card">
             <div class="card__top">
                 <p class="card__value">вопрос?</p>

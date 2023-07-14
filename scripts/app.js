@@ -7,7 +7,7 @@ import playList from "./utils/music.js"
 
 // 0002 добавляем константы к классам, чтобы можно было с ними работать, придумываем им названия понятные
 
-const buttonsSix = document.querySelector(".buttons-006-007-008")
+const buttonsSix = document.querySelector(".oneDeckButtons")
 const refreshInfo = document.querySelector(".refresh-info")
 const button001 = document.querySelector(".header__button001")
 const isTouch = () => 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0
@@ -39,6 +39,9 @@ const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
 const findAPairInfo = document.querySelector(".find-a-pair-info")
 const headerInfo = document.querySelector(".header-info")
+const oneDeckPrevious = document.querySelector(".oneDeckPrevious")
+const oneDeckCheck = document.querySelector(".oneDeckCheck")
+const oneDeckNext = document.querySelector(".oneDeckNext")
 
 // <copied
 const cardQuestion = document.querySelector(".card1_question1")
@@ -68,7 +71,6 @@ let interval = null
 let count = 0
 let foundPairs = 0
 let howManyTimesSkipped = 0
-let skipSomeCards = 0
 let pairsRemainToMatch = 0
 
 // <copied
@@ -106,7 +108,7 @@ function getquestions() {
         cardQuestion.style.border = "solid 4px rgb(123, 207, 255)";
         // questionNumber++
         questionNumber = questionNumber + 1
-     
+
     } else {
         cardQuestion.classList.remove("open1")
         cardQuestion.style.border = 'none';
@@ -121,7 +123,7 @@ function getquestions() {
 refreshInfo.addEventListener("click", pageReloadRefresh)
 
 function pageReloadRefresh() {
-    
+
     location.reload()
 }
 
@@ -129,17 +131,29 @@ cardHintQuestion.addEventListener("click", (event) => {
     cardHintQuestion.classList.toggle("show1")
     event.stopPropagation()
 })
+
+oneDeckCheck.addEventListener("click", (event) => {
+    cardHintQuestion.classList.toggle("show1")
+    event.stopPropagation()
+})
 // проверка - если карта уже открыта, то изменения только при нажатии на кнопку, а не по карте кликая
 cardQuestion.addEventListener("click", () => {
-            const AudioNextQuestionCard = new Audio("https://zvukitop.com/wp-content/uploads/2021/06/klik-myshki-9.mp3");
-            AudioNextQuestionCard.volume = 0.1
-            AudioNextQuestionCard.play()
-            
+    const AudioNextQuestionCard = new Audio("https://zvukitop.com/wp-content/uploads/2021/06/klik-myshki-9.mp3");
+    AudioNextQuestionCard.volume = 0.07
+    AudioNextQuestionCard.play()
+
     cardQuestion.classList.contains("open") ? null : getquestions()
 })
 // cardQuestion.addEventListener("click", getquestions)
 // shuffle.addEventListener("click", shuffleDecks)
 
+oneDeckNext.addEventListener("click", () => {
+    const AudioNextQuestionCard = new Audio("https://zvukitop.com/wp-content/uploads/2021/06/klik-myshki-9.mp3");
+    AudioNextQuestionCard.volume = 0.07
+    AudioNextQuestionCard.play()
+    cardQuestion.classList.contains("open") ? null : getquestions()
+
+})
 
 // copied>
 
@@ -162,8 +176,8 @@ function startTimer() {
         timeSeconds.textContent = seconds;
     }
 }
-function nextCardsFindAPairCheatUsed(){
-    
+function nextCardsFindAPairCheatUsed() {
+
     poolContainer.innerHTML = ""
     howManyTimesSkipped++;
     if (max === chosenArray.length) {
@@ -171,18 +185,18 @@ function nextCardsFindAPairCheatUsed(){
     } else {
         min = min + 6
         max = max + 6 > chosenArray.length ? chosenArray.length : max + 6
-      
+
         pairsRemainToMatch = pairsRemainToMatch - 6 + count;
         count = 0
-       
+
         findAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
         renderCards("ru")
         renderCards("eng")
-     
+
         // console.log(chosenArray.length)
         // console.log(max)
         // console.log(pairsRemainToMatch)
-        
+
 
     }
 }
@@ -196,26 +210,28 @@ function nextCards() {
     } else {
         min = min + 6
         max = max + 6 > chosenArray.length ? chosenArray.length : max + 6
-      
+
         pairsRemainToMatch = pairsRemainToMatch - 6 + count;
         count = 0
-       
+
         // findAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
         renderCards("ru")
         renderCards("eng")
-     
+
         // console.log(chosenArray.length)
         // console.log(max)
         // console.log(pairsRemainToMatch)
-        
+
 
     }
 }
+// уточнить у Andrew про set в скобках - что это
+
 function chooseSet(text, set) {
     logoSpecial.classList.add("hidden")
     // refreshInfo.classList.add("visible")
     tryAgainButton.classList.add("hidden")
-    buttonsSix.classList.add("hidden")
+    buttonsSix.classList.remove("visible")
     popupTitle.textContent = "/ю чОуз/ You chose Вы выбрали:"
     popupTitle.classList.add("greyText")
     popupDescription.textContent = " Что будем делать? :"
@@ -230,6 +246,9 @@ function chooseSet(text, set) {
     headerInfo.classList.remove("visible")
 }
 function startGameQuestions() {
+
+
+    buttonsSix.classList.add("visible")
     // renderCards("ru")
     // renderCards("eng")
     headerInfo.classList.remove("visible")
@@ -248,7 +267,7 @@ function chooseSong(set) {
     //  console.log("проверка")
     const MissionSong = playList[set]
     audio.src = MissionSong
-     
+
     // }
 }
 function startGameFindPairs() {
@@ -258,11 +277,11 @@ function startGameFindPairs() {
     buttonCoverL.disabled = false;
     buttonCoverR.disabled = true;
     howManyTimesSkipped = 0
-    console.log(howManyTimesSkipped);
-    skipSomeCards = 0
+
+    
     pairsRemainToMatch = chosenArray.length
     foundPairs = 0
-    // foundPairsOutOfSix = 0
+
     findAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
     headerInfo.textContent = `читов использовано: ${howManyTimesSkipped}`
     button001.classList.add("hidden")
@@ -289,7 +308,7 @@ function startGameSlotMachine() {
 }
 
 allSets.forEach((set) => {
-   
+
     set.addEventListener("click", (evt) => {
         getArray(evt.target.dataset.set)
         chooseSong(evt.target.dataset.set)
@@ -337,7 +356,7 @@ function readyArray() {
     return chosenArray.slice(min, max)
 }
 function match(evt) {
-    
+
     if (!!selectCard) {
         if (selectCard.dataset.id === evt.target.dataset.id && selectCard !== evt.target) {
             selectCard.classList.add("delete")
@@ -347,15 +366,15 @@ function match(evt) {
             foundPairs++;
             // foundPairsOutOfSix++;
             pairsRemainToMatch--
-          
 
-  
+
+
 
             findAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
         }
         selectCard.classList.remove("select")
         selectCard = null
-        
+
     } else {
         evt.target.classList.add("select")
         selectCard = evt.target
@@ -381,7 +400,7 @@ function finishGame() {
     headerInfo.textContent = `читов использовано: ${howManyTimesSkipped}`
     headerInfo.classList.add("visible")
     tryAgainButton.classList.remove("hidden")
-    buttonsSix.classList.remove("hidden")
+    // buttonsSix.classList.remove("hidden")
     popup.classList.remove("close")
     pool.classList.remove("open")
     popupTitle.textContent = `Результат: ${timer.textContent} seconds`
@@ -400,14 +419,14 @@ function finishGame() {
     chosenSet.classList.remove("show")
     tryAgainButton.textContent = `Yes! ${chosenSet.textContent}`
     const AudioWinner = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-na-trube.mp3");
-    AudioWinner.volume = 0.2
+    AudioWinner.volume = 0.075;
     AudioWinner.play()
 
 
     min = 0
     max = 6
     tens = "00";
-    seconds = "00";
+    seconds = "00";s
     poolContainer.innerHTML = ""
     count = 0
 }
@@ -433,10 +452,17 @@ howManyTimesSkipped = 0
 buttonCoverR.addEventListener("click", () => {
     coverCards(pictureR)
 })
+
+
+
+
 buttonCoverL.addEventListener("click", () => {
     // coverCards(pictureL)
     pageReloadRefresh()
 })
+
+oneDeckPrevious.addEventListener("click",pageReloadRefresh)
+
 
 if (isTouch()) {
     scrollLeft.addEventListener("touchstart", () => {
@@ -497,22 +523,22 @@ audioIcon.addEventListener("click", audioOnOff)
 function audioOnOff() {
 
     audioIcon.classList.toggle("off")
-  
+
     // audio.classList.add("off") музыка выключается не через стили
 
 
-        audio.play()
-        audio.loop = true;
-    
- 
+    audio.play()
+    audio.loop = true;
+
+
     if (audio.volume == 0) {
         audio.volume = 0.7
-      
+
     } else {
-        audio.volume= 0
+        audio.volume = 0
 
     }
-    
+
 
 
 }
@@ -526,7 +552,7 @@ function helloMusicStartButtonInvisible() {
     audiomissionMusicBackground.loop = false;
     helloMusicStartButton.classList.add("invisible")
     // missionMusicBackgroundIconButton.classList.add("off")
-   
+
 }
 // helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
 // function helloMusicStartButtonInvisible() {
@@ -534,10 +560,10 @@ function helloMusicStartButtonInvisible() {
 //     missionMusicBackground.loop = false;
 //     helloMusicStartButton.classList.add("invisible")
 //     missionMusicBackgroundIconButton.classList.add("off")
-   
+
 // if (missionMusicBackground.volume == 0) {
 //     missionMusicBackground.volume = 0.7
-  
+
 // } else {
 //     missionMusicBackground.volume= 0
 
@@ -552,37 +578,37 @@ missionMusicBackgroundIconButton.addEventListener("click", missionBackgroundMusi
 function missionBackgroundMusicOnOff() {
 
     missionMusicBackgroundIconButton.classList.toggle("off")
-  
+
     // audio.classList.add("off") музыка выключается не через стили
 
-        missionMusicBackground.play()
-        missionMusicBackground.loop = true;
-    
- 
+    missionMusicBackground.play()
+    missionMusicBackground.loop = true;
+
+
     if (missionMusicBackground.volume == 0) {
         missionMusicBackground.volume = 0.7
-      
+
     } else {
-        missionMusicBackground.volume= 0
+        missionMusicBackground.volume = 0
 
     }
-    
+
 
 
 }
 
 secretButton.addEventListener("click", special)
 function special() {
-    
-        // const special = new Audio("../audio/HelloTest.mp3");
-        
-        // const special = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
-        const special = new Audio("https://audio.jukehost.co.uk/7OUIbrRYhzrmgaexf3EGoQ3r4FgrlAm9");
-        // const special = new Audio("https://disk.yandex.com/d/SQWNr3QHNOtFIg");
-        // const special = new Audio("https://www.dropbox.com/s/izkudiigqhhscca/Icanlikethis.mp3");
-        special.volume = 0.3
-        special.play()
-        
-      }
 
-    
+    // const special = new Audio("../audio/HelloTest.mp3");
+
+    // const special = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
+    const special = new Audio("https://audio.jukehost.co.uk/7OUIbrRYhzrmgaexf3EGoQ3r4FgrlAm9");
+    // const special = new Audio("https://disk.yandex.com/d/SQWNr3QHNOtFIg");
+    // const special = new Audio("https://www.dropbox.com/s/izkudiigqhhscca/Icanlikethis.mp3");
+    special.volume = 0.3
+    special.play()
+
+}
+
+

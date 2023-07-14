@@ -1,5 +1,5 @@
 // Здесь вопросы для тренировки Speaking
-const allQuestions = {
+const allQuestionsOneDeck = {
 testing: [
     {
         id: 1,
@@ -4972,7 +4972,7 @@ travel: [
 
 ],
 }
-export default allQuestions
+export default allQuestionsOneDeck
 
 
 // вопросы

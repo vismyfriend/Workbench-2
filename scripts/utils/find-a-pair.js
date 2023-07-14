@@ -1,5 +1,5 @@
 // 0001 добавляем константу с данными - с массивом // Здесь слова для игры Find a pair
-const allCards = {
+const allCardsFindAPair = {
     testing: [
         {
             id: 1,
@@ -5174,7 +5174,7 @@ const allCards = {
     ],
     
 }
-export default allCards
+export default allCardsFindAPair
 
 // объединение массивов и объектов
 // const arrayFirst = [

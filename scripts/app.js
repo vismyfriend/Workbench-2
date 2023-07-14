@@ -1,10 +1,12 @@
-// 0001 создаем в папке скриптов папку utils и в ней файлы с расширением .js, в них будут данные для приложения игры и страницы и импортируем данные из файла - указываем путь  файлу 
-import allCards from "./utils/ques-answ.js"
-import allQuestions from "./utils/questions.js"
+// 0001 создаем в папке скриптов папку utils
+// в папке utils создаю файлы с расширением .js, в них будут данные для приложения и игр
+// импортируем нужные данные из файла - указываем путь файлу ( . одна точка значит файл в этой же папке ) ( .. две точки значит файл, к которому обращаемся в папке выше) 
+import allCardsFindAPair from "./utils/find-a-pair.js"
+import allQuestionsOneDeck from "./utils/questions.js"
 import playList from "./utils/music.js"
 
-// 0002 добавляем константы
-// const buttons006007008 = document.querySelector(".buttons006-007-008")
+// 0002 добавляем константы к классам, чтобы можно было с ними работать, придумываем им названия понятные
+
 const buttonsSix = document.querySelector(".buttons-006-007-008")
 const refreshInfo = document.querySelector(".refresh-info")
 const button001 = document.querySelector(".header__button001")
@@ -17,6 +19,7 @@ const popupSets = document.querySelector(".popup__sets")
 const findAPair = document.querySelector(".popup__find-a-pair")
 const checkMemory = document.querySelector(".popup__check-memory")
 const slotMachine = document.querySelector(".popup__slot-machine")
+const slotMachine2 = document.querySelector(".popup__slot-machine2")
 const p004questions = document.querySelector(".popup__p004-questions")
 const chosenSet = document.querySelector(".popup__chosen-set")
 const logoSpecial = document.querySelector(".logo-special")
@@ -34,6 +37,8 @@ const timeMiliseconds = document.getElementById("tens")
 const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
+const findAPairInfo = document.querySelector(".find-a-pair-info")
+const headerInfo = document.querySelector(".header-info")
 
 // <copied
 const cardQuestion = document.querySelector(".card1_question1")
@@ -61,6 +66,10 @@ let tens = "00"
 let seconds = "00"
 let interval = null
 let count = 0
+let foundPairs = 0
+let howManyTimesSkipped = 0
+let skipSomeCards = 0
+let pairsRemainToMatch = 0
 
 // <copied
 let value = null
@@ -104,8 +113,15 @@ function getquestions() {
         shuffleDecks()
     }
 }
-refreshInfo.addEventListener("click", mainScreen)
-function mainScreen() {
+
+
+
+// навешиваем событие, чтобы обновилась и перезагрузилась страница
+
+refreshInfo.addEventListener("click", pageReloadRefresh)
+
+function pageReloadRefresh() {
+    
     location.reload()
 }
 
@@ -149,20 +165,34 @@ function startTimer() {
 
 function nextCards() {
     poolContainer.innerHTML = ""
+    // pairsRemainToMatch =  - count;
     // очистили контейнер
+    howManyTimesSkipped++;
     if (max === chosenArray.length) {
         finishGame()
     } else {
         min = min + 6
         max = max + 6 > chosenArray.length ? chosenArray.length : max + 6
+        // console.log(count)
+        pairsRemainToMatch = pairsRemainToMatch - 6 + count;
         count = 0
+        console.log(pairsRemainToMatch)
+        
+        console.log(howManyTimesSkipped)
+        findAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
         renderCards("ru")
         renderCards("eng")
+     
+        // console.log(chosenArray.length)
+        // console.log(max)
+        // console.log(pairsRemainToMatch)
+        
+
     }
 }
 function chooseSet(text, set) {
     logoSpecial.classList.add("hidden")
-    refreshInfo.classList.add("visible")
+    // refreshInfo.classList.add("visible")
     tryAgainButton.classList.add("hidden")
     buttonsSix.classList.add("hidden")
     popupTitle.textContent = "/ю чОуз/ You chose Вы выбрали:"
@@ -172,14 +202,16 @@ function chooseSet(text, set) {
     checkMemory.classList.add("show")
     findAPair.classList.add("show")
     slotMachine.classList.add("show")
+    slotMachine2.classList.add("show")
     p004questions.classList.add("show")
     chosenSet.classList.add("show")
     chosenSet.textContent = text
+    headerInfo.classList.remove("visible")
 }
 function startGameQuestions() {
     // renderCards("ru")
     // renderCards("eng")
-
+    headerInfo.classList.remove("visible")
     popup.classList.add("close")
     // logoSpecial.classList.add("hidden")
     cardQuestion.classList.remove("hidden1")
@@ -201,8 +233,15 @@ function chooseSong(set) {
 function startGameFindPairs() {
     renderCards("ru")
     renderCards("eng")
-    buttonCoverL.disabled = true;
+    headerInfo.classList.remove("visible")
+    buttonCoverL.disabled = false;
     buttonCoverR.disabled = true;
+    howManyTimesSkipped = 0
+    skipSomeCards = 0
+    pairsRemainToMatch = chosenArray.length
+    // foundPairs = 0
+    // foundPairsOutOfSix = 0
+    findAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
     button001.classList.add("hidden")
     popup.classList.add("close")
     logoSpecial.classList.add("hidden")
@@ -251,34 +290,49 @@ function renderCards(lang) {
         poolContainer.append(someCard)
     }
 }
-// получаем массив и ниже рандомно перемешиваем через готовую функцию
-// для колоды карт 2 колоды
+// обращаемся к нужным массивам с данными
 function getArray(set) {
     chosenArray = null
     chooseQuestions = null
-    chosenArray = allCards[set].sort(function () {
+
+    // выбираем какие слова будут на карточках для поиска пар find-a-pair и
+    // рандомно перемешиваем через готовую функцию
+    chosenArray = allCardsFindAPair[set].sort(function () {
         return Math.random() - 0.5;
     });
-    chooseQuestions = allQuestions[set].sort(function () {
+
+    // Выбираем какие вопросы будут в колоде карт speaking и
+    // рандомно перемешиваем через готовую функцию
+    chooseQuestions = allQuestionsOneDeck[set].sort(function () {
         return Math.random() - 0.5;
     });
-    // перемешанные краточки
+
+    // можем посмотреть в консоли перемешанные краточки
     // console.log(chooseQuestions)
 }
 function readyArray() {
     return chosenArray.slice(min, max)
 }
 function match(evt) {
+    
     if (!!selectCard) {
         if (selectCard.dataset.id === evt.target.dataset.id && selectCard !== evt.target) {
             selectCard.classList.add("delete")
             evt.target.classList.add("delete")
             count++
-            // console.log(count)
             count === max - min ? nextCards() : null
+            foundPairs++;
+            // foundPairsOutOfSix++;
+            pairsRemainToMatch--
+            console.log(pairsRemainToMatch);
+
+  
+
+            findAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
         }
         selectCard.classList.remove("select")
         selectCard = null
+        // console.log(min,max)
     } else {
         evt.target.classList.add("select")
         selectCard = evt.target
@@ -301,6 +355,8 @@ function finishGame() {
     clearInterval(interval)
     uncoverCards(pictureL)
     uncoverCards(pictureR)
+    headerInfo.textContent = `читов использовано: ${howManyTimesSkipped}`
+    headerInfo.classList.add("visible")
     tryAgainButton.classList.remove("hidden")
     buttonsSix.classList.remove("hidden")
     popup.classList.remove("close")
@@ -316,6 +372,7 @@ function finishGame() {
     checkMemory.classList.remove("show")
     findAPair.classList.remove("show")
     slotMachine.classList.remove("show")
+    slotMachine2.classList.remove("show")
     p004questions.classList.remove("show")
     chosenSet.classList.remove("show")
     tryAgainButton.textContent = `Yes! ${chosenSet.textContent}`
@@ -353,7 +410,8 @@ buttonCoverR.addEventListener("click", () => {
     coverCards(pictureR)
 })
 buttonCoverL.addEventListener("click", () => {
-    coverCards(pictureL)
+    // coverCards(pictureL)
+    pageReloadRefresh()
 })
 
 if (isTouch()) {
@@ -437,7 +495,8 @@ function audioOnOff() {
 
 helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
 function helloMusicStartButtonInvisible() {
-    const audiomissionMusicBackground = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
+    // const audiomissionMusicBackground = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
+    const audiomissionMusicBackground = new Audio("https://audio.jukehost.co.uk/wDqy560srBF4ZvgkwI8wAqNcgK9I0cW0");
     audiomissionMusicBackground.volume = 0.4;
     audiomissionMusicBackground.play()
     audiomissionMusicBackground.loop = false;

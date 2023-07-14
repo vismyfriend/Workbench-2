@@ -106,7 +106,7 @@ function getquestions() {
         cardQuestion.style.border = "solid 4px rgb(123, 207, 255)";
         // questionNumber++
         questionNumber = questionNumber + 1
-        // console.log(questionNumber)
+     
     } else {
         cardQuestion.classList.remove("open1")
         cardQuestion.style.border = 'none';
@@ -162,24 +162,45 @@ function startTimer() {
         timeSeconds.textContent = seconds;
     }
 }
-
-function nextCards() {
+function nextCardsFindAPairCheatUsed(){
+    
     poolContainer.innerHTML = ""
-    // pairsRemainToMatch =  - count;
-    // очистили контейнер
     howManyTimesSkipped++;
     if (max === chosenArray.length) {
         finishGame()
     } else {
         min = min + 6
         max = max + 6 > chosenArray.length ? chosenArray.length : max + 6
-        // console.log(count)
+      
         pairsRemainToMatch = pairsRemainToMatch - 6 + count;
         count = 0
-        console.log(pairsRemainToMatch)
-        
-        console.log(howManyTimesSkipped)
+       
         findAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
+        renderCards("ru")
+        renderCards("eng")
+     
+        // console.log(chosenArray.length)
+        // console.log(max)
+        // console.log(pairsRemainToMatch)
+        
+
+    }
+}
+function nextCards() {
+    poolContainer.innerHTML = ""
+    // pairsRemainToMatch =  - count;
+    // очистили контейнер
+    // howManyTimesSkipped++;
+    if (max === chosenArray.length) {
+        finishGame()
+    } else {
+        min = min + 6
+        max = max + 6 > chosenArray.length ? chosenArray.length : max + 6
+      
+        pairsRemainToMatch = pairsRemainToMatch - 6 + count;
+        count = 0
+       
+        // findAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
         renderCards("ru")
         renderCards("eng")
      
@@ -237,11 +258,13 @@ function startGameFindPairs() {
     buttonCoverL.disabled = false;
     buttonCoverR.disabled = true;
     howManyTimesSkipped = 0
+    console.log(howManyTimesSkipped);
     skipSomeCards = 0
     pairsRemainToMatch = chosenArray.length
-    // foundPairs = 0
+    foundPairs = 0
     // foundPairsOutOfSix = 0
     findAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
+    headerInfo.textContent = `читов использовано: ${howManyTimesSkipped}`
     button001.classList.add("hidden")
     popup.classList.add("close")
     logoSpecial.classList.add("hidden")
@@ -324,7 +347,7 @@ function match(evt) {
             foundPairs++;
             // foundPairsOutOfSix++;
             pairsRemainToMatch--
-            console.log(pairsRemainToMatch);
+          
 
   
 
@@ -332,7 +355,7 @@ function match(evt) {
         }
         selectCard.classList.remove("select")
         selectCard = null
-        // console.log(min,max)
+        
     } else {
         evt.target.classList.add("select")
         selectCard = evt.target
@@ -403,9 +426,10 @@ slotMachine.addEventListener("click", startGameSlotMachine)
 // })
 findAPair.addEventListener("click", startGameFindPairs)
 p004questions.addEventListener("click", startGameQuestions)
-next.addEventListener("click", nextCards)
+next.addEventListener("click", nextCardsFindAPairCheatUsed)
 tryAgainButton.addEventListener("click", startGameFindPairs)
-
+foundPairs = 0
+howManyTimesSkipped = 0
 buttonCoverR.addEventListener("click", () => {
     coverCards(pictureR)
 })

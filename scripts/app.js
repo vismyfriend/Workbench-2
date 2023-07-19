@@ -426,7 +426,7 @@ function finishGame() {
     min = 0
     max = 6
     tens = "00";
-    seconds = "00";s
+    seconds = "00";
     poolContainer.innerHTML = ""
     count = 0
 }

@@ -4974,169 +4974,264 @@ travel: [
 time: [
     {					
         id	:	1	,		
-        ru	:	"	В полночь я сплю!	"	,
-        eng	:	"	I sleep at midnight!	"	
+        ru	:	"	Во сколько вы обычно открываете глаза и просыпаетесь утром?	"	,
+        eng	:	"	What time do you usually open your eyes in the morning and wake up?	"	
         }	,				
         {					
         id	:	2	,		
-        ru	:	"	Это обалденное утро!	"	,
-        eng	:	"	It is an awesome morning!	"	
+        ru	:	"	Вам нравится полежать в кровати или сразу же встать?	"	,
+        eng	:	"	Do you like to lie in bed for some time or do you get up at once? /эт уАнс/ 	"	
         }	,				
         {					
         id	:	3	,		
-        ru	:	"	Добрый день.	"	,
-        eng	:	"	Good afternoon.	"	
+        ru	:	"	Делаете зарядку?	"	,
+        eng	:	"	Do you do morning exercises? /Эксэсайzэz/	"	
         }	,				
         {					
         id	:	4	,		
-        ru	:	"	Хорошего вам вечера	"	,
-        eng	:	"	Have a nice evening	"	
+        ru	:	"	Как долго вы чистите зубы?	"	,
+        eng	:	"	How long do you brush your teeth?	"	
         }	,				
         {					
         id	:	5	,		
-        ru	:	"	ноль часов, ноль минут	"	,
-        eng	:	"	midnight 00:00 AM	"	
+        ru	:	"	Во сколько вы готовите завтрак?	"	,
+        eng	:	"	What time do you make breakfast?	"	
         }	,				
         {					
         id	:	6	,		
-        ru	:	"	двенадцать часов дня	"	,
-        eng	:	"	twelve pm	"	
+        ru	:	"	С кем вы обычно завтракаете? I usually have breakfast with my 40ty cats!	"	,
+        eng	:	"	Who do you usually have breakfast with?	"	
         }	,				
         {					
         id	:	7	,		
-        ru	:	"	двенадцать часов ночи	"	,
-        eng	:	"	12 am	"	
+        ru	:	"	Во сколько вы выходите из дома?	"	,
+        eng	:	"	What time do you leave your house?	"	
         }	,				
         {					
         id	:	8	,		
-        ru	:	"	в полночь	"	,
-        eng	:	"	at midnight	"	
+        ru	:	"	Во сколько начинаете работать?	"	,
+        eng	:	"	What time do you start your work?	"	
         }	,				
         {					
         id	:	9	,		
-        ru	:	"	днем	"	,
-        eng	:	"	in the afternoon	"	
+        ru	:	"	Во сколько обедаете?	"	,
+        eng	:	"	What time do you have lunch?	"	
         }	,				
         {					
         id	:	10	,		
-        ru	:	"	утром	"	,
-        eng	:	"	in the morning	"	
+        ru	:	"	Перед ужином перекусы делаете?	"	,
+        eng	:	"	Do you have snacks before dinner?	"	
         }	,				
         {					
         id	:	11	,		
-        ru	:	"	вечером	"	,
-        eng	:	"	in the evening	"	
+        ru	:	"	Во сколько работа у вас заканчивается?	"	,
+        eng	:	"	What time does your work finish?	"	
         }	,				
         {					
         id	:	12	,		
-        ru	:	"	ночью	"	,
-        eng	:	"	at night	"	
+        ru	:	"	Во сколько ваша семья готовит ужин?	"	,
+        eng	:	"	What time does your family make dinner?	"	
         }	,				
         {					
         id	:	13	,		
-        ru	:	"	в полдень	"	,
-        eng	:	"	at noon	"	
+        ru	:	"	С кем обычно ужинаете?	"	,
+        eng	:	"	Who do you usually have dinner with?	"	
         }	,				
         {					
         id	:	14	,		
-        ru	:	"	пол второго	"	,
-        eng	:	"	half past one	"	
+        ru	:	"	Что обычно готовите на обед?	"	,
+        eng	:	"	What do you usually cook for dinner?	"	
         }	,				
         {					
         id	:	15	,		
-        ru	:	"	пол девятого	"	,
-        eng	:	"	half past eight	"	
+        ru	:	"	Чем обычно занимаетесь после ужина?	"	,
+        eng	:	"	What do you usually do after dinner?	"	
         }	,				
         {					
         id	:	16	,		
-        ru	:	"	пол деcятого	"	,
-        eng	:	"	half past nine	"	
+        ru	:	"	Во сколько в кровать идете готовиться ко сну?	"	,
+        eng	:	"	What time do you go to bed?	"	
         }	,				
         {					
         id	:	17	,		
-        ru	:	"	eleven thirty	"	,
-        eng	:	"	half past eleven	"	
+        ru	:	"	Во сколько вы засыпаете?	"	,
+        eng	:	"	What time do you fall asleep?	"	
         }	,				
         {					
         id	:	18	,		
-        ru	:	"	без 20 девять	"	,
-        eng	:	"	twenty to nine	"	
+        ru	:	"	Вы сразу засыпаете или лежите какое-то время в кровати? I fall asleep at once. But my cat runs around my bed for 10 minutes	"	,
+        eng	:	"	Do you fall asleep at once or do you lie in bed for some time? If yes, how long?	"	
         }	,				
         {					
         id	:	19	,		
-        ru	:	"	без пятнадцати четыре	"	,
-        eng	:	"	a quarter to four	"	
+        ru	:	"	Вы ранняя пташка или совушка? Продуктивны утром или ближе к вечеру?	"	,
+        eng	:	"	Are you an early bird? It is a person who feels productive in the morning. Or are you a night owl/Аул/?	"	
         }	,				
         {					
         id	:	20	,		
-        ru	:	"	без двух минут два	"	,
-        eng	:	"	two minutes to two	"	
+        ru	:	"	I sleep at midnight!	"	,
+        eng	:	"	В полночь я сплю!	"	
         }	,				
         {					
         id	:	21	,		
-        ru	:	"	пятнадцать минут пятого	"	,
-        eng	:	"	a quarter past four	"	
+        ru	:	"	It is an awesome morning!	"	,
+        eng	:	"	Это обалденное утро!	"	
         }	,				
         {					
         id	:	22	,		
-        ru	:	"	пятнадцать пятнадцать	"	,
-        eng	:	"	it is three fifteen	"	
+        ru	:	"	Good afternoon.	"	,
+        eng	:	"	Добрый день.	"	
         }	,				
         {					
         id	:	23	,		
-        ru	:	"	Двадцать ноль ноль	"	,
-        eng	:	"	it is 8 PM	"	
+        ru	:	"	Have a nice evening	"	,
+        eng	:	"	Хорошего вам вечера	"	
         }	,				
         {					
         id	:	24	,		
-        ru	:	"	Десять ноль одна	"	,
-        eng	:	"	ten o one (Или one past ten)	"	
+        ru	:	"	midnight 00:00 AM	"	,
+        eng	:	"	ноль часов, ноль минут	"	
         }	,				
         {					
         id	:	25	,		
-        ru	:	"	Восемь часов, тринадцать минут	"	,
-        eng	:	"	thirteen past eight	"	
+        ru	:	"	twelve pm	"	,
+        eng	:	"	двенадцать часов дня	"	
         }	,				
         {					
         id	:	26	,		
-        ru	:	"	Приходите в 2 часа	"	,
-        eng	:	"	Come at 2 o'clock	"	
+        ru	:	"	12 am	"	,
+        eng	:	"	двенадцать часов ночи	"	
         }	,				
         {					
         id	:	27	,		
-        ru	:	"	После обеда перезвоните	"	,
-        eng	:	"	call back after lunch	"	
+        ru	:	"	at midnight	"	,
+        eng	:	"	в полночь	"	
         }	,				
         {					
         id	:	28	,		
-        ru	:	"	До обеда пожалуйста сделайте это	"	,
-        eng	:	"	do it before lunch, please	"	
+        ru	:	"	in the afternoon	"	,
+        eng	:	"	днем	"	
         }	,				
         {					
         id	:	29	,		
-        ru	:	"	Через 10 минут	"	,
-        eng	:	"	in 10 minutes	"	
+        ru	:	"	in the morning	"	,
+        eng	:	"	утром	"	
         }	,				
         {					
         id	:	30	,		
-        ru	:	"	в 10 часов и 10 минут	"	,
-        eng	:	"	at Ten Ten (Или at ten past ten)	"	
+        ru	:	"	in the evening	"	,
+        eng	:	"	вечером	"	
         }	,				
         {					
         id	:	31	,		
-        ru	:	"	в 10 часов	"	,
-        eng	:	"	at ten o'clock	"	
+        ru	:	"	at night	"	,
+        eng	:	"	ночью	"	
         }	,				
         {					
         id	:	32	,		
-        ru	:	"	через 2 часа	"	,
-        eng	:	"	in two hours	"	
+        ru	:	"	at noon	"	,
+        eng	:	"	в полдень	"	
         }	,				
         {					
         id	:	33	,		
-        ru	:	"	60 минут это один час	"	,
-        eng	:	"	60 minutes…. it is an hour	"	
+        ru	:	"	half past one	"	,
+        eng	:	"	пол второго	"	
         }	,				
+        {					
+        id	:	34	,		
+        ru	:	"	half past eight	"	,
+        eng	:	"	пол девятого	"	
+        }	,				
+        {					
+        id	:	35	,		
+        ru	:	"	half past nine	"	,
+        eng	:	"	пол деcятого	"	
+        }	,				
+        {					
+        id	:	36	,		
+        ru	:	"	half past eleven	"	,
+        eng	:	"	eleven thirty	"	
+        }	,				
+        {					
+        id	:	37	,		
+        ru	:	"	twenty to nine	"	,
+        eng	:	"	без 20 девять	"	
+        }	,				
+        {					
+        id	:	38	,		
+        ru	:	"	a quarter to four	"	,
+        eng	:	"	без пятнадцати четыре	"	
+        }	,				
+        {					
+        id	:	39	,		
+        ru	:	"	two minutes to two	"	,
+        eng	:	"	без двух минут два	"	
+        }	,				
+        {					
+        id	:	40	,		
+        ru	:	"	a quarter past four	"	,
+        eng	:	"	пятнадцать минут пятого	"	
+        }	,				
+        {					
+        id	:	41	,		
+        ru	:	"	it is three fifteen	"	,
+        eng	:	"	пятнадцать пятнадцать	"	
+        }	,				
+        {					
+        id	:	42	,		
+        ru	:	"	it is 8 PM	"	,
+        eng	:	"	Двадцать ноль ноль	"	
+        }	,				
+        {					
+        id	:	43	,		
+        ru	:	"	ten o one (Или one past ten)	"	,
+        eng	:	"	Десять ноль одна	"	
+        }	,				
+        {					
+        id	:	44	,		
+        ru	:	"	thirteen past eight	"	,
+        eng	:	"	Восемь часов, тринадцать минут	"	
+        }	,				
+        {					
+        id	:	45	,		
+        ru	:	"	Come at 2 o'clock	"	,
+        eng	:	"	Приходите в 2 часа	"	
+        }	,				
+        {					
+        id	:	46	,		
+        ru	:	"	call backafter lunch	"	,
+        eng	:	"	После обеда перезвоните	"	
+        }	,				
+        {					
+        id	:	47	,		
+        ru	:	"	do it before lunch, please	"	,
+        eng	:	"	До обеда пожалуйста сделайте это	"	
+        }	,				
+        {					
+        id	:	48	,		
+        ru	:	"	in 10 minutes	"	,
+        eng	:	"	Через 10 минут	"	
+        }	,				
+        {					
+        id	:	49	,		
+        ru	:	"	at Ten Ten (Или at ten past ten)	"	,
+        eng	:	"	в 10 часов и 10 минут	"	
+        }	,				
+        {					
+        id	:	50	,		
+        ru	:	"	at ten o'clock	"	,
+        eng	:	"	в 10 часов	"	
+        }	,				
+        {					
+        id	:	51	,		
+        ru	:	"	in two hours	"	,
+        eng	:	"	через 2 часа	"	
+        }	,				
+        {					
+        id	:	52	,		
+        ru	:	"	60 minutes…. it is an hour	"	,
+        eng	:	"	60 минут это один час	"	
+        }	,							
 
 ],
 }

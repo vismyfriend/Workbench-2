@@ -4971,6 +4971,174 @@ travel: [
         }	,				
 
 ],
+time: [
+    {					
+        id	:	1	,		
+        ru	:	"	В полночь я сплю!	"	,
+        eng	:	"	I sleep at midnight!	"	
+        }	,				
+        {					
+        id	:	2	,		
+        ru	:	"	Это обалденное утро!	"	,
+        eng	:	"	It is an awesome morning!	"	
+        }	,				
+        {					
+        id	:	3	,		
+        ru	:	"	Добрый день.	"	,
+        eng	:	"	Good afternoon.	"	
+        }	,				
+        {					
+        id	:	4	,		
+        ru	:	"	Хорошего вам вечера	"	,
+        eng	:	"	Have a nice evening	"	
+        }	,				
+        {					
+        id	:	5	,		
+        ru	:	"	ноль часов, ноль минут	"	,
+        eng	:	"	midnight 00:00 AM	"	
+        }	,				
+        {					
+        id	:	6	,		
+        ru	:	"	двенадцать часов дня	"	,
+        eng	:	"	twelve pm	"	
+        }	,				
+        {					
+        id	:	7	,		
+        ru	:	"	двенадцать часов ночи	"	,
+        eng	:	"	12 am	"	
+        }	,				
+        {					
+        id	:	8	,		
+        ru	:	"	в полночь	"	,
+        eng	:	"	at midnight	"	
+        }	,				
+        {					
+        id	:	9	,		
+        ru	:	"	днем	"	,
+        eng	:	"	in the afternoon	"	
+        }	,				
+        {					
+        id	:	10	,		
+        ru	:	"	утром	"	,
+        eng	:	"	in the morning	"	
+        }	,				
+        {					
+        id	:	11	,		
+        ru	:	"	вечером	"	,
+        eng	:	"	in the evening	"	
+        }	,				
+        {					
+        id	:	12	,		
+        ru	:	"	ночью	"	,
+        eng	:	"	at night	"	
+        }	,				
+        {					
+        id	:	13	,		
+        ru	:	"	в полдень	"	,
+        eng	:	"	at noon	"	
+        }	,				
+        {					
+        id	:	14	,		
+        ru	:	"	пол второго	"	,
+        eng	:	"	half past one	"	
+        }	,				
+        {					
+        id	:	15	,		
+        ru	:	"	пол девятого	"	,
+        eng	:	"	half past eight	"	
+        }	,				
+        {					
+        id	:	16	,		
+        ru	:	"	пол деcятого	"	,
+        eng	:	"	half past nine	"	
+        }	,				
+        {					
+        id	:	17	,		
+        ru	:	"	eleven thirty	"	,
+        eng	:	"	half past eleven	"	
+        }	,				
+        {					
+        id	:	18	,		
+        ru	:	"	без 20 девять	"	,
+        eng	:	"	twenty to nine	"	
+        }	,				
+        {					
+        id	:	19	,		
+        ru	:	"	без пятнадцати четыре	"	,
+        eng	:	"	a quarter to four	"	
+        }	,				
+        {					
+        id	:	20	,		
+        ru	:	"	без двух минут два	"	,
+        eng	:	"	two minutes to two	"	
+        }	,				
+        {					
+        id	:	21	,		
+        ru	:	"	пятнадцать минут пятого	"	,
+        eng	:	"	a quarter past four	"	
+        }	,				
+        {					
+        id	:	22	,		
+        ru	:	"	пятнадцать пятнадцать	"	,
+        eng	:	"	it is three fifteen	"	
+        }	,				
+        {					
+        id	:	23	,		
+        ru	:	"	Двадцать ноль ноль	"	,
+        eng	:	"	it is 8 PM	"	
+        }	,				
+        {					
+        id	:	24	,		
+        ru	:	"	Десять ноль одна	"	,
+        eng	:	"	ten o one (Или one past ten)	"	
+        }	,				
+        {					
+        id	:	25	,		
+        ru	:	"	Восемь часов, тринадцать минут	"	,
+        eng	:	"	thirteen past eight	"	
+        }	,				
+        {					
+        id	:	26	,		
+        ru	:	"	Приходите в 2 часа	"	,
+        eng	:	"	Come at 2 o'clock	"	
+        }	,				
+        {					
+        id	:	27	,		
+        ru	:	"	После обеда перезвоните	"	,
+        eng	:	"	call backafter lunch	"	
+        }	,				
+        {					
+        id	:	28	,		
+        ru	:	"	До обеда пожалуйста сделайте это	"	,
+        eng	:	"	do it before lunch, please	"	
+        }	,				
+        {					
+        id	:	29	,		
+        ru	:	"	Через 10 минут	"	,
+        eng	:	"	in 10 minutes	"	
+        }	,				
+        {					
+        id	:	30	,		
+        ru	:	"	в 10 часов и 10 минут	"	,
+        eng	:	"	at Ten Ten (Или at ten past ten)	"	
+        }	,				
+        {					
+        id	:	31	,		
+        ru	:	"	в 10 часов	"	,
+        eng	:	"	at ten o'clock	"	
+        }	,				
+        {					
+        id	:	32	,		
+        ru	:	"	через 2 часа	"	,
+        eng	:	"	in two hours	"	
+        }	,				
+        {					
+        id	:	33	,		
+        ru	:	"	60 минут это один час	"	,
+        eng	:	"	60 minutes…. it is an hour	"	
+        }	,				
+
+],
 }
 export default allQuestionsOneDeck
 

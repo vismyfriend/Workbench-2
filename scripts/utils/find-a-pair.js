@@ -5306,7 +5306,7 @@ const allCardsFindAPair = {
             {					
             id	:	27	,		
             ru	:	"	После обеда перезвоните	"	,
-            eng	:	"	call backafter lunch	"	
+            eng	:	"	call back after lunch	"	
             }	,				
             {					
             id	:	28	,		

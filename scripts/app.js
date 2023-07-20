@@ -63,7 +63,7 @@ const secretButton = document.querySelector(".secretButton")
 const audioTest = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
 // wtf пока не понятно как сделать так чтобы можно было константе присваивать трек разный в java
 // const audioIconOnOffTrack = document.querySelector(".audioIconOnOffTrack")
-const audioIconOnOffTrack = new Audio("https://audio.jukehost.co.uk/JHNeJtC076ydQwBp3vBmLGiMTMpExydO");
+
 
 let selectCard = null
 let chosenArray = null
@@ -562,15 +562,18 @@ function helloMusicStartButtonInvisible() {
     // missionMusicBackgroundIconButton.classList.add("off")
 
 }
+const audioIconOnOffTrack = new Audio("https://audio.jukehost.co.uk/JHNeJtC076ydQwBp3vBmLGiMTMpExydO");
+audioIconOnOffTrack.loop = false;
+
 audioIconOnOff.addEventListener("click" , () => {
     audioIconOnOff.classList.toggle("off")
 
     audiomissionMusicBackground.pause()
-
-    audioIconOnOffTrack.loop = true;
-
-
+    
+    
     console.log(audioIconOnOffTrack.volume);
+    console.log(audioIconOnOffTrack);
+
     //1
     if (audioIconOnOffTrack.volume == 0) {
         //3 0.4
@@ -584,6 +587,20 @@ audioIconOnOff.addEventListener("click" , () => {
 
     }
 })
+
+secretButton.addEventListener("click", special)
+function special() {
+
+    // const special = new Audio("../audio/HelloTest.mp3");
+
+    // const special = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
+    const special = new Audio("https://audio.jukehost.co.uk/7OUIbrRYhzrmgaexf3EGoQ3r4FgrlAm9");
+    // const special = new Audio("https://disk.yandex.com/d/SQWNr3QHNOtFIg");
+    // const special = new Audio("https://www.dropbox.com/s/izkudiigqhhscca/Icanlikethis.mp3");
+    special.volume = 0.3
+    special.play()
+
+}
 
 
 // helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
@@ -626,20 +643,6 @@ function missionBackgroundMusicOnOff() {
     }
 
 
-
-}
-
-secretButton.addEventListener("click", special)
-function special() {
-
-    // const special = new Audio("../audio/HelloTest.mp3");
-
-    // const special = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-i-aplodismenty.mp3");
-    const special = new Audio("https://audio.jukehost.co.uk/7OUIbrRYhzrmgaexf3EGoQ3r4FgrlAm9");
-    // const special = new Audio("https://disk.yandex.com/d/SQWNr3QHNOtFIg");
-    // const special = new Audio("https://www.dropbox.com/s/izkudiigqhhscca/Icanlikethis.mp3");
-    special.volume = 0.3
-    special.play()
 
 }
 

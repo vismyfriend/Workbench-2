@@ -56,9 +56,14 @@ const audio = document.querySelector(".audio")
 const missionMusicBackground = document.querySelector(".missionMusicBackground")
 // так же как классы и array в java уже есть Audio
 const audioIcon = document.querySelector(".audioIcon")
+const audioIconOnOff = document.querySelector(".audioIconOnOff")
 const missionMusicBackgroundIconButton = document.querySelector(".missionMusicBackgroundIconButton")
 const helloMusicStartButton = document.querySelector(".helloMusicStartButton")
 const secretButton = document.querySelector(".secretButton")
+const audioTest = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
+// wtf пока не понятно как сделать так чтобы можно было константе присваивать трек разный в java
+// const audioIconOnOffTrack = document.querySelector(".audioIconOnOffTrack")
+const audioIconOnOffTrack = new Audio("https://audio.jukehost.co.uk/JHNeJtC076ydQwBp3vBmLGiMTMpExydO");
 
 let selectCard = null
 let chosenArray = null
@@ -542,18 +547,45 @@ function audioOnOff() {
 
 
 }
-
+const audiomissionMusicBackground = new Audio("https://audio.jukehost.co.uk/wDqy560srBF4ZvgkwI8wAqNcgK9I0cW0");
+    
 helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
 function helloMusicStartButtonInvisible() {
     // const audiomissionMusicBackground = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
-    const audiomissionMusicBackground = new Audio("https://audio.jukehost.co.uk/wDqy560srBF4ZvgkwI8wAqNcgK9I0cW0");
     audiomissionMusicBackground.volume = 0.4;
     audiomissionMusicBackground.play()
     audiomissionMusicBackground.loop = false;
     helloMusicStartButton.classList.add("invisible")
+    audioIconOnOff.classList.add("visible")
+    // wtf пока не понятно как сделать так чтобы можно было константе присваивать трек разный в java
+    // audioIconOnOffTrack = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
     // missionMusicBackgroundIconButton.classList.add("off")
 
 }
+audioIconOnOff.addEventListener("click" , () => {
+    audioIconOnOff.classList.toggle("off")
+
+    audiomissionMusicBackground.pause()
+
+    audioIconOnOffTrack.loop = true;
+
+
+    console.log(audioIconOnOffTrack.volume);
+    //1
+    if (audioIconOnOffTrack.volume == 0) {
+        //3 0.4
+        audioIconOnOffTrack.volume = 0.4
+        audioIconOnOffTrack.play()
+
+        //2 0     5 0
+    } else {
+        audioIconOnOffTrack.volume = 0
+        audioIconOnOffTrack.pause()
+
+    }
+})
+
+
 // helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
 // function helloMusicStartButtonInvisible() {
 //     missionMusicBackground.play()

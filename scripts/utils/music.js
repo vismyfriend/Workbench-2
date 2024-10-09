@@ -1,4 +1,4 @@
-// Здесь музыка фоновая для игры find-a-pair 
+// Здесь музыка фоновая для игры findAPair 
 const playList = {
     testing: "https://zvukitop.com/wp-content/uploads/2021/04/zvuk-perezariadki-pistoleta-435.mp3",
     mission0: "https://zvukitop.com/wp-content/uploads/2021/04/zvuk-perezariadki-pistoleta-435.mp3",

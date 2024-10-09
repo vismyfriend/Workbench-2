@@ -1988,7 +1988,7 @@ Irregular_verbs_1_form: [
         eng: "	will	"
     },
 ],
-Irregular_verbs_3_forms: [
+Irr_v_3_forms: [
     {
         id: 3001,
         ru: "	broke , broken	",

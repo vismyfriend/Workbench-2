@@ -1,5 +1,5 @@
 // 0001 добавляем константу с данными - с массивом // Здесь слова для игры Find a pair
-const allCardsFindAPair = {
+const allCardsGameFindAPair = {
     testing: [
         {
             id: 1,
@@ -1989,7 +1989,7 @@ const allCardsFindAPair = {
             eng: "	will	"
         },
     ],
-    Irregular_verbs_3_forms: [
+    Irr_v_3_forms: [
         {
             id: 3001,
             ru: "	broke , broken	",
@@ -5341,7 +5341,7 @@ const allCardsFindAPair = {
 
     ],
 }
-export default allCardsFindAPair
+export default allCardsGameFindAPair
 
 // объединение массивов и объектов
 // const arrayFirst = [

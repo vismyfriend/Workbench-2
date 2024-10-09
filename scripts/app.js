@@ -1,35 +1,35 @@
 // 0001 создаем в папке скриптов папку utils
 // в папке utils создаю файлы с расширением .js, в них будут данные для приложения и игр
 // импортируем нужные данные из файла - указываем путь файлу ( . одна точка значит файл в этой же папке ) ( .. две точки значит файл, к которому обращаемся в папке выше) 
-import allCardsFindAPair from "./utils/find-a-pair.js"
+import allCardsGameFindAPair from "./utils/find-a-pair.js"
 import allQuestionsOneDeck from "./utils/questions.js"
 import playList from "./utils/music.js"
 
 // 0002 добавляем константы к классам, чтобы можно было с ними работать, придумываем им названия понятные
-
-const buttonsSix = document.querySelector(".oneDeckButtons")
+const starsEmoji = document.querySelector(".starsEmoji")
+const oneDeckButtons = document.querySelector(".oneDeckButtons")
 const refreshInfo = document.querySelector(".refresh-info")
 const button001 = document.querySelector(".header__button001")
 const isTouch = () => 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0
-const allSets = document.querySelectorAll(".popup__set")
-const popup = document.querySelector(".popup")
-const popupTitle = document.querySelector(".popup__title")
-const popupDescription = document.querySelector(".popup__description")
-const popupSets = document.querySelector(".popup__sets")
-const findAPair = document.querySelector(".popup__find-a-pair")
-const checkMemory = document.querySelector(".popup__check-memory")
-const slotMachine = document.querySelector(".popup__slot-machine")
-const slotMachine2 = document.querySelector(".popup__slot-machine2")
-const p004questions = document.querySelector(".popup__p004-questions")
-const chosenSet = document.querySelector(".popup__chosen-set")
+const dataFromEachPopupMissionsAndSets = document.querySelectorAll(".popupMissionsAndSets__set")
+const popupMissionsAndSetsSets = document.querySelector(".popupMissionsAndSets__sets")
+const chosenSet = document.querySelector(".popupMissionsAndSets__chosen-set")
+const popupMissionsAndSets = document.querySelector(".popupMissionsAndSets")
+const popupMissionsAndSetsTitle = document.querySelector(".popupMissionsAndSets__title")
+const popupMissionsAndSetsDescription = document.querySelector(".popupMissionsAndSets__description")
+const popupMissionsAndSetsGameFindAPair = document.querySelector(".popupMissionsAndSets__gameFindAPair")
+const wordOrderGameDrunkRobot = document.querySelector(".popupMissionsAndSets__wordOrderGameDrunkRobot")
 const logoSpecial = document.querySelector(".logo-special")
-const pool = document.querySelector(".pool")
+const gameFindAPair = document.querySelector(".gameFindAPair")
+const letsSpeak = document.querySelector(".popupMissionsAndSets__letsSpeak")
+const slotMachine = document.querySelector(".popupMissionsAndSets__slot-machine")
+const slotMachine2 = document.querySelector(".popupMissionsAndSets__slot-machine2")
 const card = document.querySelector(".template").content.querySelector(".card")
-const next = document.querySelector(".next")
-const poolContainer = document.querySelector(".pool__container")
+const gameFindAPairButtonSkipThese = document.querySelector(".gameFindAPairButtonSkipThese")
+const gameFindAPairContainer = document.querySelector(".gameFindAPair__container")
 const timer = document.querySelector(".timer")
-const buttonCoverR = document.querySelector(".cover-r")
-const buttonCoverL = document.querySelector(".cover-l")
+const gameFindAPairButtonNotUsed = document.querySelector(".gameFindAPairButtonNotUsed")
+const gameFindAPairButtonBackToMissions = document.querySelector(".gameFindAPairButtonBackToMissions")
 const pictureR = document.querySelector(".picture-right")
 const pictureL = document.querySelector(".picture-left")
 const timeSeconds = document.getElementById("seconds")
@@ -37,18 +37,18 @@ const timeMiliseconds = document.getElementById("tens")
 const tryAgainButton = document.querySelector(".try-again")
 const scrollLeft = document.querySelector(".scroll-left")
 const scrollRight = document.querySelector(".scroll-right")
-const findAPairInfo = document.querySelector(".find-a-pair-info")
-const headerInfo = document.querySelector(".header-info")
-const oneDeckPrevious = document.querySelector(".oneDeckPrevious")
-const oneDeckCheck = document.querySelector(".oneDeckCheck")
-const oneDeckNext = document.querySelector(".oneDeckNext")
+const gameFindAPairInfo = document.querySelector(".gameFindAPair-info")
+const headerInfo = document.querySelector(".headerInfoText")
+const oneDeckButtonPrevious = document.querySelector(".oneDeckButtonPrevious")
+const oneDeckButtonCheck = document.querySelector(".oneDeckButtonCheck")
+const oneDeckButtonNext = document.querySelector(".oneDeckButtonNext")
 
 // <copied
-const cardQuestion = document.querySelector(".card1_question1")
-const cardValueQuestion = cardQuestion.querySelector(".card1__value1")
-const cardHintQuestion = cardQuestion.querySelector(".card1__hint1")
-// ниже я добавил константу, чтобы при нажатии на любую часть карточки появлялся следующий вопрос - но тогда сбивается номер вопроса
-const cardTop = cardQuestion.querySelector(".card1__top1")
+const cardForSpeakingGame = document.querySelector(".oneDeckOfCards_cardForSpeakingGame")
+const topOfTheCard1Value = cardForSpeakingGame.querySelector(".oneDeckOfCards__topOfTheCard1Value")
+const bottomOfTheCard1Value = cardForSpeakingGame.querySelector(".oneDeckOfCards__bottomOfTheCard1Value")
+// ниже добавляли константу, чтобы при нажатии на любую часть карточки появлялся следующий вопрос - но тогда сбивается номер вопроса и поэтому удалили ее потом
+const topOfTheCard1 = cardForSpeakingGame.querySelector(".oneDeckOfCards__topOfTheCard1")
 // const shuffle = document.querySelector(".shuffle")
 // copied>
 // const MusicFromGoogleDriveDefault = new Audio("https://drive.google.com/file/d/1YlPN33KcfXRkw2BgHnNZVeb2z7NkiZKP/view?usp=sharing"); 
@@ -82,9 +82,47 @@ let pairsRemainToMatch = 0
 let value = null
 let questionNumber = 0
 
+
+//ниже функция для высвечивания результата и количество звезд
+let howManyStarsEmoji = 5
+let timeToGet5StarResult = 5
+let timeToGet4StarResult = 10
+let timeToGet3StarResult = 15
+let timeToGet2StarResult = 20
+// let timeToGet5StarResult = 120
+// let timeToGet4StarResult = 140
+// let timeToGet3StarResult = 170
+// let timeToGet2StarResult = 210
+function starResult() {
+    if (seconds < timeToGet5StarResult) {
+        howManyStarsEmoji = 5
+        starsEmoji.style.width = `${howManyStarsEmoji * 31}px`
+        
+    } else if (seconds > timeToGet5StarResult && seconds < timeToGet4StarResult) {
+        howManyStarsEmoji = 4
+        starsEmoji.style.width = `${howManyStarsEmoji * 31}px`
+        
+    } else if (seconds > timeToGet4StarResult && seconds < timeToGet3StarResult) {
+        howManyStarsEmoji = 3
+        starsEmoji.style.width = `${howManyStarsEmoji * 31}px`
+        
+    } else if (seconds > timeToGet3StarResult && seconds < timeToGet2StarResult) {
+        howManyStarsEmoji = 2
+        starsEmoji.style.width = `${howManyStarsEmoji * 31}px`
+        
+    } else if (seconds > timeToGet2StarResult) {
+        howManyStarsEmoji = 1
+        starsEmoji.style.width = `${howManyStarsEmoji * 31}px`
+        
+    }
+}
+
+
+
+
+
+
 // на старте чтобы играла музыка
-
-
 
 
 
@@ -97,26 +135,26 @@ function shuffleDecks() {
         return Math.random() - 0.5;
     });
     questionNumber = 0
-    cardQuestion.classList.remove("open1")
-    cardQuestion.style.border = 'none';
+    cardForSpeakingGame.classList.remove("AnOpenCard")
+    cardForSpeakingGame.style.border = 'none';
 }
 // от прошлой
 function getquestions() {
     if (questionNumber < chooseQuestions.length) {
-        cardQuestion.classList.remove("open1")
-        setTimeout(function () { cardQuestion.classList.add("open1") }, 0);
+        cardForSpeakingGame.classList.remove("AnOpenCard")
+        setTimeout(function () { cardForSpeakingGame.classList.add("AnOpenCard") }, 0);
         value = chooseQuestions[questionNumber]
-        cardHintQuestion.classList.remove("show1")
+        bottomOfTheCard1Value.classList.remove("Unblur")
         // обновляет blur на каждой новой карточке
-        cardValueQuestion.textContent = value.eng
-        cardHintQuestion.textContent = value.ru
-        cardQuestion.style.border = "solid 4px rgb(123, 207, 255)";
+        topOfTheCard1Value.textContent = value.eng
+        bottomOfTheCard1Value.textContent = value.ru
+        cardForSpeakingGame.style.border = "solid 4px rgb(123, 207, 255)";
         // questionNumber++
         questionNumber = questionNumber + 1
 
     } else {
-        cardQuestion.classList.remove("open1")
-        cardQuestion.style.border = 'none';
+        cardForSpeakingGame.classList.remove("AnOpenCard")
+        cardForSpeakingGame.style.border = 'none';
         shuffleDecks()
     }
 }
@@ -132,31 +170,31 @@ function pageReloadRefresh() {
     location.reload()
 }
 
-cardHintQuestion.addEventListener("click", (event) => {
-    cardHintQuestion.classList.toggle("show1")
+bottomOfTheCard1Value.addEventListener("click", (event) => {
+    bottomOfTheCard1Value.classList.toggle("Unblur")
     event.stopPropagation()
 })
 
-oneDeckCheck.addEventListener("click", (event) => {
-    cardHintQuestion.classList.toggle("show1")
+oneDeckButtonCheck.addEventListener("click", (event) => {
+    bottomOfTheCard1Value.classList.toggle("Unblur")
     event.stopPropagation()
 })
 // проверка - если карта уже открыта, то изменения только при нажатии на кнопку, а не по карте кликая
-cardQuestion.addEventListener("click", () => {
+cardForSpeakingGame.addEventListener("click", () => {
     const AudioNextQuestionCard = new Audio("https://zvukitop.com/wp-content/uploads/2021/06/klik-myshki-9.mp3");
     AudioNextQuestionCard.volume = 0.07
     AudioNextQuestionCard.play()
 
-    cardQuestion.classList.contains("open") ? null : getquestions()
+    cardForSpeakingGame.classList.contains("open") ? null : getquestions()
 })
-// cardQuestion.addEventListener("click", getquestions)
+// cardForSpeakingGame.addEventListener("click", getquestions)
 // shuffle.addEventListener("click", shuffleDecks)
 
-oneDeckNext.addEventListener("click", () => {
+oneDeckButtonNext.addEventListener("click", () => {
     const AudioNextQuestionCard = new Audio("https://zvukitop.com/wp-content/uploads/2021/06/klik-myshki-9.mp3");
     AudioNextQuestionCard.volume = 0.07
     AudioNextQuestionCard.play()
-    cardQuestion.classList.contains("open") ? null : getquestions()
+    cardForSpeakingGame.classList.contains("open") ? null : getquestions()
 
 })
 
@@ -181,9 +219,9 @@ function startTimer() {
         timeSeconds.textContent = seconds;
     }
 }
-function nextCardsFindAPairCheatUsed() {
+function nextCardsGameFindAPairCheatUsed() {
 
-    poolContainer.innerHTML = ""
+    gameFindAPairContainer.innerHTML = ""
     howManyTimesSkipped++;
     if (max === chosenArray.length) {
         finishGame()
@@ -194,7 +232,7 @@ function nextCardsFindAPairCheatUsed() {
         pairsRemainToMatch = pairsRemainToMatch - 6 + count;
         count = 0
 
-        findAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
+        gameFindAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
         renderCards("ru")
         renderCards("eng")
 
@@ -206,7 +244,7 @@ function nextCardsFindAPairCheatUsed() {
     }
 }
 function nextCards() {
-    poolContainer.innerHTML = ""
+    gameFindAPairContainer.innerHTML = ""
     // pairsRemainToMatch =  - count;
     // очистили контейнер
     // howManyTimesSkipped++;
@@ -219,7 +257,7 @@ function nextCards() {
         pairsRemainToMatch = pairsRemainToMatch - 6 + count;
         count = 0
 
-        // findAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
+        // gameFindAPairInfo.textContent = `осталось найти пар: ${pairsRemainToMatch}`
         renderCards("ru")
         renderCards("eng")
 
@@ -236,16 +274,16 @@ function chooseSet(text, set) {
     logoSpecial.classList.add("hidden")
     // refreshInfo.classList.add("visible")
     tryAgainButton.classList.add("hidden")
-    buttonsSix.classList.remove("visible")
-    popupTitle.textContent = "/ю чОуз/ You chose Вы выбрали:"
-    popupTitle.classList.add("greyText")
-    popupDescription.textContent = " Что будем делать? :"
-    popupSets.classList.add("hide")
-    checkMemory.classList.add("show")
-    findAPair.classList.add("show")
+    oneDeckButtons.classList.remove("visible")
+    popupMissionsAndSetsTitle.textContent = "/ю чОуз/ You chose Вы выбрали:"
+    popupMissionsAndSetsTitle.classList.add("greyText")
+    popupMissionsAndSetsDescription.textContent = " Что будем делать? :"
+    popupMissionsAndSetsSets.classList.add("hide")
+    wordOrderGameDrunkRobot.classList.add("show")
+    popupMissionsAndSetsGameFindAPair.classList.add("show")
     slotMachine.classList.add("show")
     slotMachine2.classList.add("show")
-    p004questions.classList.add("show")
+    letsSpeak.classList.add("show")
     chosenSet.classList.add("show")
     chosenSet.textContent = text
     headerInfo.classList.remove("visible")
@@ -253,14 +291,14 @@ function chooseSet(text, set) {
 function startGameQuestions() {
 
 
-    buttonsSix.classList.add("visible")
+    oneDeckButtons.classList.add("visible")
     // renderCards("ru")
     // renderCards("eng")
     headerInfo.classList.remove("visible")
-    popup.classList.add("close")
+    popupMissionsAndSets.classList.add("close")
     // logoSpecial.classList.add("hidden")
-    cardQuestion.classList.remove("hidden1")
-    // pool.classList.add("open")
+    cardForSpeakingGame.classList.remove("hiddenDeck")
+    // popupMissionsAndSetsGameFindAPair.classList.add("open")
     interval = setInterval(startTimer, 10);
 }
 function chooseSong(set) {
@@ -279,20 +317,20 @@ function startGameFindPairs() {
     renderCards("ru")
     renderCards("eng")
     headerInfo.classList.remove("visible")
-    buttonCoverL.disabled = false;
-    buttonCoverR.disabled = true;
+    gameFindAPairButtonBackToMissions.disabled = false;
+    gameFindAPairButtonNotUsed.disabled = true;
     howManyTimesSkipped = 0
 
-    
+
     pairsRemainToMatch = chosenArray.length
     foundPairs = 0
 
-    findAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
+    gameFindAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
     headerInfo.textContent = `читов использовано: ${howManyTimesSkipped}`
     button001.classList.add("hidden")
-    popup.classList.add("close")
+    popupMissionsAndSets.classList.add("close")
     logoSpecial.classList.add("hidden")
-    pool.classList.add("open")
+    gameFindAPair.classList.add("open")
     interval = setInterval(startTimer, 10);
     audio.play()
     missionMusicBackground.volume = 0;
@@ -312,7 +350,7 @@ function startGameSlotMachine() {
 
 }
 
-allSets.forEach((set) => {
+dataFromEachPopupMissionsAndSets.forEach((set) => {
 
     set.addEventListener("click", (evt) => {
         getArray(evt.target.dataset.set)
@@ -334,7 +372,7 @@ function renderCards(lang) {
         someCard.classList.add(lang)
         someCard.addEventListener("click", match)
         someCard.dataset.id = shuffle[i].id
-        poolContainer.append(someCard)
+        gameFindAPairContainer.append(someCard)
     }
 }
 // обращаемся к нужным массивам с данными
@@ -342,9 +380,9 @@ function getArray(set) {
     chosenArray = null
     chooseQuestions = null
 
-    // выбираем какие слова будут на карточках для поиска пар find-a-pair и
+    // выбираем какие слова будут на карточках для поиска пар gameFindAPair и
     // рандомно перемешиваем через готовую функцию
-    chosenArray = allCardsFindAPair[set].sort(function () {
+    chosenArray = allCardsGameFindAPair[set].sort(function () {
         return Math.random() - 0.5;
     });
 
@@ -375,7 +413,7 @@ function match(evt) {
 
 
 
-            findAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
+            gameFindAPairInfo.textContent = `найдено пар: ${foundPairs} / ${chosenArray.length}`
         }
         selectCard.classList.remove("select")
         selectCard = null
@@ -398,29 +436,44 @@ function uncoverCards(picture) {
 }
 
 
+
+
+
 function finishGame() {
     clearInterval(interval)
     uncoverCards(pictureL)
     uncoverCards(pictureR)
+    starResult()
     headerInfo.textContent = `читов использовано: ${howManyTimesSkipped}`
     headerInfo.classList.add("visible")
     tryAgainButton.classList.remove("hidden")
-    // buttonsSix.classList.remove("hidden")
-    popup.classList.remove("close")
-    pool.classList.remove("open")
-    popupTitle.textContent = `Результат: ${timer.textContent} seconds`
-    // popupTitle.textContent = `${chosenSet.textContent} пройдена : ${timer.textContent}`
-    popupDescription.innerHTML = "Сможешь лучше?"
+    // oneDeckButtons.classList.remove("hidden")
+    popupMissionsAndSets.classList.remove("close")
+    gameFindAPair.classList.remove("open")
+    popupMissionsAndSetsTitle.textContent = `Результат: ${timer.textContent} seconds`
+
+
+    // else {
+    //     howManyStarsEmoji = howManyStarsEmoji + 1
+    //     console.log(howManyStarsEmoji)
+    //     console.log(timer.textContent)
+    //     console.log(seconds)
+    //     starsEmoji.style.width = `${howManyStarsEmoji * 31}px`
+    // }
+
+
+    // popupMissionsAndSetsTitle.textContent = `${chosenSet.textContent} пройдена : ${timer.textContent}`
+    popupMissionsAndSetsDescription.innerHTML = "Еще разок?"
     // попробуете побить рекорд
-    // popupDescription.innerHTML = `Сможешь лучше? ${chosenSet.textContent}`
+    // popupMissionsAndSetsDescription.innerHTML = `Сможешь лучше? ${chosenSet.textContent}`
     timeMiliseconds.textContent = "00"
     timeSeconds.textContent = "00"
-    popupSets.classList.remove("hide")
-    checkMemory.classList.remove("show")
-    findAPair.classList.remove("show")
+    popupMissionsAndSetsSets.classList.remove("hide")
+    wordOrderGameDrunkRobot.classList.remove("show")
+    popupMissionsAndSetsGameFindAPair.classList.remove("show")
     slotMachine.classList.remove("show")
     slotMachine2.classList.remove("show")
-    p004questions.classList.remove("show")
+    letsSpeak.classList.remove("show")
     chosenSet.classList.remove("show")
     tryAgainButton.textContent = `Yes! ${chosenSet.textContent}`
     const AudioWinner = new Audio("https://zvukitop.com/wp-content/uploads/2021/03/zvuk-tadam-na-trube.mp3");
@@ -432,41 +485,41 @@ function finishGame() {
     max = 6
     tens = "00";
     seconds = "00";
-    poolContainer.innerHTML = ""
+    gameFindAPairContainer.innerHTML = ""
     count = 0
 }
 
 
 
 function scroll(direction) {
-    popupSets.scrollBy(direction, 0)
+    popupMissionsAndSetsSets.scrollBy(direction, 0)
 }
 // При нажатии запускаем событие "навешиваем событие"
-checkMemory.addEventListener("click", startGameRobotBender)
+wordOrderGameDrunkRobot.addEventListener("click", startGameRobotBender)
 
 slotMachine.addEventListener("click", startGameSlotMachine)
-// checkMemory.addEventListener("onclick", () => {
+// wordOrderGameDrunkRobot.addEventListener("onclick", () => {
 // location.href="https://vismyfriend.github.io/Bender/"
 // })
-findAPair.addEventListener("click", startGameFindPairs)
-p004questions.addEventListener("click", startGameQuestions)
-next.addEventListener("click", nextCardsFindAPairCheatUsed)
+popupMissionsAndSetsGameFindAPair.addEventListener("click", startGameFindPairs)
+letsSpeak.addEventListener("click", startGameQuestions)
+gameFindAPairButtonSkipThese.addEventListener("click", nextCardsGameFindAPairCheatUsed)
 tryAgainButton.addEventListener("click", startGameFindPairs)
 foundPairs = 0
 howManyTimesSkipped = 0
-buttonCoverR.addEventListener("click", () => {
+gameFindAPairButtonNotUsed.addEventListener("click", () => {
     coverCards(pictureR)
 })
 
 
 
 
-buttonCoverL.addEventListener("click", () => {
+gameFindAPairButtonBackToMissions.addEventListener("click", () => {
     // coverCards(pictureL)
     pageReloadRefresh()
 })
 
-oneDeckPrevious.addEventListener("click",pageReloadRefresh)
+oneDeckButtonPrevious.addEventListener("click", pageReloadRefresh)
 
 
 if (isTouch()) {
@@ -548,7 +601,7 @@ function audioOnOff() {
 
 }
 const audiomissionMusicBackground = new Audio("https://audio.jukehost.co.uk/wDqy560srBF4ZvgkwI8wAqNcgK9I0cW0");
-    
+
 helloMusicStartButton.addEventListener("click", helloMusicStartButtonInvisible)
 function helloMusicStartButtonInvisible() {
     // const audiomissionMusicBackground = new Audio("https://zvukitop.com/wp-content/uploads/2021/01/hello-zvuk-111.mp3");
@@ -565,14 +618,14 @@ function helloMusicStartButtonInvisible() {
 const audioIconOnOffTrack = new Audio("https://audio.jukehost.co.uk/JHNeJtC076ydQwBp3vBmLGiMTMpExydO");
 audioIconOnOffTrack.loop = false;
 
-audioIconOnOff.addEventListener("click" , () => {
+audioIconOnOff.addEventListener("click", () => {
     audioIconOnOff.classList.toggle("off")
 
     audiomissionMusicBackground.pause()
-    
-    
-    console.log(audioIconOnOffTrack.volume);
-    console.log(audioIconOnOffTrack);
+
+
+    // console.log(audioIconOnOffTrack.volume);
+    // console.log(audioIconOnOffTrack);
 
     //1
     if (audioIconOnOffTrack.volume == 0) {

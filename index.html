@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
 
@@ -36,7 +37,7 @@
         в строку можно вставлять спец. символы ←  и эмоджи 🍺. Вот такой вот классный редактор кода 
         Чтобы сделать неразрывной пробел нажимаю option + space -->
         <p class="refresh-info">← выключить музыку, вернуться к миссиям</p>
-        <p class="header-info">бла бла</p>
+        <p class="headerInfoText">бла бла</p>
         <!-- Можно создать там не строку, а кнопку и сразу навешать ссылку на неё -->
         <a href="https://vismyfriend.github.io/A-pool-game/">
             <button class="header__button001"> S.P.E.C.I.A.L 🍺</button>
@@ -47,183 +48,209 @@
     <!-- 0010 ниже еще напишу про подключение скриптов - но тут продублирую, чтобы не забыть - они после Main подключаются внизу самом 
     сайт читается сверху вниз и поэтому всё,что пишется будет использоваться позже программой -->
     <main class="main">
-        
-        <!-- картиночки вставляю, потом  медиа запросах для разных разрешений экранов настройки сделаем, чтобы не мешались картинки -->
-        <img class="logo-special" src="./images/special logo square black and white.png" alt="Logo Special">
-        <img class="homer" src="./images/Gomer.png" alt="Homer">
-
-        <!-- внутри main создаем контейнеры, в которых будут располагаться элементы (окна, кнопкии все остальное) что-то вроде блоков
+        <!-- спросить Andrew можно ли все объединить дивом или еще чем-то чтобы удобно перемещать по экрану задавая разметку сразу всему, что внутри контейнера -->
+        <div class="mainOne">
+            
+            <!-- внутри main создаем контейнеры, в которых будут располагаться элементы (окна, кнопкии все остальное) что-то вроде блоков
         именно внутри main в общем вся движуха будет происходить как я понял -->
-        <!-- итак создаем контейнер для игры find-a-pair раньше называлась pool бильярд, так как за идею взял картинку бильярдного стола
-        этот контейнер будет картинкой background picture -->
-        <div class="pool">
-            <p class="find-a-pair-info">найдено пар:</p>
-            <!-- строка с таймером -->
-            <p class="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
 
-            <!-- 0011 двойное подчеркивание__обозначает дополнительный класс?? спросить у Эндрю что значит -->
-            <!-- дальше создаем еще контейнер для карточек, которые нужно будет нажимать выбирая нужные пары -->
-            <div class="pool__container"></div>
-                
-                
-            <!-- контейнеры внутри контейнеров - так оказывается и строятся сайты
-            делаем контейнер с кнопками -->
-            <!-- это контейнер с кнопками для игры find-a-pair -->
-            <div class="pool__buttons">
-                <!-- wtf - нужно переименаовать кнопки для каждой игры понятно и отдельно -->
-                <!-- 0012 пробел не ставится в названии классов. вместо-него-символ-вот-такой - Если поставить пробел это будет второй класс-->
-                <!-- уточнить у Andrew разницу между двойным подчеркиванием и пробелом при присвоении классов  -->
-                <!-- несколько классов указываются через пробел в html а в css через точку -->
-                <!-- ну и вот соственно сами кнопки создаем wtf-->
-                <!-- br это перенос текста на следующую строку -->
-                <button class="cover-l">вернуться к <br> выбору миссий</button>
-                <button class="next">skip these <br> пропустить </button>
-                <button class="cover-r">next</button>
-            </div>
-        </div>
 
-        <!-- Что такое template у Andrew уточнить wtf-->
-        <template class="template">
-            <p class="card"></p>
-        </template>
-
-        <!-- приветствие или кнопка обманка - постовил ее сюда, когда не могли сделать так чтобы фоновая музыка сразу играла - требовалось
+            <!-- приветствие или кнопка обманка - постовил ее сюда, когда не могли сделать так чтобы фоновая музыка сразу играла - требовалось
         какое-то дейтсвие от пользователя - поэтому нажав на нее будет запускаться музыка фоновая или звук приветствия, который можно будет выключить надеюсь  
         можно было эту кнопку поставить в самом низу main и тогда она бы всё зкрыла, так как код читается сверху вниз. Но я в стилях ей задам z-индекс, чтобы потренироваться, поэтому можно её оставить здесь и она все равно все закроет, что под ней-->
-        <!-- br и tab это перенос текста на следующую строку -->
-        <button class="helloMusicStartButton">Hello, Special Agent <br> нажми на /спЭшл/</button>
+            <!-- br и tab это перенос текста на следующую строку -->
+            <button class="helloMusicStartButton">Hello, Special Agent <br> нажми на /спЭшл/</button>
 
-        <!-- приветствие и первое, что будет видеть агент, студент, игрок, пользователь, после кнопки обманки -->
-        <div class="popup">
+            <!-- приветствие и первое, что будет видеть агент, студент, игрок, пользователь, после кнопки обманки -->
+            <div class="popupMissionsAndSets">
 
-            <!-- заголовок h и tab нажать-->
-            <h3 class="popup__title">   Nice to see you, S.A.</h3>
+                <!-- заголовок h и tab нажать-->
+                <h3 class="popupMissionsAndSets__title">   Nice to see you, S.A.</h3>
 
-            <!-- строки приветствия, неразрывной пробел alt + space -->
-            <p class="popup__chosen-set"></p>
-            <p class="popup__description">         choose your mission to practice <br> 👈 Выбирай миссию и show must go
-                on! 👉</p>
-            <!-- <button class="try-again hidden"> Yes! </button> -->
+                <!-- строки приветствия, неразрывной пробел alt + space -->
+                <p class="popupMissionsAndSets__chosen-set"></p>
+                <p class="popupMissionsAndSets__description">         choose your mission to practice <br> 👈 Выбирай
+                    миссию и show
+                    must go
+                    on! 👉</p>
+                <!-- <button class="try-again hidden"> Yes! </button> -->
+                <div class="starsEmoji">
+                    <img src="./images/stars.png" alt="starsEmoji">
+                </div>
+                <!-- изначально следующий класс скрыт будет hidden -->
+                <!-- это элементы списка, они будут скролиться и это будет выбор миссий и наборов слов или вопросов -->
+                <ul class="popupMissionsAndSets__sets">
+                    <button class="scroll-left"></button>
+                    <button class="scroll-right"></button>
+                    <li class="popupMissionsAndSets__set" data-set="testing"> ... </li>
+                    <li class="popupMissionsAndSets__set" data-set="mission0">Миссия ZER0</li>
+                    <li class="popupMissionsAndSets__set" data-set="mission1">Миссия ONE</li>
+                    <li class="popupMissionsAndSets__set green" data-set="time"> 00:00 am </li>
+                    <li class="popupMissionsAndSets__set" data-set="mission2">Mission TWO</li>
+                    <li class="popupMissionsAndSets__set" data-set="mission3">Mission THREE</li>
+                    <li class="popupMissionsAndSets__set" data-set="areamisTest">Test Арамиса</li>
+                    <li class="popupMissionsAndSets__set" data-set="travel">Travel</li>
+                    <li class="popupMissionsAndSets__set" data-set="bodypartsa1">body parts A1</li>
+                    <li class="popupMissionsAndSets__set" data-set="animals">животные </li>
+                    <li class="popupMissionsAndSets__set" data-set="bodypartsa2">body parts A2</li>
+                    <li class="popupMissionsAndSets__set" data-set="verbs">common verbs</li>
+                    <li class="popupMissionsAndSets__set" data-set="Naughty_verbs_challenge">NV Contest</li>
+                    <li class="popupMissionsAndSets__set" data-set="seasons"> сезоны </li>
+                    <li class="popupMissionsAndSets__set" data-set="Irregular_verbs_F_K"> Irr.V F-K</li>
+                    <li class="popupMissionsAndSets__set" data-set="Irregular_verbs_B_K"> Irr.V B-K</li>
+                    <li class="popupMissionsAndSets__set" data-set="a_cook_cooks"> A cook cooks </li>
+                    <li class="popupMissionsAndSets__set green" data-set="cooking">cooking</li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="Irregular_verbs_ALL">coming soon</li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="numbers">coming soon</li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="prepositions"> coming soon </li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="food"> coming soon </li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="Irr_v_3_forms"> coming soon</li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="Irregular_verbs_1_form"> coming soon</li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="Irregular_verbs_En_Ru"> coming soon</li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="musicCheck"> заблокирован </li>
+                    <li class="popupMissionsAndSets__set comingSoon" data-set="new_mission"> coming soon </li>
+                </ul>
+                <!-- изначально выбор игр скрыт до тех пор пока пользователь не выберет какой-либо набор -->
+                <!-- уточнить у Andrew можно ли это сократить -->
+                <div class="popupMissionsAndSets__gameFindAPair">
+                    <img src="./images/monkey.png">
+                    <p> Find a pair </p>
+                </div>
+                <div class="popupMissionsAndSets__letsSpeak">
+                    <img src="./images/mouthmonkey.png">
+                    <p> Let's speak </p>
+                </div>
+                <div class="popupMissionsAndSets__wordOrderGameDrunkRobot">
+                    <img src="./images/eyesmonkey.png">
+                    <p> Practice grammar</p>
+                </div>
+                <div class="popupMissionsAndSets__slot-machine">
+                    <img src="./images/earsmonkey.png">
+                    <p> Slot machine</p>
+                </div>
+                <div class="popupMissionsAndSets__slot-machine2">
+                    <img src="./images/Brain.png">
+                    <p> Full brain work-out</p>
+                </div>
 
-            <!-- изначально следующий класс скрыт будет hidden -->
-            <!-- это элементы списка, они будут скролиться и это будет выбор миссий и наборов слов или вопросов -->
-            <ul class="popup__sets">
-                <button class="scroll-left"></button>
-                <button class="scroll-right"></button>
-                <li class="popup__set" data-set="testing"> ... </li>
-                <li class="popup__set" data-set="mission0">Миссия ZER0</li>
-                <li class="popup__set" data-set="mission1">Миссия ONE</li>
-                <li class="popup__set green" data-set="time"> 00:00 am </li>
-                <li class="popup__set" data-set="mission2">Mission TWO</li>
-                <li class="popup__set" data-set="mission3">Mission THREE</li>
-                <li class="popup__set" data-set="areamisTest">Test Арамиса</li>
-                <li class="popup__set" data-set="travel">Travel</li>
-                <li class="popup__set" data-set="bodypartsa1">body parts A1</li>
-                <li class="popup__set" data-set="animals">животные </li>
-                <li class="popup__set" data-set="bodypartsa2">body parts A2</li>
-                <li class="popup__set" data-set="verbs">common verbs</li>
-                <li class="popup__set" data-set="Naughty_verbs_challenge">NV Contest</li>
-                <li class="popup__set" data-set="seasons"> сезоны </li>
-                <li class="popup__set" data-set="Irregular_verbs_F_K"> Irr.V F-K</li>
-                <li class="popup__set" data-set="Irregular_verbs_B_K"> Irr.V B-K</li>
-                <li class="popup__set" data-set="a_cook_cooks"> A cook cooks </li>
-                <li class="popup__set green" data-set="cooking">cooking</li>
-                <li class="popup__set comingSoon" data-set="Irregular_verbs_ALL">coming soon</li>
-                <li class="popup__set comingSoon" data-set="numbers">coming soon</li>
-                <li class="popup__set comingSoon" data-set="prepositions"> coming soon </li>
-                <li class="popup__set comingSoon" data-set="food"> coming soon </li>
-                <li class="popup__set comingSoon" data-set="Irregular_verbs_3_forms"> coming soon </li>
-                <li class="popup__set comingSoon" data-set="Irregular_verbs_1_form"> coming soon</li>
-                <li class="popup__set comingSoon" data-set="Irregular_verbs_En_Ru"> coming soon</li>
-                <li class="popup__set comingSoon" data-set="musicCheck"> заблокирован </li>
-                <li class="popup__set comingSoon" data-set="new_mission"> coming soon </li>
-            </ul>
-
-            <!-- уточнить у Andrew можно ли это сократить -->
-            <div class="popup__find-a-pair">
-                <img src="./images/monkey.png">
-                <p> Find a pair </p>
+                <button class="try-again hidden"> Yes! </button>
             </div>
-            <div class="popup__p004-questions">
-                <img src="./images/mouthmonkey.png">
-                <p> Let's speak </p>
-            </div>
-            <div class="popup__check-memory">
-                <img src="./images/eyesmonkey.png">
-                <p> Practice grammar</p>
-            </div>
-            <div class="popup__slot-machine">
-                <img src="./images/earsmonkey.png">
-                <p> Slot machine</p>
-            </div>
-            <div class="popup__slot-machine2">
-                <img src="./images/Brain.png">
-                <p> Full brain work-out</p>
-            </div>
 
-            <button class="try-again hidden"> Yes! </button>
-        </div>
+            <!-- картиночки вставляю, потом  медиа запросах для разных разрешений экранов настройки сделаем, чтобы не мешались картинки -->
+            <img class="logo-special" src="./images/special logo square black and white.png" alt="Logo Special">
+            <img class="homerPicture" src="./images/Gomer.png" alt="homerPicture">
 
 
+            <!-- вообще этот шаг был первее, но я перенес его сюда, чтобы логика соблюдалась - 
+                создаем контейнер для игры gameFindAPair раньше называлась pool бильярд, так как 
+                за идею взял картинку бильярдного стола
+                этот контейнер будет картинкой background picture -->
+            <div class="gameFindAPair">
+                <p class="gameFindAPair-info">найдено пар:</p>
+                <!-- строка с таймером -->
+                <p class="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
+
+                <!-- 0011 двойное подчеркивание__обозначает дополнительный класс?? спросить у Эндрю что значит -->
+                <!-- дальше создаем еще контейнер для карточек, которые нужно будет нажимать выбирая нужные пары -->
+                <div class="gameFindAPair__container"></div>
 
 
-        <!-- wtf -->
+                <!-- контейнеры внутри контейнеров - так оказывается и строятся сайты
+                делаем контейнер с кнопками -->
+                <!-- это контейнер с кнопками для игры gameFindAPair -->
 
-        <img class="picture-right" src="./images/hide R.png">
-        <img class="picture-left" src="./images/Hide L.png">
-        
-        
-        <!-- несколько классов указываются через пробел в html а в css через точку -->
-        <!-- позже при выборе набора класс hidden удалится remove hidden1 -->
-        <!-- Это игра oneDeck вопросы и ответы одна карта заблюрен перевод -->
-        <div class="card1_question1 hidden1 card1">
-            <div class="card1__top1">
-                <p class="card1__value1">вопрос?</p>
+                <!-- спросить у Andrew зачем или почему мы здесь два класса делали кнопкам -->
+
+                <!-- <div class="gameFindAPair__buttons"> -->
+
+
+                <div class="gameFindAPairButtons">
+                    <!-- wtf - нужно переименаовать кнопки для каждой игры понятно и отдельно -->
+                    <!-- 0012 пробел не ставится в названии классов. вместо-него-символ-вот-такой - Если поставить пробел это будет второй класс-->
+                    <!-- уточнить у Andrew разницу между двойным подчеркиванием и пробелом при присвоении классов  -->
+                    <!-- несколько классов указываются через пробел в html а в css через точку -->
+                    <!-- ну и вот соственно сами кнопки создаем wtf-->
+                    <!-- br это перенос текста на следующую строку -->
+                    <button class="gameFindAPairButtonBackToMissions">вернуться к <br> выбору миссий</button>
+                    <button class="gameFindAPairButtonSkipThese">skip these <br> пропустить </button>
+                    <button class="gameFindAPairButtonNotUsed">NotUsed</button>
+                </div>
             </div>
-            <div class="card1__bottom1">
-                <p class="card1__hint1">перевод и пример?</p>
-            </div>
+
+            <!-- Что такое template у Andrew уточнить wtf-->
+            <template class="template">
+                <p class="card"></p>
+            </template>
+
+
+
+
+
+            <!-- wtf -->
+
+            <img class="picture-right" src="./images/hide R.png">
+            <img class="picture-left" src="./images/Hide L.png">
+
+
+            <!-- несколько классов указываются через пробел в html а в css через точку -->
+            <!-- позже при выборе набора класс hidden удалится remove hiddenDeck -->
             
-        </div>
-        <!-- кнопки для oneDeck game -->
-        <div class="oneDeckButtons">
-            <button class="oneDeckPrevious">missions</button>
-            <button class="oneDeckCheck">check</button>
-            <button class="oneDeckNext">next</button>
+            <!-- Это игра Speaking или LetsSpeak раньше называлась oneDeck вопросы и ответы одна карта заблюрен перевод -->
+            <!-- уточнить у Andrew почему здесь сперва нижнее подчеркивание а потом тоже самое в конце -->
+            <div class="oneDeckOfCards_cardForSpeakingGame hiddenDeck oneDeckOfCards">
+                <div class="oneDeckOfCards__topOfTheCard1">
+                    <p class="oneDeckOfCards__topOfTheCard1Value">информация на верней части карточки</p>
+                </div>
+                <div class="oneDeckOfCards__bottomOfTheCard1">
+                    <p class="oneDeckOfCards__bottomOfTheCard1Value">информация на нижней части карточки</p>
+                </div>
 
-        </div>
+            </div>
+            <!-- кнопки для oneDeck game -->
+            <div class="oneDeckButtons">
+                <button class="oneDeckButtonPrevious">missions</button>
+                <button class="oneDeckButtonCheck">check</button>
+                <button class="oneDeckButtonNext">next</button>
 
-        <!-- вторая колода -->
-        <!-- <div class="card_question card">
+            </div>
+
+            <!-- вторая колода -->
+            <!-- <div class="card_question card">
             <div class="card__top">
                 <p class="card__value">вопрос?</p>
             </div>
-            <div class="card__bottom">
+            <div class="card__bottomOfTheCard2">
                 <p class="card__hint">перевод и пример?</p>
             </div>
         </div> -->
 
 
+            <div class="insertANewGameHere">
 
-        <!-- добавляем фоновую музыку на старте - строчкой ниже создается монстр трэк неотключаемый даже при закрытии браузера поэтому закоменчу пока-->
-        <!-- <audio class="missionMusicBackground" src="./audio/mission background musicVolume50.mp3" autoplay loop></audio> -->
-        <audio class="audio" src="./audio/MissionMusicDefaultGoldfinger.mp3"></audio>
-        <!-- preload не работает с autoplay -->
-        <!-- можно подряд добавлять autoplay loop -->
-        <!-- loop - бес перерыва играет -->
-        <!-- wtf пока не понятно как сделать так чтобы можно было константе присваивать трек разный в java -->
-        <!-- <audio class="audioIconOnOffTrack" src="./audio/MissionMusicDefaultGoldfinger.mp3"></audio> -->
-        
-        <button class="audioIcon"></button>
-        <button class="audioIconOnOff"></button>
+                <!-- в планах вставить сюда игру про бендера c Божьей помощью =) То есть с Andrew-->
 
-        <button class="secretButton"></button>
-        <button class="missionMusicBackgroundIconButton"></button>
-        
-        <!-- кнопку обманку можно здесь вставить, тогда она будет самой первой видна и можно в стилях её убрать z-индекс 
-        но я чтобы запомнить это оставлю здесь и закоменчу -->
-        <!-- <button class="helloMusicStartButton">Hello, Special Agent <br> нажми на /спЭшл/</button> -->
+            </div>
 
+            
+            <!-- добавляем фоновую музыку на старте - строчкой ниже создается монстр трэк неотключаемый даже при закрытии браузера поэтому закоменчу пока-->
+            <!-- <audio class="missionMusicBackground" src="./audio/mission background musicVolume50.mp3" autoplay loop></audio> -->
+            <audio class="audio" src="./audio/MissionMusicDefaultGoldfinger.mp3"></audio>
+            <!-- preload не работает с autoplay -->
+            <!-- можно подряд добавлять autoplay loop -->
+            <!-- loop - бес перерыва играет -->
+            <!-- wtf пока не понятно как сделать так чтобы можно было константе присваивать трек разный в java -->
+            <!-- <audio class="audioIconOnOffTrack" src="./audio/MissionMusicDefaultGoldfinger.mp3"></audio> -->
+
+            <button class="audioIcon"></button>
+            <button class="audioIconOnOff"></button>
+
+            <button class="secretButton"></button>
+            <button class="missionMusicBackgroundIconButton"></button>
+
+            <!-- кнопку обманку можно здесь вставить, тогда она будет самой первой видна и можно в стилях её убрать z-индекс 
+            но я чтобы запомнить это оставлю здесь и закоменчу -->
+            <!-- <button class="helloMusicStartButton">Hello, Special Agent <br> нажми на /спЭшл/</button> -->
+        </div>
     </main>
 
     <!-- 0010 подключаем скрипты они подключаются в самом низу после закрытия main - папка scripts и в ней файл app.js  -->
